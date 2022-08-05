@@ -59,9 +59,7 @@
 			
 		</div>
 	</div>
-<<<<<<< Updated upstream
 </section>
-=======
 </nav>
 <script src="<?= base_url() ?>assets/js/Jquery.js"></script>
 
@@ -71,4 +69,6 @@
 		alert
 	})
 </script>
->>>>>>> Stashed changes
+
+</script>
+
