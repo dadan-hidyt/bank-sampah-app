@@ -6,6 +6,13 @@
   * Aplikasi ini di kembangkan dengan PHP Native v7.4
   * Front end mengunakan bootstrap
   * Selamat projekan 💪.
+
+## CARA INSTALL PROJEK DI LOCAL
+  * Bikin folder di htdocs dengan nama myproject
+  * Download git Bash dan install
+  * Di posisi folder myproject klik kanan lalu git Bash
+  * clone repo dengan ketikan perintah git clone https://github.com/dadan-hidyt/bank-sampah-app.git di terminal git Bash
+  * Lalu CD bank-sampah-app
 <!--
   For the maintainers, here are some tips 💡 for getting started with Discussions. We'll leave these in Markdown comments for now, but feel free to take out the comments for all maintainers to see.
 
