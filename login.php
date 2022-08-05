@@ -21,7 +21,6 @@ if ($req->method() === 'POST' || $req->method() === 'post') {
    }
 
 }
-
 /** view login page */
 view('auth/login','layout.general',[
     'title' => 'login',

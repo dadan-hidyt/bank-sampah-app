@@ -114,3 +114,31 @@ function base_url() {
 function session() {
     return core()->session;
 }
+
+function create_breadcrumb($data = []) {
+    if (!empty($data)) {
+        $content = '
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb has-arrow">';
+            if (count($data) > 0) {
+                $content .= '<li class="breadcrumb-item">
+                    <a href=\'home.php\'>Dashboard</a>
+                </li>';
+            }
+        foreach ($data as $link => $value) {
+        
+            if(end($data) === $value) {
+                $content .= '<li class="breadcrumb-item active" aria-current="page">'.$value.'</li>';
+            } else {
+                $content .= '<li class="breadcrumb-item">
+                <a href=\''.$value.'\'>'.$link.'</a>
+            </li>';
+            }
+        }
+    }   
+    $content .= '
+        </ol>
+    </nav>';
+    echo $content;
+}
+
