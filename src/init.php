@@ -6,6 +6,7 @@ use Libs\Session\Session;
 use Libs\View;
 use Libs\Cookie;
 use Libs\Security;
+use Libs\Request;
 require 'define.php';
 /**
  * functions
@@ -16,6 +17,13 @@ require 'functions.php';
  */
 load_file_src('html_functions');
 load_file_src('Registry');
+/**
+ * load file config
+ * */
+if(false === is_file(ROOT_PATH.'config.php')) {
+    die('Error: config is not defined');
+}
+require ROOT_PATH.'config.php';
 /**
  * autoloader class
  */
@@ -48,3 +56,12 @@ $registry->set('cookie', new Cookie);
  * security
  */
 $registry->set('security', new Security);
+
+/**
+ * LIBS INPUT
+ */
+$registry->set('request',new Request);
+/**
+ * CONFIG
+ * */
+$registry->set('config', new Config);

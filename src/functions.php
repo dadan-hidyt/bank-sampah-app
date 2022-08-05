@@ -54,8 +54,15 @@ if(!function_exists('db_query')) {
  **/ 
 if(!function_exists('view')) {
     function view($file, $layout = null, $data = []) {
+        $ubah_dot = function($string) {
+            $string = trim($string,'.');
+            return str_replace('.','/',$string);
+        };
+        $file = $ubah_dot($file);
+        $layout = $ubah_dot($layout);
         if (class_exists(View::class)) {
-            ob_start('minify_html');
+           // ob_start('minify_html');
+            ob_start();
             $c = new View($file, $data);
             $c->set_layout($layout);
             $c->render();
@@ -69,7 +76,7 @@ if(!function_exists('view')) {
  **/ 
 if (!function_exists('minify_html')) {
     function minify_html($str) {
-          $str = preg_replace("/\n+/",'',$str);
+         $str = preg_replace("/\n+/",'',$str);
         $str = preg_replace("/\t+/",'',$str);
         $str = preg_replace("/>\r+/",'>',$str);
         $str = preg_replace("/\r+</",'<',$str);
@@ -87,7 +94,7 @@ if(!function_exists('load_file')) {
 }
 if(!function_exists('get_title')) {
     function get_title($title, $surfix = false, $separator = ' | ') {
-        $app_name = 'dadan';
+        $app_name = core()->config->get('SITE')->TITLE;
         if($surfix) {
             return $title.$separator.$app_name;
         }
@@ -99,4 +106,8 @@ if(!function_exists('clean_string')) {
     function clean_string($string) {
         return core()->security::clean_string($string);
     }
+}
+
+function base_url() {
+    return core()->config->get('SITE')->URL;
 }

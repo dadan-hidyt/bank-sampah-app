@@ -61,6 +61,21 @@ class View {
            $file = trim($value[1]);
            $content = str_replace($value[0],'<?php $this->include('.$file.'); ?>',$content);
         }
+        /** parsing {%function()} */
+        preg_match_all('/@(|=)\{(.*)\}/',$content,$match,PREG_SET_ORDER);
+        foreach ($match as $value) {
+            $assgment = false;
+            if($value[1] === '=') {
+                $assgment = true;
+            }
+            if($assgment) {
+                $php = "<?= $value[2] ?>";
+            } else {
+                $php = "<?php $value[2] ?>";
+            }
+
+            $content = str_replace($value[0],$php,$content);
+        } 
         /**
          * untuk memparsing struktur logika
          * ------PATTERN---------------COMPILED-----------

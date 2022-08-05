@@ -5,22 +5,27 @@
  */
 
 use Libs\Security;
-
+use Libs\Input;
 require 'src/init.php';
 
-
-$next_uri = null;
+$req = core()->request;
 /**
- * mendapatkan next url jika ada
- */
-if(isset($_GET['_next'])) {
-    $next_uri = $_GET['_next'];
+ *cek apakah method nya adalah post 
+ **/
+if ($req->method() === 'POST' || $req->method() === 'post') {
+   $submit_login = $_POST['login'] ?? false;
+   if ($submit_login) {
+        $username = $req->post('username');
+        $password = $req->post('password');
+        $remember_me = $req->post("remember");
+   }
+
 }
-//get next uri from url
-echo clean_string($next_uri);
-//render login page
-view('auth/login','auth',array(
-    'title' => get_title('login'),
-    'body_class' => 'auth'
-));
+
+/** view login page */
+view('auth/login','layout.general',[
+    'title' => 'login',
+    'body_class' => 'auth_class'
+]);
+
 ?>
