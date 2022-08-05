@@ -1,0 +1,21 @@
+:root{
+    --primary-color :#064635 ;
+    --second-color : #519259;
+    --third-color : #F0BB62;
+    --fourth-color : #F4EEA9;
+
+    --trans-06 : all ease .6s;
+    --trans-05 : all ease .5s;
+    --trans-04 : all ease .4s;
+    --trans-03 : all ease .3s;
+    --trans-02 : all ease .2s;
+    --trans-01 : all ease .1s;
+}
+
+*{
+    margin:0;
+    padding :0;
+    list-style : none;
+    font-family: 'Poppins', sans-serif;
+}
+
