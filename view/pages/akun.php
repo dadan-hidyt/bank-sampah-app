@@ -3,14 +3,14 @@
     <div class="w-100 py-3">
             <div class="d-flex flex-column justify-content-center w-100">
                <div class="logo-profil rounded-circle border border-success mx-auto">
-                  <img id="logo" src="<?=base_url()?>assets/images/profile/female/image_6.png" class="rounded-circle">
+                  <img id="logo" src="<?=base_url()?>assets/images/profile/female/image_6.png" class="rounded-circle profile">
                </div>
                <div class="w-100 text-center">
-                <i class='mdi mdi-lead-pencil mdi-4x text-success'></i>
+                <i id="pen_icon" class='mdi mdi-lead-pencil mdi-4x text-success'></i>
                </div>
             </div>
         <form action="" name="ep" class="w-100 d-flex flex-col justify-content-center">
-        <input type="file" name="file" id="file" class="file">
+        <input onchange="photo_preview(event)" type="file" name="file" id="file" class="file">
         <div class="ep-container w-50 mt-4 d-flex flex-wrap justify-content-between">
             <div class="w-100">
                 <label for=" lastname">Nama depan :</label>
@@ -36,10 +36,35 @@
 <script>
     const logoImg = document.querySelector(".logo-profil");
     const editBtn = document.querySelector(".mdi-lead-pencil");
+    const image_profile = document.querySelector('.profile')
     logoImg.addEventListener("click", function () {
         document.getElementById("file").click();
     });
     editBtn.addEventListener("click", function () {
         document.getElementById("file").click();
     });
+
+    function photo_preview(event) {
+       const file = event.target.files[0];
+
+       const filename = file?.name ?? 'Tidak ada gambar';
+       //icon edit
+       const icon_edit = document.getElementById('pen_icon');
+       icon_edit.classList.remove('mdi');
+       icon_edit.classList.remove('mdi-lead-pencil');
+       console.log(file.type)
+       if (file.type !== 'image/png' || file.type !== 'image/jpg' || file.type !== 'image/jpeg') {
+            icon_edit.innerText = 'Gambar harus jpg atau png';
+        } else {
+            icon_edit.innerText = filename;
+       //preview
+       const image = URL.createObjectURL(file);
+            if (image) {
+                image_profile.src = image;
+            }
+        }
+
+
+    }
+
 </script>
