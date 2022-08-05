@@ -1,9 +1,10 @@
 <?php create_breadcrumb(['penjualan']) ?>
-<div class="mt-4">
-    <div class="button-action mb-4 mt-3">
-        <a class="btn btn-warning" href="">PRINT</a>
-    </div>
-    <div class="table-responsive">
+<div class="bg-white">
+<div class="button-control py-2 px-2 shadow-sm">
+    <a href="" class="btn btn-warning">PRINT</a>
+</div>
+<div class="mt-2">
+    <div class="table-responsive shadow-sm">
     <table class="table table-hover table-bordered">
     <tr>
        <thead>
@@ -53,5 +54,6 @@
        </tbody>
     </tr>
 </table>
-    </div>
+</div>
+</div>
 </div>
