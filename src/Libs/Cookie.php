@@ -2,9 +2,13 @@
 namespace Libs;
 class Cookie {
     public function _setCookie($name,$value,$expires,$path,$secure,$http_only) {
+        if (!$expires) {
+            //default expires for cookie
+            $expires = (time() + 60 * 60 * 24 * 30); //1 bulan
+        }
         if(is_array($name)) {
           $cookie_name = $name['name'];
-          $value = $name['name'];
+          $value = $name['value'];
           $expires = $name['expires'] ?? $expires;
           $path = $name['path'] ?? $path;
           $secure = $name['secure'] ?? $secure;
