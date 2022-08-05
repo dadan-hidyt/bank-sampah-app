@@ -111,3 +111,6 @@ if(!function_exists('clean_string')) {
 function base_url() {
     return core()->config->get('SITE')->URL;
 }
+function session() {
+    return core()->session;
+}

@@ -65,3 +65,8 @@ $registry->set('request',new Request);
  * CONFIG
  * */
 $registry->set('config', new Config);
+
+/**
+ * menu
+ */
+$registry->set('menu_akses',new MenuAkses);

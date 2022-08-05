@@ -27,6 +27,7 @@
 
 /* Header */
 .t-header {
+  box-shadow: 0px 0px 0px 1px #dedede;
   display: flex;
   height: 65px;
   background: #ffffff;
@@ -42,7 +43,7 @@
     width: 17rem;
     min-width: 17rem;
     max-width: 17rem;
-    background: #fff;
+    background: #000000;
     z-index: 100;
     padding-left: 18px; }
     .t-header .t-header-brand-wrapper a {
@@ -236,7 +237,7 @@
         padding: 12px 30px 12px 30px;
         font-size: 13px;
         line-height: 1;
-        color: #525c5d;
+        color: #b3b3b3;
         letter-spacing: 0.03rem;
         font-weight: 500;
         max-width: 100%;
@@ -253,7 +254,7 @@
       .sidebar .navigation-menu li:last-child a {
         border-bottom: none; }
       .sidebar .navigation-menu li .navigation-submenu {
-        background: #fafafa;
+        background: #000000;
         padding: 0px 0 10px 30px; }
         .sidebar .navigation-menu li .navigation-submenu.collapsing {
           transition: 0.2s ease-in; }
@@ -261,6 +262,7 @@
           display: inherit; }
           .sidebar .navigation-menu li .navigation-submenu li a {
             display: block;
+            color: white;
             padding: calc(9px) 30px calc(9px) calc(30px + 2px);
             opacity: 0.5;
             letter-spacing: 0.03rem;
@@ -328,7 +330,7 @@
         transition-property: transform, -webkit-transform;
         color: #839092; }
       .sidebar .navigation-menu > li:not(.nav-category-divider) > a[data-toggle="collapse"][aria-expanded="true"] {
-        background: #fafafa; }
+        background: #000000; }
         .sidebar .navigation-menu > li:not(.nav-category-divider) > a[data-toggle="collapse"][aria-expanded="true"]:after {
           -webkit-transform: rotate(90deg);
                   transform: rotate(90deg); }
@@ -420,7 +422,8 @@ footer {
 
 @media (max-width: 991.98px) {
   .t-header {
-    width: 100vw; }
+    width: 100vw; 
+  }
     .t-header .t-header-brand-wrapper {
       background: #fbfcfd;
       width: 4rem;
@@ -503,7 +506,4 @@ footer {
 .table-responsive::-webkit-scrollbar-thumb{
   border-radius: 300px;
   background-color:rgb(180, 180, 180);
-}
-.alert.custom-alert{
-border-radius: 0;
 }

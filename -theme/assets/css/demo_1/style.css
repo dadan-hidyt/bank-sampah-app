@@ -236,7 +236,7 @@
         padding: 12px 30px 12px 30px;
         font-size: 13px;
         line-height: 1;
-        color: #525c5d;
+        color: #ffffff;
         letter-spacing: 0.03rem;
         font-weight: 500;
         max-width: 100%;
@@ -253,7 +253,7 @@
       .sidebar .navigation-menu li:last-child a {
         border-bottom: none; }
       .sidebar .navigation-menu li .navigation-submenu {
-        background: #fafafa;
+        background: #000000;
         padding: 0px 0 10px 30px; }
         .sidebar .navigation-menu li .navigation-submenu.collapsing {
           transition: 0.2s ease-in; }
