@@ -1,4 +1,10 @@
 <?php
+/**
+ * Library cookie untuk menangani pembuatan halaman views
+ * dan parsing html
+ * @author dadan
+ * @package library
+ */
 namespace Libs;
 class View {
 	private $layout = null;

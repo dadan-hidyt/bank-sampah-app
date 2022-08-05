@@ -1,4 +1,9 @@
 <?php
+/**
+ * Library cookie untuk menangani koneksi database
+ * @author dadan
+ * @package library
+ */
 namespace Libs;
 class DB {
     private $db_config = [];

@@ -1,4 +1,9 @@
 <?php
+/**
+ * Library cookie untuk menangani pembuatan cookie
+ * @author dadan
+ * @package library
+ */
 namespace Libs;
 class Cookie {
     public function _setCookie($name,$value,$expires,$path,$secure,$http_only) {
