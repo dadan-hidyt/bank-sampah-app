@@ -32,6 +32,11 @@ body{
     font-weight: 400;
     margin-right: 32px;
 }
+.nav-link i{
+    font-size: 18px;
+    margin-top: -3px;
+    margin-right: 4px;
+}
 .nav-link.active{
     color: var(--primary-color) !important;
     font-weight: 600;
@@ -69,8 +74,71 @@ body{
     background-color: var(--primary-color);
     color: #fff;
     font-weight: 600;
+    transition: var(--trans-04);
 }
 .login-bx:hover{
-    background-color: rgba(6, 70, 53, 0.1);
-    color: var(--primary-color);
+    background-color: rgba(6, 70, 53, 0.8);
+    color: #fff;
+}
+
+
+/* navbar mobile  */
+.navbar-mobile{
+    position: fixed;
+    bottom: 20px;
+    width: 100%;
+    display: none;
+}
+    .nav-link.mbl-v i{
+        font-size: 24px;
+        margin-left: 4px;
+    }
+    .nav-link.mbl-v{
+        width: 54px;
+        height: 54px;
+        background-color: rgba(6, 70, 53, 0.1);
+        border-radius: 12px;
+        margin: 0;
+        color: var(--primary-color);
+        transition: var(--trans-04);
+
+    }
+    .navbar-menu_mobile{
+        width: 90%;
+    }
+    .nav-link.mbl-v:hover{
+        transform: translateY(-8px);
+    }
+    .nav-link.mbl-v.active{
+        background-color: rgba(6, 70, 53, 0.6);
+        color: #fff !important;
+    }
+
+    .carousel-box{
+        height: 380px;
+    }
+
+    .carousel-box .carousel{
+        width: 100%;
+        height: 100%;
+    }
+
+
+
+
+
+
+
+
+
+
+/* Responsive  */
+@media only screen and (max-width: 600px) {
+    .navbar-desk .navbar-menu{
+       background-color: salmon;
+       display: none !important;
+    }
+    .navbar-mobile{
+        display: block;   
+    }
 }

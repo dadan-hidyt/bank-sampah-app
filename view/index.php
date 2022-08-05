@@ -5,7 +5,7 @@
 		</a>
 		
 		<div class="navbar-menu d-flex align-items-center">
-			<a href="#" class="nav-link active">
+			<a href="#" class="nav-link active d-flex align-items-center">
 				<i class='bx bx-home-alt' ></i>
 				<span>Beranda</span>
 			</a>
@@ -30,7 +30,33 @@
 				Login
 			</a>
 		</div>
-
-
 	</div>
 </nav>
+
+<nav class="navbar navbar-mobile">
+	<div class="container">
+		<div class="navbar-menu_mobile d-flex m-auto align-items-center justify-content-between">
+			<a href="#" class="nav-link mbl-v d-flex flex-column  align-items-center justify-content-center  active">
+				<i class='bx bx-home-alt' ></i>
+			</a>
+			<a href="#" class="nav-link mbl-v d-flex flex-column  align-items-center justify-content-center ">
+				<i class='bx bx-news' ></i>
+			</a>
+			<a href="#" class="nav-link mbl-v d-flex flex-column  align-items-center justify-content-center ">
+				<i class='bx bx-bell' ></i>
+			</a>
+			<a href="#" class="nav-link mbl-v d-flex flex-column  align-items-center justify-content-center ">
+				<i class='bx bx-user' ></i>
+			</a>
+		</div>
+	</div>
+</nav>
+
+
+<section class="carousel-section">
+	<div class="container bg-secondary">
+		<div class="carousel-box">
+			
+		</div>
+	</div>
+</section>
