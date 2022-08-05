@@ -12,8 +12,6 @@
                 <i class="mdi mdi-menu"></i>
             </button>
             <ul class="nav ml-auto">
-
-
                 <li class="nav-item dropdown">
                     <a class="nav-link" href="#" id="appsDropdown" data-toggle="dropdown" aria-expanded="false">
                         <i class="mdi mdi-account-circle mdi-1x"></i>
@@ -38,11 +36,9 @@
                         </div>
                     </div>
                 </li>
-
                 <li class="nav-item">
                     <a class="nav-link" href="logout"><i class="grid-icon mdi mdi-logout mdi-1x"></i></a>
                 </li>
-
             </ul>
         </div>
     </div>
