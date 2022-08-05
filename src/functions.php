@@ -108,7 +108,10 @@ if(!function_exists('clean_string')) {
     }
 }
 
-function base_url() {
+function base_url($path = null) {
+    if($path) {
+        return core()->config->get('SITE')->URL.$path;
+    }
     return core()->config->get('SITE')->URL;
 }
 function session() {
