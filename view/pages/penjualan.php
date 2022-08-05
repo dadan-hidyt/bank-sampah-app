@@ -1,7 +1,7 @@
 <?php create_breadcrumb(['penjualan']) ?>
 <div class="bg-white">
 <div class="button-control py-2 px-2 shadow-sm">
-    <a href="" class="btn btn-warning">PRINT</a>
+    <a href="" class="btn btn-warning"><i class="mdi mdi-printer"></i>&nbsp;CETAK</a>
 </div>
 <div class="mt-2">
     <div class="table-responsive shadow-sm">
