@@ -14,19 +14,19 @@
         <div class="ep-container w-50 mt-4 d-flex flex-wrap justify-content-between">
             <div class="w-100">
                 <label for=" lastname">Nama depan :</label>
-                <input type="text" class="form-control border border-success fs-2 py-4" value="Dadan">
+                <input type="text" class="form-control border border-dark fs-2 py-4" value="Dadan">
             </div>
             <div class="w-100 mt-4">
                 <label for=" lastname">Nama belakang :</label>
-                <input type="text" name="lastname" class="form-control border border-success fs-2 py-4" value="Hidayat">
+                <input type="text" name="lastname" class="form-control border border-dark fs-2 py-4" value="Hidayat">
             </div>
             <div class="w-100 mt-4">
                 <label for="username">Username :</label>
-                <input type="text" name="username" class="form-control border border-success fs-2 py-4" value="dadanhidyat">
+                <input type="text" name="username" class="form-control border border-dark fs-2 py-4" value="dadanhidyat">
             </div>
             <div class="w-100 mt-4">
                 <label for="email">Email :</label>
-                <input type="email" name="email" class="form-control border border-success fs-2 py-4" value="dadan.hdyt@gmail.com">
+                <input type="email" name="email" class="form-control border border-dark fs-2 py-4" value="dadan.hdyt@gmail.com">
             </div>
             <button type="submit" class="btn btn-md mt-4 bg-success">Simpan perubahan</button>
         </div>
