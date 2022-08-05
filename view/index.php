@@ -54,7 +54,7 @@
 
 
 <section class="carousel-section">
-	<div class="container bg-secondary">
+	<div class="container ">
 		<div class="carousel-box">
 			
 		</div>
