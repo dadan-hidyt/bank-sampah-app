@@ -5,11 +5,7 @@
   INI ADALAH REPOSITORY BANK SAMPAH YANG DI GUNAKAN TIM PROJEK MENGEMBANGKAN PROJEK INI:
   * Aplikasi ini di kembangkan dengan PHP Native v7.4
   * Front end mengunakan bootstrap
- Selamat projekan 💪.
-
-  diskusi:
-  
-
+  * Selamat projekan 💪.
 <!--
   For the maintainers, here are some tips 💡 for getting started with Discussions. We'll leave these in Markdown comments for now, but feel free to take out the comments for all maintainers to see.
 
