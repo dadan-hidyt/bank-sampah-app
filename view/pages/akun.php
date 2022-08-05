@@ -11,12 +11,12 @@
             </div>
         <form action="" name="ep" class="w-100 d-flex flex-col justify-content-center">
         <input type="file" name="file" id="file" class="file">
-        <div class="ep-container w-75 mt-4 d-flex justify-content-between">
+        <div class="ep-container w-50 mt-4 d-flex justify-content-between">
             <div class="w-50 px-4">
-                <input type="text" class="form-control">
+                <input type="text" class="form-control py-4" placeholder="Nama Depan" value="Dadan">
             </div>
             <div class="w-50 px-4">
-
+                <input type="text" class="form-control py-4" placeholder="Nama Belakang" value="Hidayat">
             </div>
         </div>
         </form>
