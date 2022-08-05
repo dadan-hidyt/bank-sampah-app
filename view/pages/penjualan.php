@@ -3,7 +3,7 @@
     <div class="button-action mb-4 mt-3">
         <a class="btn btn-warning" href="">PRINT</a>
     </div>
-    <div class="table-responsive">
+    <div class="table-responsive shadow-sm">
     <table class="table table-hover table-bordered">
     <tr>
        <thead>
