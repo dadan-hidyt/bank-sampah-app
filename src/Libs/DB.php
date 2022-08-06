@@ -16,4 +16,10 @@ class DB {
     public function connect() {
         return 'usep';
     }
+    public function query($query = '') {
+
+    }
+    public function prepare() {
+
+    }
 }
