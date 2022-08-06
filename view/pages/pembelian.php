@@ -1,4 +1,4 @@
-<?php create_breadcrumb(['penjualan']) ?>
+<?php create_breadcrumb(['pembelian']) ?>
 <div class="mt-2">
     <div class="bg-white">
         <div class="button-control py-2 px-2 shadow-sm">
@@ -16,7 +16,7 @@
                         <th>ID</th>
                         <th>TX-ID</th>
                         <th>TANGGAL</th>
-                        <th>PENAMPUNG</th>
+                        <th>PENGELOLA</th>
                         <th>SALDO</th>
                         <th>ACT</th>
                     </tr>

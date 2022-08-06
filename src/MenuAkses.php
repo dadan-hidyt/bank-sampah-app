@@ -28,7 +28,7 @@ class MenuAkses {
             </a>
             <ul class="collapse navigation-submenu" id="transaksi">
               <li>
-                <a href="pages/ui-components/buttons.html">Penjualan</a>
+                <a href="penjualan.php">Penjualan</a>
               </li>
               <li>
                 <a href="pages/ui-components/tables.html">Pembelian</a>
@@ -37,7 +37,7 @@ class MenuAkses {
           </li>
 
            <li>
-            <a href="pages/icons/material-icons.html">
+            <a href="akun.php">
               <span class="link-title">AKUN</span>
               <i class="mdi mdi-settings link-icon"></i>
             </a>

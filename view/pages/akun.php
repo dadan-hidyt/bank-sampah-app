@@ -1,5 +1,5 @@
+<?php create_breadcrumb(['akun']) ?>
 <div class="ep-wrapper w-100">
-    <h1 class="py-4">Edit Profile</h1>
     <div class="w-100 py-3">
         <div class="d-flex flex-column justify-content-center w-100">
          <div class="logo-profil rounded-circle border border-success mx-auto">

@@ -26,24 +26,27 @@
                         <small class="text-muted d-block">Copyright © @{echo date('Y')}
                             <i class="mdi mdi-xml mdi-1x"></i> <i class="mdi mdi-heart text-danger"></i>
                             <a href="http://www.uxcandy.co" target="_blank">SAMPAHKITA</a>. All rights reserved</small>
+                        </div>
                     </div>
-                </div>
-            </footer>
-            <!-- e:footer -->
+                </footer>
+                <!-- e:footer -->
+            </div>
         </div>
-    </div>
-    <!-- plugins:js -->
-    <script src="<?= base_url(); ?>assets/vendors/js/core.js"></script>
-    <!-- endinject -->
-    <!-- Vendor Js For This Page Ends-->
-    <script src="<?= base_url(); ?>assets/vendors/apexcharts/apexcharts.min.js"></script>
-    <script src="<?= base_url(); ?>assets/vendors/chartjs/Chart.min.js"></script>
-    <script src="<?= base_url(); ?>assets/js/charts/chartjs.addon.js"></script>
-    <!-- Vendor Js For This Page Ends-->
-    <!-- build:js -->
-    <script src="<?= base_url(); ?>assets/js/template.js"></script>
-    <script src="<?= base_url(); ?>assets/js/dashboard.js"></script>
-    <!-- endbuild -->
-</body>
+        <!-- plugins:js -->
+        <script src="<?= base_url(); ?>assets/vendors/js/core.js"></script>
+        <!-- endinject -->
+        <script src="<?= base_url()."assets/js/jquery.js" ?>"></script>
+        <!-- Vendor Js For This Page Ends-->
+        <script src="<?= base_url(); ?>assets/vendors/apexcharts/apexcharts.min.js"></script>
+        <script src="<?= base_url(); ?>assets/vendors/chartjs/Chart.min.js"></script>
+        <script src="<?= base_url(); ?>assets/js/charts/chartjs.addon.js"></script>
+        <script src="<?= base_url('assets/vendors/datatable/datatables.js') ?>"></script>
+        <!-- Vendor Js For This Page Ends-->
+        <!-- build:js -->
+        <script src="<?= base_url(); ?>assets/js/template.js"></script>
+        <script src="<?= base_url(); ?>assets/js/dashboard.js"></script>
+        <!-- endbuild -->
 
-</html>
+    </body>
+
+    </html>
