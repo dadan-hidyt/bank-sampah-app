@@ -23,10 +23,14 @@ class MenuAkses {
                   INNER JOIN tb_akses ON tb_menu_akses.akses_id = tb_akses.fungsi_akses
                   INNER JOIN tb_menu ON tb_menu.id_menu = tb_menu_akses.id_menu
                   WHERE
-                  tb_akses.id_akses = '2' AND tb_menu.parent_id = '0'");
+                  tb_akses.id_akses = '2' AND tb_menu.parent_id = 0");
 
         while ($data_menu = $menu->fetch_assoc()) {
-                    
+             ?>
+             <li>
+               <a href=""><?= $data_menu['nama_menu'] ?></a>
+             </li>
+             <?php
         }        
         $data = <<<EOLL
         <li>

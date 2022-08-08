@@ -19,7 +19,6 @@
 
 <body <?= set_body_class($body_class); ?>>
     %@content%
-    <script src=""></script>
     <script src="assets/vendors/OwlCarousel/dist/owl.carousel.min.js"></script>
 </body>
 </html>
