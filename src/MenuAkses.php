@@ -29,6 +29,12 @@ class MenuAkses {
              ?>
              <li>
                <a href=""><?= $data_menu['nama_menu'] ?></a>
+               <?php
+                $d = db()->query("SELECT * FROM menu WHERE parent_id='{$data_menu['id_menu']}'");
+                while ($dd = $d->fetch_assoc()) {
+                  echo $dd['config']
+                }
+               ?>
              </li>
              <?php
         }        
