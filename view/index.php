@@ -134,6 +134,64 @@
 				</a>
 			</div>
 		</div>
+
+
+		<div class="trend-product_row row mt-3">
+			<div class="col-md-4 mt-4">
+				<div class="card-product_trend d-flex align-items-center justify-content-center p-3">
+					<div class="card-trend_img">
+						<img src="https://images.unsplash.com/photo-1606037150583-fb842a55bae7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80" alt="">
+					</div>
+					<div class="card-trend_body">
+						<div class="product-desc">
+							<h5 class="product-name">Nama Produk</h5>
+							<span class="price-awal">IDR Harga Awal</span>
+							<div class="price-trend_up mt-2">
+								<span class="price_">IDR Harga Saat ini</span>
+								<i class='bx bx-trending-up'></i>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4 mt-4">
+				<div class="card-product_trend d-flex align-items-center justify-content-center p-3">
+					<div class="card-trend_img">
+						<img src="https://images.unsplash.com/photo-1606037150583-fb842a55bae7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80" alt="">
+					</div>
+					<div class="card-trend_body">
+						<div class="product-desc">
+							<h5 class="product-name">Nama Produk</h5>
+							<span class="price-awal">IDR Harga Awal</span>
+							<div class="price-trend_down mt-2">
+								<span class="price_">IDR Harga Saat ini</span>
+								<i class='bx bx-trending-down'></i>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4 mt-4">
+				<div class="card-product_trend d-flex align-items-center justify-content-center p-3">
+					<div class="card-trend_img">
+						<img src="https://images.unsplash.com/photo-1606037150583-fb842a55bae7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80" alt="">
+					</div>
+					<div class="card-trend_body">
+						<div class="product-desc">
+							<h5 class="product-name">Nama Produk</h5>
+							<span class="price-awal">IDR Harga Awal</span>
+							<div class="price-trend_up mt-2">
+								<span class="price_">IDR Harga Saat ini</span>
+								<i class='bx bx-trending-up'></i>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
 	</div>
 </section>
 
