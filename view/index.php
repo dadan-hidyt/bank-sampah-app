@@ -54,21 +54,43 @@
 
 
 <section class="carousel-section">
-	<div class="container ">
+	<div class="container">
 		<div class="carousel-box">
-			
+			<div class="owl-carousel">
+	            <div class="item">
+	            	<img src="https://images.unsplash.com/photo-1592890278983-18616401d4ed?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80" alt="">
+	            </div>
+	            <div class="item">
+	              <img src="https://images.unsplash.com/photo-1606037150583-fb842a55bae7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80" alt="">
+	            </div>
+	            <div class="item">
+	              <img src="https://images.unsplash.com/photo-1528190336454-13cd56b45b5a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="">
+	            </div>
+	        </div>
 		</div>
 	</div>
-<<<<<<< Updated upstream
 </section>
-=======
-</nav>
+
+
+
 <script src="<?= base_url() ?>assets/js/Jquery.js"></script>
+<script src="assets/vendors/OwlCarousel/dist/owl.carousel.min.js"></script>
 
 <script>
-	//jquery disini
-	$(window).ready(function(){
-		alert
-	})
+$('.owl-carousel').owlCarousel({
+    loop:true,
+    margin:10,
+    nav:false,
+    responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:1
+        },
+        1000:{
+            items:1
+        }
+    }
+})
 </script>
->>>>>>> Stashed changes
