@@ -22,6 +22,11 @@
 body{
     background-color: #fdfdfd;
 }
+.container-bx{
+    width: 88%;
+    height: 100%;
+    margin: auto;
+}
 .navbar-desk{
     width: 100%;
     height: 100px;
@@ -138,17 +143,101 @@ body{
 
     }
 
+    .button-more{
+        width: 160px;
+        height: 42px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(81, 146, 89, .2);
+        cursor: pointer;
+        transition: var(--trans-03);
+    }
+    .button-more a{
+        width: 100%;
+        height: 100%;
+        color: #064635;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .button-more i{
+        display: none;
+    }
+    .button-more:hover{
+        background-color:rgba(81, 146, 89, .4) ;
+    }
+
+.best-product_title h2,
+.trend-product_title h2{
+    font-weight: 500 !important;
+    margin-top: 4px;
+    color: #444;
+}
+.best-product_title img{
+    width: 140px;
+}
+.card-product{
+    height: 320px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    cursor: pointer;
+}
+.card-product .card-img{
+    margin-top: 18px;
+    height: 200px;
+}
+.card-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.button-view_detail{
+    background-color: rgba(81, 146, 89, .2);
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    justify-content: center;
+    transition: var(--trans-03);
+}
+.button-view_detail a{
+    color: var(--primary-color);
+}
+.button-view_detail:hover{
+    background-color: rgba(81, 146, 89, .4);
+}
+
+.product_price{
+    color: var(--second-color);
+    opacity: .7;
+}
+
+
+
+
+
+
 /* Responsive  */
 @media only screen and (max-width: 600px) {
     .container{
         width:90%;
     }
     .navbar-desk .navbar-menu{
-       background-color: salmon;
        display: none !important;
     }
     .navbar-mobile{
-        display: block;   
+        display: block;  
+        z-index: 10; 
+        bottom: -8px;
+        background-color: #fdfdfd;
+        border-radius: 24px;
     }
     .carousel-section{
         margin-top: 0px;
@@ -158,5 +247,25 @@ body{
      }
     .owl-carousel .item{
         height: 200px;
+    }
+
+    .best-product_title img{
+        width: 100px;
+    }
+    .card-product .card-img{
+        margin-top: 20px
+    }
+    .button-more{
+        width: 42px;
+        height: 42px;
+    }
+    .button-more span{
+        display: none;
+    }
+    .button-more i{
+        display: block;
+        margin-top: 1px;
+        margin-left: 3px;
+        font-size: 24px;
     }
 }

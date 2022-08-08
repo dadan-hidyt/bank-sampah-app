@@ -34,7 +34,7 @@
 </nav>
 
 <nav class="navbar navbar-mobile">
-	<div class="container">
+	<div class="container p-3">
 		<div class="navbar-menu_mobile d-flex m-auto align-items-center justify-content-between">
 			<a href="#" class="nav-link mbl-v d-flex flex-column  align-items-center justify-content-center  active">
 				<i class='bx bx-home-alt' ></i>
@@ -70,7 +70,77 @@
 		</div>
 	</div>
 </section>
-</nav>
+
+<section class="best-product_section mt-5">
+	<div class="container">
+		<div class="best-product_header d-flex align-items-center justify-content-between">
+			<div class="best-product_title">
+				<img src="assets/images/client-side/logo-app.svg" alt="Logo-app">
+				<h2>Produk Terlaris</h2>
+			</div>
+			<div class="button-more">
+				<a href="#" class="nav-link m-0 p-0">
+					<span>Lihat Lainnya</span> 
+					<i class='bx bx-chevron-right'></i>
+				</a>
+			</div>
+		</div>
+
+		<div class="best-product_row row mt-3">
+			<?php 
+				for ($i=0; $i <=3; $i++) { 
+					?> 
+						<div class="col-md-3 mt-4">
+							<div class="card-product">
+								<div class="container-bx">
+									<div class="card-img">
+										<img src="https://images.unsplash.com/photo-1592890278983-18616401d4ed?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80" alt="">
+									</div>
+									<div class="card-product_body mt-4 d-flex align-items-center justify-content-between">
+										<div class="card-body_title">
+											<h5 class="produk_name mt-2">
+												Nama Produk
+											</h5>
+											<span class="product_price">IDR Harga</span>
+										</div>
+										<div class="button-view_detail">
+											<a href="#" class="d-flex align-items-center justify-content-center">
+												<i class='bx bx-detail' ></i>
+											</a>
+										</div>
+									</div>
+								</div>
+								
+							</div>
+						</div>
+					<?php
+				}
+			?>
+		</div>
+	</div>
+</section>
+
+<section class="trend-product_section mt-5">
+	<div class="container">
+		<div class="trend-product_header d-flex align-items-center justify-content-between">
+			<div class="best-product_title">
+				<img src="assets/images/client-side/logo-app.svg" alt="Logo-app">
+				<h2>Analitik Produk</h2>
+			</div>
+			<div class="button-more">
+				<a href="#" class="nav-link m-0 p-0">
+					<span>Lihat Lainnya</span> 
+					<i class='bx bx-chevron-right'></i>
+				</a>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+
+
+
 
 
 
