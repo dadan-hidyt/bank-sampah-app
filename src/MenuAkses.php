@@ -32,7 +32,7 @@ class MenuAkses {
                <?php
                 $d = db()->query("SELECT * FROM menu WHERE parent_id='{$data_menu['id_menu']}'");
                 while ($dd = $d->fetch_assoc()) {
-                  echo $dd['config']
+                  echo $dd['config'];
                 }
                ?>
              </li>
