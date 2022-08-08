@@ -39,7 +39,7 @@ $registry = new Registry();
  * DATABASE
  * ---------------------------------------
  */
-$registry->set('db', new DB);
+$registry->set('db', new DB());
 /**
  * ---------------------------------------
  * SESSION

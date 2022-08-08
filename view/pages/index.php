@@ -20,7 +20,7 @@
           <h1>RP. 120.000</h1>
         </div>
         <div class="d-flex mt-3 mb-3">
-          <small class="mb-0 text-primary">Transaksi Bulan ini (2)</small>
+          <small class="mb-0 text-primary">Pengeluaran bulan ini (2)</small>
         </div>
         <div class="d-flex justify-content-between border-bottom py-2">
           <p class="text-black">Bayar iyuran masjid</p>
@@ -30,6 +30,7 @@
           <p class="text-black">Isi galon</p>
           <p class="text-gray">Rp. 5.000</p>
         </div>
+        <a href="">See all</a>
 
       </div>
     </div>
@@ -46,7 +47,7 @@
               <th>Nama Barang</th>
               <th>Satuan</th>
               <th>Harga Hari Ini</th>
-              <th>Harga Hari Kemarin</th>
+              <th>Harga Sebelumnya</th>
               <th>Change</th>
             </tr>
           </thead>
