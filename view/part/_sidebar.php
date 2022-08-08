@@ -9,7 +9,7 @@
           <li class="nav-category-divider">Dadan Hidayat</li>
           <!-- get all -->
          <?php
-         echo core()->menu_akses->getMenu();
+          core()->menu_akses->getMenu();
          ?>
         </ul>
        
