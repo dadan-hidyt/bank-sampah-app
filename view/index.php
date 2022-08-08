@@ -196,7 +196,54 @@
 </section>
 
 
-
+<section class="berita-terkini_section mt-5">
+	<div class="container">
+		<div class="berita-terkini_row row mt-3">
+			<div class="col-md-6">
+				<div class="card-berita">
+					<div class="card-gradient"></div>
+					<img src="https://images.unsplash.com/photo-1592890278983-18616401d4ed?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80" alt="">
+					<div class="card-berita_desc text-white px-4">
+						<div class="title-berita d-flex flex-column">
+							<a href="#" class="text-dec">Judul berita</a>
+							<span class="berita-excerpt">
+								Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur expedita odio dicta, laudantium illum?
+							</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="berita-terkini_row-2 d-flex flex-column justify-content-between">
+					<div class="card-berita">
+					<div class="card-gradient"></div>
+					<img src="https://images.unsplash.com/photo-1592890278983-18616401d4ed?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80" alt="">
+					<div class="card-berita_desc text-white px-4">
+						<div class="title-berita d-flex flex-column">
+							<a href="#" class="text-dec">Judul berita</a>
+							<span class="berita-excerpt">
+								Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur expedita odio dicta, laudantium illum?
+							</span>
+						</div>
+					</div>
+				</div>
+				<div class="card-berita">
+					<div class="card-gradient"></div>
+					<img src="https://images.unsplash.com/photo-1592890278983-18616401d4ed?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80" alt="">
+					<div class="card-berita_desc text-white px-4">
+						<div class="title-berita d-flex flex-column">
+							<a href="#" class="text-dec">Judul berita</a>
+							<span class="berita-excerpt">
+								Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur expedita odio dicta, laudantium illum?
+							</span>
+						</div>
+					</div>
+				</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
 
 
 
