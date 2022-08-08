@@ -13,6 +13,9 @@
   * Di posisi folder myproject klik kanan lalu git Bash
   * clone repo dengan ketikan perintah git clone https://github.com/dadan-hidyt/bank-sampah-app.git di terminal git Bash
   * Lalu CD bank-sampah-app
+  * --IMPORT DATABASE--
+  * buka phpmyadmin buat database baru dengan nama sampah_kita
+  * import database sampah_kita.sql
 <!--
   For the maintainers, here are some tips 💡 for getting started with Discussions. We'll leave these in Markdown comments for now, but feel free to take out the comments for all maintainers to see.
 
