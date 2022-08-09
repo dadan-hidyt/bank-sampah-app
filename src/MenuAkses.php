@@ -5,13 +5,16 @@
 class MenuAkses {
   private $akses;
     /**
-     * get menu
+     * get menu by accsess
      */
     public function setAkses($akses_id = false) {
       if($akses_id != false){
         $this->akses = $akses_id;
       }
     }
+    /**
+     * get menu
+     * */
     public function getMenu() {
       /**
        * get menu in tb_menu
@@ -24,8 +27,11 @@ class MenuAkses {
         INNER JOIN tb_akses ON tb_menu_akses.akses_id = tb_akses.fungsi_akses
         INNER JOIN tb_menu ON tb_menu.id_menu = tb_menu_akses.id_menu
         WHERE
-        tb_akses.id_akses = '2' AND tb_menu.parent_id = 0 AND tb_menu.active='Y'");
-
+        tb_akses.id_akses = '".$this->akses."' AND tb_menu.parent_id = 0 AND tb_menu.active='Y'");
+      /**
+       * Parsing menu
+       * membuat menu
+       * */
       while ($data_menu = $menu->fetch_assoc()) {
         $menu_data .= '<li>';
         if($data_menu['link'] == '') {
@@ -44,7 +50,6 @@ class MenuAkses {
             }
             $menu_data .= '</ul>';
           }
-
         } else {
           $menu_data .= '<a href="'.$data_menu['link'].'">
           <span class="link-title">'.$data_menu['nama_menu'].'</span>
@@ -53,8 +58,7 @@ class MenuAkses {
         }
         $menu_data .= '</li>';
       }       
-
-      echo $menu_data; 
+      return $menu_data; 
 
     }
   }

@@ -2,7 +2,7 @@
 <nav class="t-header">
     <div class="t-header-brand-wrapper">
         <a href="index.html">
-            <img width='30px' height="40px" class="logo" src="<?= base_url(); ?>assets/images/logo.svg" alt="">
+            <img width='80px' class="logo" src="<?= base_url(); ?>assets/images/client-side/logo-app.svg" alt="">
             <img class="logo-mini" src="<?= base_url(); ?>assets/images/logo_mini.svg" alt="">
         </a>
     </div>
