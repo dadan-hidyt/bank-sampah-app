@@ -1,3 +1,10 @@
+<?php
+
+if(core()->auth->isLogin() === false) {
+    redirect('../login.php');
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 

@@ -65,12 +65,14 @@ $registry->set('request',new Request);
  * CONFIG
  * */
 $registry->set('config', new Config);
-
 /**
- * menu
- */
+ * auth
+ **/
 $registry->set('auth',new Auth);
+/**
+ * menu akses
+ * */
 $registry->set('menu_akses',new MenuAkses);
 /**/
 //get session user
-$registry->set('user',new User(1));
+$registry->set('user',new User());

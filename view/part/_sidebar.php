@@ -5,7 +5,7 @@
             <img class="profile-img img-lg rounded-circle" style="object-fit: cover;" src="<?= base_url(); ?>assets/images/profile/female/image_6.png" alt="profile image">
           </div>
           <div class="info-wrapper">
-            <p class="user-name">Member: Dadan ...</p>
+            <p class="user-name"><?= ucwords(core()->user->getName()); ?></p>
             <h6 class="display-income">Rp. 29.000</h6>
           </div>
         </div>
@@ -18,7 +18,7 @@
           </li>
           <!-- get all -->
          <?php
-         core()->menu_akses->setAkses(1);
+         core()->menu_akses->setAkses(core()->user->getId());
          echo core()->menu_akses->getMenu();
          ?>
         </ul>

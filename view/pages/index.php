@@ -2,7 +2,7 @@
 <div class="row">
   <div class="col-12 py-2 mb-2">
     <h4>Dashboard</h4>
-    <p class="text-gray">Selamat siang, Dadan Hidayat</p>
+    <p class="text-gray">Selamat siang, <?= core()->user->getName(); ?>, anda login sebagai <?= strtoupper(core()->user->getAkses()); ?> </p>
   </div>
 </div>
 <!-- S:HOMEPAGE -->

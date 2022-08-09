@@ -9,12 +9,16 @@ use Libs\Input;
 require 'src/init.php';
 
 $req = core()->request;
+$auth = core()->auth;
 
+if($auth->isLogin()) {
+    redirect('app/home.php');
+}
 /**
  * cek apakah method nya post
  * */
 if($req->method() === 'POST') {
-    $auth = core()->auth;
+
     $emailOrUsername = $req->post('email');
     $remember_me = $req->post('remember_me');
     if (!is_null($remember_me)) {

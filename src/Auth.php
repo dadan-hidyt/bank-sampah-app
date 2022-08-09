@@ -50,11 +50,42 @@ class Auth {
 		db()->connect()->rollback();
 		return false;
 	}
-	public function getSessionUser($has) {
-		//
+	public function tokenUser() {
+		$session_hash = 'null';
+		if(session()->get('_xht')) {
+			$session_hash = session()->get('_xht');
+		} else {
+			$session_hash = cookie()->get('_xht');
+		}
+		//check dulu apakah ada di database
+		$check = db()->query("SELECT token,id_pengguna FROM tb_sessions WHERE token='$session_hash'");
+		if ($check && $check->num_rows > 0 && !empty($session_hash)) {
+			return $check->fetch_assoc();
+		}
+		return false;
 	}
-	public function getUserData() {
-		return $this->userData;
+	public function isLogin() {
+		if(is_null($this->tokenUser())) {
+			return false;
+		}else {
+			$token_data = $this->tokenUser();
+			if(!empty($token_data)) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+		return false;
+	}
+	public function userData() {
+		$id_pengguna = $this->tokenUser()['id_pengguna'] ?? false;
+		if ($id_pengguna) {
+			$data = db()->query("SELECT * FROM tb_pengguna WHERE id_pengguna='$id_pengguna'");
+			if($data && $data->num_rows > 0) {
+				return $data->fetch_assoc();
+			}
+		}
+		
 	}
 	public function getId() {
 		return $this->id;
