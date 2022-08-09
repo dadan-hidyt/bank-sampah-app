@@ -10142,6 +10142,12 @@ table {
 .bottom-3{
   bottom: 20px;
 }
+.w-10{
+  width: 10%;
+}
+.fs-16{
+  font-size: 16px;
+}
 #file{
   display: none;
 }
