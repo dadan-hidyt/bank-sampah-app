@@ -289,10 +289,12 @@ body{
     left: 20px;
 }
 .card-berita .card-berita_desc a{
-    font-size: 24px;
+    font-size: 20px;
     color: #fff;
     font-weight: 500;
-
+}
+.berita-excerpt{
+    font-size: 12px;
 }
 .card-berita .card-berita_desc a:hover{
     opacity: .8;
@@ -303,15 +305,36 @@ body{
 .berita-terkini_row-2 .card-berita{
     height: 154px;
 }
-
-
+.berita-terkini_row-2 .card-berita_desc{
+    bottom: 24px;
+    left: 20px;
+}
+.footer-desc{
+    font-weight: 400;
+    color: var(--grey-color);
+}
+.sosial-media_icon{
+    width: 42px;
+    height: 42px;
+    font-size: 22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+    background-color: rgba(81, 146, 89, .2);
+    color: var(--primary-color);
+    border-radius: 12px;
+}
+.sosial-media_icon:hover{
+    color: var(--second-color);
+}
 
 
 
 
 
 /* Responsive  */
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 678px) {
     .container{
         width:90%;
     }
@@ -368,5 +391,14 @@ body{
     .card-trend_body .price-trend_down{
         color: var(--red-color) ;
         font-size: 14px;
+    }
+    .card-berita{
+        height: 154px;
+        margin-bottom: 20px;
+    }
+    .card-berita .card-berita_desc,
+    .berita-terkini_row-2 .card-berita_desc{
+        bottom: 14px;
+        left: 10px;
     }
 }
