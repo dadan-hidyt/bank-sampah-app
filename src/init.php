@@ -69,4 +69,8 @@ $registry->set('config', new Config);
 /**
  * menu
  */
+$registry->set('auth',new Auth);
 $registry->set('menu_akses',new MenuAkses);
+/**/
+//get session user
+$registry->set('user',new User(1));

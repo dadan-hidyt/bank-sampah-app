@@ -181,3 +181,11 @@ function toArray(object $object) {
     }
     return $array;
  }
+
+ function redirect($to) {
+    header('location: '.$to);
+    exit;
+ }
+ function cookie() {
+    return core()->cookie;
+ }

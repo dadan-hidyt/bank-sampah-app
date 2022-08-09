@@ -19,7 +19,12 @@ class Cookie {
           $secure = $name['secure'] ?? $secure;
           $http_only = $name['http_only'] ?? $http_only;
         }
-        setcookie($cookie_name, $value, $expires, $path, $secure,$http_only);
+        $set = setcookie($name, $value, $expires, $path, $secure,$http_only);
+        if($set) {
+            return true;
+        } else {
+            return false;
+        }
     }
     public function set($name,$value = '',$expires = 0,$path = '',$secure = false,$http_only = true) {
         $this->_setCookie($name,$value,$expires,$path,$secure,$http_only);

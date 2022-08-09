@@ -9,16 +9,30 @@ use Libs\Input;
 require 'src/init.php';
 
 $req = core()->request;
+
 /**
- *cek apakah method nya adalah post 
- **/
-if ($req->method() === 'POST' || $req->method() === 'post') {
-   $submit_login = $_POST['login'] ?? false;
-   if ($submit_login) {
-        $username = $req->post('username');
-        $password = $req->post('password');
-        $remember_me = $req->post("remember");
-   }
+ * cek apakah method nya post
+ * */
+if($req->method() === 'POST') {
+    $auth = core()->auth;
+    $emailOrUsername = $req->post('email');
+    $remember_me = $req->post('remember_me');
+    if (!is_null($remember_me)) {
+        //set remember
+        $auth->isRemember(true);
+    }
+    $password = $req->post('password');
+    $data = [
+        'email' => db()->connect()->real_escape_string($emailOrUsername),
+        'password' => $password,
+    ];
+    try {
+       $data = $auth->doLogin($data);
+      // redirect('app/home.php');
+    }catch(Exception $e) {
+        session()->flashWarning('login_gagal_message',$e->getMessage());
+        redirect('login.php');
+    }
 
 }
 /** view login page */

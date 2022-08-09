@@ -7,21 +7,27 @@
                 </div>
                 <div class="grid-body mt-0">
                     <div>
-                        <p class="alert custom-alert alert-danger">login gagal</p>
+                        <?php
+                        //get flash
+                            $error =  session()->getFlash('login_gagal_message');
+                            if(!empty($error)) {
+                                echo $error;
+                            }
+                        ?>
                     </div>
-                   <form action="">
+                   <form action="" method='post'>
                         <div class="form-group">
                             <label for="email/username">Email atau usename</label>
-                            <input type="text" class='form-control form-control-lg'>
+                            <input type="text" name="email" class='form-control form-control-lg'>
                         </div>
                         <div class="form-group">
                             <label for="Password">Password</label>
-                            <input type="text" class='form-control form-control-lg'>
+                            <input type="text" name="password" class='form-control form-control-lg'>
                         </div>
                         <div class="form-group">
                             <div class="checkbox">
                                   <label>
-                                    <input type="checkbox" class="form-check-input"> Ingat Saya <i class="input-frame"></i>
+                                    <input type="checkbox" name="remember_me" class="form-check-input"> Ingat Saya <i class="input-frame"></i>
                                   </label>
                                 </div>
                         </div>
@@ -34,6 +40,4 @@
         </div>
 
     </div>
-
-
 <!-- end:login -->
