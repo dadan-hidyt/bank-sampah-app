@@ -267,7 +267,7 @@
 				<div class="row-navigation row">
 					<div class="col-md-4">
 						<ul class="nav-footer">
-							<li class="mb-4">
+							<li class="mb-3">
 								<h6>Navigasi Cepat</h6>
 							</li>
 							<li><a href="#" class="nav-link p-0 py-2">Beranda</a></li>
@@ -278,7 +278,7 @@
 					</div>
 					<div class="col-md-4">
 						<ul class="nav-footer">
-							<li class="mb-4">
+							<li class="mb-3">
 								<h6>Produk Kami</h6>
 							</li>
 							<li><a href="#" class="nav-link p-0 py-2">Sampah Mentah</a></li>
@@ -287,7 +287,7 @@
 					</div>
 					<div class="col-md-4">
 						<ul class="nav-footer">
-							<li class="mb-4">
+							<li class="mb-3">
 								<h6>Kontak Kami</h6>
 							</li>
 							<li>
