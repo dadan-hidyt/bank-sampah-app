@@ -32,7 +32,6 @@
 		</div>
 	</div>
 </nav>
-
 <nav class="navbar navbar-mobile">
 	<div class="container p-3">
 		<div class="navbar-menu_mobile d-flex m-auto align-items-center justify-content-between">
@@ -51,8 +50,6 @@
 		</div>
 	</div>
 </nav>
-
-
 <section class="carousel-section">
 	<div class="container">
 		<div class="carousel-box">
@@ -70,7 +67,6 @@
 		</div>
 	</div>
 </section>
-
 <section class="best-product_section mt-5">
 	<div class="container">
 		<div class="best-product_header d-flex align-items-center justify-content-between">
@@ -119,7 +115,6 @@
 		</div>
 	</div>
 </section>
-
 <section class="trend-product_section mt-5">
 	<div class="container">
 		<div class="trend-product_header d-flex align-items-center justify-content-between">
@@ -194,9 +189,7 @@
 
 	</div>
 </section>
-
-
-<section class="berita-terkini_section mt-5">
+<section class="berita-terkini_section mt-5 mb-5">
 	<div class="container">
 		<div class="berita-terkini_row row mt-3">
 			<div class="col-md-6">
@@ -245,9 +238,73 @@
 	</div>
 </section>
 
-
-
-
+<section class="footer py-5">
+	<div class="container">
+		<div class="row-footer row">
+			<div class="col-md-5">
+				<div class="footer-logo">
+					<img src="assets/images/client-side/logo-app.svg" alt="Logo-app">
+					<div class="footer-desc mt-4">
+						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea aspernatur consequatur eum modi, enim culpa rem. Laboriosam recusandae, esse est.</p>
+					</div>
+					<div class="footer-sosial_media mt-4 d-flex">
+						<a href="#" class="sosial-media_icon">
+							<i class='bx bxl-instagram'></i>
+						</a>
+						<a href="#" class="sosial-media_icon">
+							<i class='bx bxl-facebook'></i>
+						</a>
+						<a href="#" class="sosial-media_icon">
+							<i class='bx bxl-twitter' ></i>
+						</a>
+						<a href="#" class="sosial-media_icon">
+							<i class='bx bxl-youtube'></i>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-7">
+				<div class="row-navigation row">
+					<div class="col-md-4">
+						<ul class="nav-footer">
+							<li class="mb-4">
+								<h6>Navigasi Cepat</h6>
+							</li>
+							<li><a href="#" class="nav-link p-0 py-2">Beranda</a></li>
+							<li><a href="#" class="nav-link p-0 py-2">Berita</a></li>
+							<li><a href="#" class="nav-link p-0 py-2">Trending</a></li>
+							<li><a href="#" class="nav-link p-0 py-2">Notifikasi</a></li>
+						</ul>
+					</div>
+					<div class="col-md-4">
+						<ul class="nav-footer">
+							<li class="mb-4">
+								<h6>Produk Kami</h6>
+							</li>
+							<li><a href="#" class="nav-link p-0 py-2">Sampah Mentah</a></li>
+							<li><a href="#" class="nav-link p-0 py-2">Olahan Sampah</a></li>
+						</ul>
+					</div>
+					<div class="col-md-4">
+						<ul class="nav-footer">
+							<li class="mb-4">
+								<h6>Kontak Kami</h6>
+							</li>
+							<li>
+								<form action="" class="search-box_footer">
+									<input type="text" placeholder="Kontak Kami">
+									<button class="btn-submit" type="submit">
+										Send
+									</button>
+								</form>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
 
 <script src="<?= base_url() ?>assets/js/Jquery.js"></script>
 <script src="assets/vendors/OwlCarousel/dist/owl.carousel.min.js"></script>
