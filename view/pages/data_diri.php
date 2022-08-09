@@ -13,49 +13,40 @@
         Informasi Pribadi
     </h2>
     <div class="mt-4">
-            <label for="" class="fs-16 font-weight-bold">Nama lengkap</label>
-            <div class="p-3 border border-gray rounded-lg">
-                <span>Dadan Hidayat</span>
-            </div>
+            <label for="" class="w-100 fs-16 font-weight-bold">Nama lengkap</label>
+            <input class="w-100 p-3 border border-gray rounded-lg" value="Dadan Hidayat">
+    </div>
+    <div class="mt-4">
+            <label for="" class="w-100 fs-16 font-weight-bold">No. KTP</label>
+            <input class="w-100 p-3 border border-gray rounded-lg" value="321119029048358">
     </div>
     <div class="d-flex mt-4">
         <div class="w-50 mr-2">
-            <label for="" class="fs-16 font-weight-bold">Tempat lahir</label>
-            <div class="p-3 border border-gray rounded-lg">
-                <span>Markas PP</span>
-            </div>
+            <label for="" class="w-100 fs-16 font-weight-bold">Tempat lahir</label>
+            <input class="w-100 p-3 border border-gray rounded-lg" value="Markas PP">
         </div>
         <div class="w-50 ml-2">
             <label for="" class="fs-16 font-weight-bold">Tanggal lahir</label>
-            <div class="p-3 border border-gray rounded-lg">
-                <span>18/12/2003</span>
-            </div>
+            <input class="w-100 p-3 border border-gray rounded-lg" value="18-06-2003">
         </div>
     </div>
     <div class="d-flex mt-4 justify-content-between">
-        <div class="w-25">
-            <label for="" class="fs-16 font-weight-bold">Agama</label>
-            <div class="p-3 border border-gray rounded-lg">
-                <span>Islam KTP</span>
-            </div>
+        <!-- <div class="w-25">
+            <label for="" class="w-100 fs-16 font-weight-bold">Agama</label>
+            <input class="w-100 p-3 border border-gray rounded-lg" value="Islam KTP">
+        </div> -->
+        <div class="w-50 mr-2">
+        <label for="" class="w-100 fs-16 font-weight-bold">Agama</label>
+            <input class="w-100 p-3 border border-gray rounded-lg" value="Islam KTP">
         </div>
-        <div class="w-50">
-            <label for="" class="fs-16 font-weight-bold">Alamat</label>
-            <div class="p-3 border border-gray rounded-lg">
-                <span>Cadas pangeran, Sumedang</span>
-            </div>
+        <div class="w-25 ml-2 mr-2">
+            <label for="" class="w-100 fs-16 font-weight-bold">RT</label>
+            <input class="w-100 p-3 border border-gray rounded-lg" value="003">
         </div>
-        <div class="w-10">
-            <label for="" class="fs-16 font-weight-bold">RT</label>
-            <div class="p-3 border border-gray rounded-lg">
-                <span>002</span>
-            </div>
-        </div>
-        <div class="w-10">
-            <label for="" class="fs-16 font-weight-bold">RW</label>
-            <div class="p-3 border border-gray rounded-lg">
-                <span>007</span>
-            </div>
+        <div class="w-25 ml-2">
+            <label for="" class="w-100 fs-16 font-weight-bold">RW</label>
+            <input class="w-100 p-3 border border-gray rounded-lg" value="007">
+            
         </div>
     </div>
     <div class="d-flex mt-4">
@@ -66,31 +57,23 @@
             </div>
         </div>
         <div class="w-50 ml-2">
-            <label for="" class="fs-16 font-weight-bold">Kecamatan</label>
-            <div class="p-3 border border-gray rounded-lg">
-                <span>Uchiha</span>
-            </div>
+            <label for="" class="w-100 fs-16 font-weight-bold">Kecamatan</label>
+            <input class="w-100 p-3 border border-gray rounded-lg" value="Uchiha">
         </div>
     </div>
     <div class="d-flex mt-4">
     <div class="w-50 mr-2">
-            <label for="" class="fs-16 font-weight-bold">Kabupaten</label>
-            <div class="p-3 border border-gray rounded-lg">
-                <span>Konoha Pojok</span>
-            </div>
+            <label for="" class="w-100 fs-16 font-weight-bold">Kabupaten</label>
+            <input class="w-100 p-3 border border-gray rounded-lg" value="Uchiha">
         </div>
         <div class="w-50 ml-2">
-            <label for="" class="fs-16 font-weight-bold">Provinsi</label>
-            <div class="p-3 border border-gray rounded-lg">
-                <span>Wakanda</span>
-            </div>
+            <label for="" class="w-100 fs-16 font-weight-bold">Provinsi</label>
+            <input class="w-100 p-3 border border-gray rounded-lg" value="Konoha Barat">
         </div>
     </div>
     <div class="mt-4">
-            <label for="" class="fs-16 font-weight-bold">No. KTP</label>
-            <div class="p-3 border border-gray rounded-lg">
-                <span>321197802782466</span>
-            </div>
+    <label for="" class="w-100 fs-16 font-weight-bold">Alamat</label>
+            <input class="w-100 p-3 border border-gray rounded-lg" value="Uchiha sector sasuke, Konoha">
     </div>
 
 </div>
