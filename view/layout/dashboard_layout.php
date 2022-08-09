@@ -1,6 +1,9 @@
 <?php
-
+/**
+ * cek apakah user sudah login apa belum
+ * */
 if(core()->auth->isLogin() === false) {
+    session()->flashWarning('login_gagal_message', 'Login dulu untuk mengakses halaman ini!');
     redirect('../login.php');
 }
 

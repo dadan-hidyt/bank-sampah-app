@@ -32,7 +32,7 @@ if($req->method() === 'POST') {
     ];
     try {
        $data = $auth->doLogin($data);
-      // redirect('app/home.php');
+      redirect('app/home.php');
     }catch(Exception $e) {
         session()->flashWarning('login_gagal_message',$e->getMessage());
         redirect('login.php');

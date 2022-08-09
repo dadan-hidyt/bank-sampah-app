@@ -58,7 +58,8 @@ class Auth {
 			$session_hash = cookie()->get('_xht');
 		}
 		//check dulu apakah ada di database
-		$check = db()->query("SELECT token,id_pengguna FROM tb_sessions WHERE token='$session_hash'");
+		$now = time();
+		$check = db()->query("SELECT token,id_pengguna,expire FROM tb_sessions WHERE token='$session_hash'");
 		if ($check && $check->num_rows > 0 && !empty($session_hash)) {
 			return $check->fetch_assoc();
 		}
@@ -69,7 +70,8 @@ class Auth {
 			return false;
 		}else {
 			$token_data = $this->tokenUser();
-			if(!empty($token_data)) {
+			$expire = $this->tokenUser()['expire'];
+			if(!empty($token_data) && time() < $expire) {
 				return true;
 			} else {
 				return false;

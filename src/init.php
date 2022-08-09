@@ -1,4 +1,5 @@
 <?php
+date_default_timezone_set('asia/jakarta');
 header_remove('X-Powered-By');
 header_remove('Server');
 use Libs\DB;
