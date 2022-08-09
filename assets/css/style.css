@@ -227,7 +227,7 @@ body{
 }
 .card-trend_img{
     width: 136px;
-    margin-right: 32px;
+    margin-right: 26px;
     height: 136px;
 }
 .card-trend_img > img{
@@ -236,8 +236,14 @@ body{
     border-radius: 24px;
     object-fit: cover;
 }
+.card-trend_body{
+    margin-right: 18px;
+}
 .card-trend_body .price-awal{
     opacity: .8;
+}
+.price_{
+    font-size: 14px;
 }
 .card-trend_body .price-trend_up{
     color: var(--second-color);
@@ -297,6 +303,10 @@ body{
 .berita-terkini_row-2 .card-berita{
     height: 154px;
 }
+
+
+
+
 
 
 
