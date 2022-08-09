@@ -127,7 +127,7 @@ function session()
 {
     return core()->session;
 }
-
+//create breadcroumb
 function create_breadcrumb($data = [])
 {
     if (!empty($data)) {
@@ -170,3 +170,14 @@ function toObject($array = [])
     }
     return $std;
 }
+
+function toArray(object $object) {
+    $array = [];
+    foreach($object as $obj => $v) {
+        $array[$obj] = $v;
+        if (is_object($v)) {
+            $array[$obj] = $v;
+        }
+    }
+    return $array;
+ }

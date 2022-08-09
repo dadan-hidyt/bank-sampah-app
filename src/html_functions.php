@@ -21,7 +21,15 @@ function set_attr($attr_name = 'class', $value = null) {
 function set_body_class($class = null) {
     return $class ?? false ? set_attr('class', $class) : '';
 }
-
+/**
+ * set body id 
+ **/
 function set_body_id($id = null) {
     return $id ?? false ? set_attr('id', $id) : '';
+}
+/**
+ * membuat link dengan html
+ * */
+function create_link($link, $name = '',$target = '__blank') {
+    return sprintf('<a href=\'%s\' target=\'%s\'>%s</a>', $link,$name,$target);
 }
