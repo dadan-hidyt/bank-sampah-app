@@ -9,9 +9,9 @@
         <i id="pen_icon" class='mdi mdi-lead-pencil mdi-4x text-success'></i>
     </div>
 </div>
-<form action="" name="ep" class="w-100 d-flex flex-col justify-content-center">
+<form action="" name="ep" class="w-100 d-flex flex-col">
     <input onchange="photo_preview(event)" type="file" name="file" id="file" class="file">
-    <div class="ep-container w-50 mt-4 d-flex flex-wrap justify-content-between">
+    <div class="ep-container w-100 mt-4 d-flex flex-wrap justify-content-between">
         <div class="w-100">
             <label for=" lastname">Nama depan :</label>
             <input type="text" class="form-control border border-dark fs-2 py-4" value="Dadan">

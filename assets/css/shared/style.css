@@ -10120,11 +10120,21 @@ table {
   height: 100px;
   padding: 2px;
   cursor: pointer;
+  border-radius: 50px !important;
+  border: 1px solid #064635;
+  overflow: hidden;
 }
 .logo-profil img{
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: 50px;
+}
+.status span{
+  color: #656565;
+}
+.border-gray{
+  border: 1px solid #d5d5d5 !important;
 }
 .top-0{
   top: 0;
@@ -10138,5 +10148,21 @@ table {
 @media only screen and (max-width: 600px){
   .ep-container{
     width: 100% !important;
+  }
+  .logo-profil{
+    width: 80px;
+    height: 80px;
+  }
+  .profile-container{
+    width: 100% !important;
+  }
+  .profile{
+    flex-direction: column;
+    align-items: center;
+  }
+  .status{
+    margin-left: 0 !important;
+    margin-top: 10px;
+    text-align: center;
   }
 }
