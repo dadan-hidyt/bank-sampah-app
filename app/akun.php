@@ -4,7 +4,30 @@ require '../src/init.php';
 
 $information = [];
 
+if (request()->has('update_data_diri') && request()->method() === 'POST') {
+	$data['id_pengguna'] = core()->user->getId();
+	// VALUES ('[value-1]','[value-2]','[value-3]','[value-4]','[value-5]','[value-6]','[value-7]','[value-8]','[value-9]','[value-10]','[value-11]','[value-12]','[value-13]','[value-14]','[value-15]')
+	//amankan texs nya wkwkw sugan we berhasil
+	foreach (request()->post() as $key => $value) {
+		$data[$key] = db()->connect()->real_escape_string(strip_tags(htmlentities($value)));
+	}
+	$data['foto_ktp'] = '';
+	$data['photo_kk'] = '';
+	var_dump($data);
+	$sql = sprintf("
+		INSERT INTO `tb_datadiri`(`id_diri`,`nama_lengkap`,`tempat_lahir`,`tanggal_lahir`,`agama`,`alamat`,`rt`,`rw`,`kelurahan_desa`,`kecamatan`,`kabupaten`,`provinsi`,`no_ktp`,`foto_ktp`,`photo_kk`) 
+		VALUES ('%s','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s')",
+		$data['id_pengguna'],$data['nama_lengkap'],$data['tempat_lahir'],$data['tanggal_lahir'],$data['agama'],$data['alamat'],$data['rt'],$data['rw'],$data['desa'],$data['kecamatan'],$data['kabupaten'],$data['provinsi'],$data['no_ktp'],$data['foto_ktp'],$data['photo_kk']);
+	if (empty(core()->user->dataDiri()) && db()->connect()->query($sql)) {
+		session()->flashWarning('data_diri_edited','Data berhasil di tambahkan');
+		return redirect('akun.php?data-diri&edit');
+	} else {
+		session()->flashWarning('data_diri_edited','Data gagal di tambahkan: data sudah ada di database!');
+		return redirect('akun.php?data-diri&edit');
+	}
 
+
+}
 
 if (isset($_GET['data-diri'])) {
 	if (isset($_GET['edit'])) {
