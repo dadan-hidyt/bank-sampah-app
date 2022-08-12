@@ -192,3 +192,16 @@ function toArray(object $object) {
  function request(){
     return core()->request;
  }
+function randomFileName($filename)  {
+    $ext = '.'.pathinfo($filename,PATHINFO_EXTENSION);
+    return uniqid().time().md5(rand()).$ext;
+}
+ function upload($filename,$tmp,$dir) {
+   if (is_dir($dir) || !is_file($dir)) {
+       @mkdir($dir);
+   }
+   if (move_uploaded_file($tmp, $dir.DS.$filename)) {
+       return true;
+   }
+   return false;
+ }
