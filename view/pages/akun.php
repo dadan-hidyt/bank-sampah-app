@@ -13,22 +13,28 @@
     <input onchange="photo_preview(event)" type="file" name="file" id="file" class="file">
     <div class="ep-container w-100 mt-4 d-flex flex-wrap justify-content-between">
         <div class="w-100">
-            <label for=" lastname">Nama depan :</label>
-            <input type="text" class="form-control border border-dark fs-2 py-4" value="Dadan">
+            <label for=" lastname">Username :</label>
+            <input type="text" class="form-control border border-dark fs-2 py-4" value="<?= core()->user->getUsername() ?>">
         </div>
         <div class="w-100 mt-4">
-            <label for=" lastname">Nama belakang :</label>
-            <input type="text" name="lastname" class="form-control border border-dark fs-2 py-4" value="Hidayat">
+            <label for=" lastname">Email :</label>
+            <input type="text" name="lastname" class="form-control border border-dark fs-2 py-4" value="<?= core()->user->getEmail() ?>">
+        </div>
+      
+        <div class="w-100 mt-4">
+            <label for="email">Password lama:</label>
+            <input type="email" name="email" class="form-control border border-dark fs-2 py-4" value="dadan.hdyt@gmail.com">
         </div>
         <div class="w-100 mt-4">
-            <label for="username">Username :</label>
-            <input type="text" name="username" class="form-control border border-dark fs-2 py-4" value="dadanhidyat">
+            <label for="email">Password Baru :</label>
+            <input type="email" name="email" class="form-control border border-dark fs-2 py-4" value="dadan.hdyt@gmail.com">
         </div>
         <div class="w-100 mt-4">
-            <label for="email">Email :</label>
+            <label for="email">Ketikan ulang password baru :</label>
             <input type="email" name="email" class="form-control border border-dark fs-2 py-4" value="dadan.hdyt@gmail.com">
         </div>
         <button type="submit" class="btn btn-md mt-4 bg-success">Simpan perubahan</button>
+        <a href="akun.php?data-diri" class="btn btn-md mt-4 bg-warning">Data Diri</a>
     </div>
 </form>
 </div>

@@ -5,7 +5,7 @@
             <img class="profile-img img-lg rounded-circle" style="object-fit: cover;" src="<?= base_url(); ?>assets/images/profile/female/image_6.png" alt="profile image">
           </div>
           <div class="info-wrapper">
-            <p class="user-name"><?= ucwords(core()->user->getName()); ?></p>
+            <p class="user-name"><?= empty(core()->user->getNama()) ? core()->user->getUsername() : core()->user->getNama(); ?></p>
             <h6 class="display-income">Rp. 29.000</h6>
           </div>
         </div>

@@ -1,6 +1,6 @@
 <?php
 /**
- * cek apakah user sudah login apa belum
+ * cek dyky 
  * */
 if(core()->auth->isLogin() === false) {
     session()->flashWarning('login_gagal_message', 'Login dulu untuk mengakses halaman ini!');

@@ -6,7 +6,7 @@
  */
 namespace Libs;
 class Cookie {
-    public function _setCookie($name,$value,$expires,$path,$secure,$http_only) {
+    public function _setCookie($name,$value,$expires,$path,$domain,$secure,$http_only) {
         if (!$expires) {
             //default expires for cookie
             $expires = (time() + 60 * 60 * 24 * 30); //1 bulan
@@ -19,15 +19,15 @@ class Cookie {
           $secure = $name['secure'] ?? $secure;
           $http_only = $name['http_only'] ?? $http_only;
         }
-        $set = setcookie($name, $value, $expires, $path, $secure,$http_only);
+        $set = setcookie($name, $value, $expires, $path, $domain, $secure,$http_only);
         if($set) {
             return true;
         } else {
             return false;
         }
     }
-    public function set($name,$value = '',$expires = 0,$path = '',$secure = false,$http_only = true) {
-        $this->_setCookie($name,$value,$expires,$path,$secure,$http_only);
+    public function set($name,$value = '',$expires = 0,$path = '',$domain = '', $secure = false,$http_only = true) {
+        $this->_setCookie($name,$value,$expires,$path,$domain, $secure,$http_only);
     }
     public function get($name) {
         if ($this->has($name)) {

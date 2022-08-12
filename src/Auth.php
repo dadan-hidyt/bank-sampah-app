@@ -89,8 +89,17 @@ class Auth {
 		}
 		
 	}
-	public function logout() {
-		
+	//function for logout
+	public function logout($callback) {
+		//delete token di daatabase
+		$token = $this->tokenUser()['token'];
+		if (!empty($token)) {
+			$exec = db()->query("DELETE FROM tb_sessions WHERE token='$token'");
+			cookie()->set('_xht','',strtotime('-10y'),'');
+			session_destroy();
+			session_unset();
+			return $callback();
+		}
 	}
 	public function getId() {
 		return $this->id;
