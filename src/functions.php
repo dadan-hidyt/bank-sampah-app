@@ -189,3 +189,6 @@ function toArray(object $object) {
  function cookie() {
     return core()->cookie;
  }
+ function request(){
+    return core()->request;
+ }
