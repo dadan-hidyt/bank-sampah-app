@@ -27,6 +27,12 @@ class Request {
 			return $_GET;
 		}
 	}
+	public function has($key) {
+		if (isset($_GET[$key]) OR isset($_POST[$key])) {
+			return true;
+		}
+		return false;
+	}
 	public function is_ajax() {
 		echo $this->get('isAjax');
 		$xml_http_request = $_SERVER['HTTP_X_REQUESTED_WITH'] ?? null;
