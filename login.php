@@ -31,6 +31,7 @@ if($req->method() === 'POST') {
         'password' => $password,
     ];
     try {
+        //proccess login
        $data = $auth->doLogin($data);
       redirect('app/home.php');
     }catch(Exception $e) {

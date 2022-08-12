@@ -66,7 +66,7 @@ class Auth {
 		return false;
 	}
 	public function isLogin() {
-		if(is_null($this->tokenUser())) {
+		if(!$this->tokenUser()) {
 			return false;
 		}else {
 			$token_data = $this->tokenUser();
@@ -87,6 +87,9 @@ class Auth {
 				return $data->fetch_assoc();
 			}
 		}
+		
+	}
+	public function logout() {
 		
 	}
 	public function getId() {
