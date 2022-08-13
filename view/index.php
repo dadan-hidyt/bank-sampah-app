@@ -75,7 +75,7 @@
 				<h2>Produk Terlaris</h2>
 			</div>
 			<div class="button-more">
-				<a href="#" class="nav-link m-0 p-0">
+				<a href="" class="nav-link m-0 p-0">
 					<span>Lihat Lainnya</span> 
 					<i class='bx bx-chevron-right'></i>
 				</a>
