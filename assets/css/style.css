@@ -396,6 +396,7 @@ body{
 
 
 
+
 /* Responsive  */
 @media only screen and (max-width: 678px) {
     .container{
@@ -482,4 +483,9 @@ body{
     .footer{
         margin-bottom: 80px;
     }
+
+    .nav-pills .nav-link{
+        margin: 10px !important;
+    }
+
 }

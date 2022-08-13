@@ -74,7 +74,43 @@
 			  </li>
 			</ul>
 			<div class="tab-content" id="pills-tabContent">
-			  <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">All product</div>
+			  <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+			  	
+			  	<div class="row_all_product row">
+			  		<?php 
+			  			for ($i=0; $i <= 11; $i++) { 
+			  				?> 
+
+			  					<div class="col-md-3 mt-4">
+			  						<div class="card-product">
+										<div class="container-bx">
+											<div class="card-img">
+												<img src="https://images.unsplash.com/photo-1592890278983-18616401d4ed?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80" alt="">
+											</div>
+											<div class="card-product_body mt-4 d-flex align-items-center justify-content-between">
+												<div class="card-body_title">
+													<h5 class="produk_name mt-2">
+														Nama Produk
+													</h5>
+													<span class="product_price">IDR Harga</span>
+												</div>
+												<div class="button-view_detail">
+													<a href="#" class="d-flex align-items-center justify-content-center">
+														<i class='bx bx-detail' ></i>
+													</a>
+												</div>
+											</div>
+										</div>
+									</div>
+			  					</div>
+
+			  				<?php
+			  			}
+			  		?>
+			  	</div>
+
+
+			  </div>
 			  <div class="tab-pane fade" id="pills-best_product" role="tabpanel" aria-labelledby="pills-profile-tab">Best Product</div>
 			  <div class="tab-pane fade" id="pills-organik_trash" role="tabpanel" aria-labelledby="pills-contact-tab">Organik</div>
 			  <div class="tab-pane fade" id="pills-Nonorganik_trash" role="tabpanel" aria-labelledby="pills-contact-tab">Non-Organik</div>
