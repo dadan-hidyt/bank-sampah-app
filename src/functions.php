@@ -28,6 +28,10 @@ if (!function_exists('autoload_registers')) {
     }
 }
 
+function formatRupiah($int) {
+    return number_format($int, 0, ',','.');
+}
+
 if (!function_exists('autoloader')) {
     function autoloader()
     {

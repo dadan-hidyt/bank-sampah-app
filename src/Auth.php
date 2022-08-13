@@ -79,6 +79,7 @@ class Auth {
 		}
 		return false;
 	}
+	//for get userdata
 	public function userData() {
 		$id_pengguna = $this->tokenUser()['id_pengguna'] ?? false;
 		if ($id_pengguna) {

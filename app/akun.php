@@ -8,7 +8,7 @@ if (request()->has('update_data_diri') && request()->method() === 'POST') {
 	$file_kk = $_FILES['foto_kk'];
 
 	$file = [];
-	//foto KK
+	//untuk uplaod file
 	$file['foto_kk'] = [
 		'name' => randomFileName($file_kk['name']),
 		'tmp' => $file_kk['tmp_name'],
@@ -19,13 +19,13 @@ if (request()->has('update_data_diri') && request()->method() === 'POST') {
 		'tmp' => $file_ktp['tmp_name'],
 	];
 	$data['id_pengguna'] = core()->user->getId();
-	// VALUES ('[value-1]','[value-2]','[value-3]','[value-4]','[value-5]','[value-6]','[value-7]','[value-8]','[value-9]','[value-10]','[value-11]','[value-12]','[value-13]','[value-14]','[value-15]')
-	//amankan texs nya wkwkw sugan we berhasil
+	//tangkap inputan dari user dan filter string
 	foreach (request()->post() as $key => $value) {
 		$data[$key] = db()->connect()->real_escape_string(strip_tags(htmlentities($value)));
 	}
 	$data['foto_ktp'] = 'files/'.core()->user->getUsername().'/'.$file['foto_ktp']['name'];
 	$data['photo_kk'] = 'files/'.core()->user->getUsername().'/'.$file['foto_kk']['name'];
+	//sql statement
 	$sql = sprintf("
 		INSERT INTO `tb_datadiri`
 		(`id_diri`,`nama_lengkap`,`tempat_lahir`,`tanggal_lahir`,`agama`,`alamat`,`rt`,`rw`,`kelurahan_desa`,`kecamatan`,`kabupaten`,`provinsi`,`no_ktp`,`foto_ktp`,`photo_kk`) 
