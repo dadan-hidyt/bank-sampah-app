@@ -1,154 +1,211 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Label - Premium Responsive Bootstrap 4 Admin & Dashboard Template</title>
-    <!-- plugins:css -->
-    <link rel="stylesheet" href="../assets/vendors/iconfonts/mdi/css/materialdesignicons.css">
-    <!-- endinject -->
-    <!-- vendor css for this page -->
-    <!-- End vendor css for this page -->
-    <!-- inject:css -->
-    <link rel="stylesheet" href="../assets/css/shared/style.css">
-    <!-- endinject -->
-    <!-- Layout style -->
-    <link rel="stylesheet" href="../assets/css/demo_1/style.css">
-    <!-- Layout style -->
-    <link rel="shortcut icon" href="../asssets/images/favicon.ico" />
-  </head>
-  <body class="header-fixed">
-    <!-- partial:partials/_header.html -->
-    <nav class="t-header">
-      <div class="t-header-brand-wrapper">
-        <a href="index.html">
-          <img width='30px' height="40px" class="logo" src="../assets/images/logo.svg" alt="">
-          <img class="logo-mini" src="../assets/images/logo_mini.svg" alt="">
-        </a>
-      </div>
-      <div class="t-header-content-wrapper">
-        <div class="t-header-content">
-          <button class="t-header-toggler t-header-mobile-toggler d-block d-lg-none">
-            <i class="mdi mdi-menu"></i>
-          </button>
-          <ul class="nav ml-auto">
-        
 
-            <li class="nav-item dropdown">
-              <a class="nav-link" href="#" id="appsDropdown" data-toggle="dropdown" aria-expanded="false">
-                <i class="mdi mdi-account-circle mdi-1x"></i>
-              </a>
-              <div class="dropdown-menu navbar-dropdown dropdown-menu-right" aria-labelledby="appsDropdown">
-                <div class="dropdown-header">
-                  <h6 class="dropdown-title">Akun</h6>
-                </div>
-                <div class="dropdown-body border-top pt-0">
-                  <a class="dropdown-grid">
-                    <i class="grid-icon mdi mdi-arrow-up-bold-circle mdi-2x"></i>
-                    <span class="grid-tittle">Profile</span>
-                  </a>
-                  <a class="dropdown-grid">
-                    <i class="grid-icon mdi mdi-arrow-down-bold-circle mdi-2x"></i>
-                    <span class="grid-tittle">Edit</span>
-                  </a>
-                  <a class="dropdown-grid">
-                    <i class="grid-icon mdi mdi-logout mdi-2x"></i>
-                    <span class="grid-tittle">Logout</span>
-                  </a>
-                </div>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Label - Premium Responsive Bootstrap 4 Admin & Dashboard Template</title>
+  <!-- plugins:css -->
+  <link rel="stylesheet" href="../assets/vendors/iconfonts/mdi/css/materialdesignicons.css">
+  <!-- endinject -->
+  <!-- vendor css for this page -->
+  <!-- End vendor css for this page -->
+  <!-- inject:css -->
+  <link rel="stylesheet" href="../assets/css/shared/style.css">
+  <!-- endinject -->
+  <!-- Layout style -->
+  <link rel="stylesheet" href="../assets/css/demo_1/style.css">
+  <!-- Layout style -->
+  <link rel="shortcut icon" href="../asssets/images/favicon.ico" />
+</head>
+<style>
+  /* utility */
+  .absolute{
+    position: absolute;
+  }
+  .relative{
+    position: relative;
+  }
+  .border-gray{
+    border: 1px solid #dddddd;
+  }
+  .border-bottom-gray{
+    border-bottom: 1px solid #dddddd;
+  }
+  .bg-gray{
+    background-color: #f0f0f0;
+  }
+  .h-auto{
+    height: auto;
+  }
+  .fs-16{
+    font-size: 16px !important;
+  }
+  .fs-14{
+    font-size: 14px;
+  }
+  .fs-24{
+    font-size: 24px !important;
+  }
+  .card-trx {
+    width: 100%;
+    border: 1px solid #dddddd;
+    background-color: #ffffff;
+    border-radius: 6px;
+  }
+
+  @media (min-width: 992px) {
+    .space{
+      margin-top: 40px !important;
+    }
+    .lg-w-50 {
+      width: 50% !important;
+    }
+    .lg-w-45 {
+      width: 45% !important;
+    }
+    .lg-w-48 {
+      width: 48% !important;
+    }
+    .trx-wrapper {
+      flex-direction: row !important;
+    }
+  }
+</style>
+
+<body class="header-fixed">
+  <!-- partial:partials/_header.html -->
+  <nav class="t-header">
+    <div class="t-header-brand-wrapper">
+      <a href="index.html">
+        <img width='30px' height="40px" class="logo" src="../assets/images/logo.svg" alt="">
+        <img class="logo-mini" src="../assets/images/logo_mini.svg" alt="">
+      </a>
+    </div>
+    <div class="t-header-content-wrapper">
+      <div class="t-header-content">
+        <button class="t-header-toggler t-header-mobile-toggler d-block d-lg-none">
+          <i class="mdi mdi-menu"></i>
+        </button>
+        <ul class="nav ml-auto">
+
+
+          <li class="nav-item dropdown">
+            <a class="nav-link" href="#" id="appsDropdown" data-toggle="dropdown" aria-expanded="false">
+              <i class="mdi mdi-account-circle mdi-1x"></i>
+            </a>
+            <div class="dropdown-menu navbar-dropdown dropdown-menu-right" aria-labelledby="appsDropdown">
+              <div class="dropdown-header">
+                <h6 class="dropdown-title">Akun</h6>
               </div>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link" href="logout"><i class="grid-icon mdi mdi-logout mdi-1x"></i></a>
-            </li>
-
-          </ul>
-        </div>
-      </div>
-    </nav>
-    <!-- partial -->
-    <div class="page-body">
-      <!-- partial:partials/_sidebar.html -->
-      <div class="sidebar">
-        <div class="user-profile">
-          <div class="display-avatar animated-avatar">
-            <img class="profile-img img-lg rounded-circle" style="object-fit: cover;" src="../assets/images/profile/male/image_5.png" alt="profile image">
-          </div>
-        </div>
-        <ul class="navigation-menu">
-          <li class="nav-category-divider">MAIN</li>
-          <li>
-            <a href="index.html">
-              <span class="link-title">Dashboard</span>
-              <i class="mdi mdi-gauge link-icon"></i>
-            </a>
-          </li>
-          <li>
-            <a href="#sample-pages" data-toggle="collapse" aria-expanded="false">
-              <span class="link-title">Sample Pages</span>
-              <i class="mdi mdi-flask link-icon"></i>
-            </a>
-            <ul class="collapse navigation-submenu" id="sample-pages">
-              <li>
-                <a href="pages/sample-pages/login_1.html" target="_blank">Login</a>
-              </li>
-              <li>
-                <a href="pages/sample-pages/error_2.html" target="_blank">Error</a>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <a href="#ui-elements" data-toggle="collapse" aria-expanded="false">
-              <span class="link-title">UI Elements</span>
-              <i class="mdi mdi-bullseye link-icon"></i>
-            </a>
-            <ul class="collapse navigation-submenu" id="ui-elements">
-              <li>
-                <a href="pages/ui-components/buttons.html">Buttons</a>
-              </li>
-              <li>
-                <a href="pages/ui-components/tables.html">Tables</a>
-              </li>
-              <li>
-                <a href="pages/ui-components/typography.html">Typography</a>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <a href="pages/forms/form-elements.html">
-              <span class="link-title">Forms</span>
-              <i class="mdi mdi-clipboard-outline link-icon"></i>
-            </a>
-          </li>
-          <li>
-            <a href="pages/charts/chartjs.html">
-              <span class="link-title">Charts</span>
-              <i class="mdi mdi-chart-donut link-icon"></i>
-            </a>
-          </li>
-          <li>
-            <a href="pages/icons/material-icons.html">
-              <span class="link-title">Icons</span>
-              <i class="mdi mdi-flower-tulip-outline link-icon"></i>
-            </a>
-          </li>        
-        </ul>
-       
-      </div>
-      <!-- partial -->
-      <div class="page-content-wrapper">
-        <div class="page-content-wrapper-inner">
-          <div class="content-viewport">
-            <div class="row">
-              <div class="col-12 py-2 mb-2">
-                <h4>Dashboard</h4>
-                <p class="text-gray">Selamat siang, Dadan Hidayat</p>
+              <div class="dropdown-body border-top pt-0">
+                <a class="dropdown-grid">
+                  <i class="grid-icon mdi mdi-arrow-up-bold-circle mdi-2x"></i>
+                  <span class="grid-tittle">Profile</span>
+                </a>
+                <a class="dropdown-grid">
+                  <i class="grid-icon mdi mdi-arrow-down-bold-circle mdi-2x"></i>
+                  <span class="grid-tittle">Edit</span>
+                </a>
+                <a class="dropdown-grid">
+                  <i class="grid-icon mdi mdi-logout mdi-2x"></i>
+                  <span class="grid-tittle">Logout</span>
+                </a>
               </div>
             </div>
-            <div class="row">
-             
-              <div class="col-lg-4 col-md-6 col-sm-12 equel-grid">
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="logout"><i class="grid-icon mdi mdi-logout mdi-1x"></i></a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- partial -->
+  <div class="page-body">
+    <!-- partial:partials/_sidebar.html -->
+    <div class="sidebar">
+      <div class="user-profile">
+        <div class="display-avatar animated-avatar">
+          <img class="profile-img img-lg rounded-circle" style="object-fit: cover;"
+            src="../assets/images/profile/male/image_5.png" alt="profile image">
+        </div>
+      </div>
+      <ul class="navigation-menu">
+        <li class="nav-category-divider">MAIN</li>
+        <li>
+          <a href="index.html">
+            <span class="link-title">Dashboard</span>
+            <i class="mdi mdi-gauge link-icon"></i>
+          </a>
+        </li>
+        <li>
+          <a href="#sample-pages" data-toggle="collapse" aria-expanded="false">
+            <span class="link-title">Sample Pages</span>
+            <i class="mdi mdi-flask link-icon"></i>
+          </a>
+          <ul class="collapse navigation-submenu" id="sample-pages">
+            <li>
+              <a href="pages/sample-pages/login_1.html" target="_blank">Login</a>
+            </li>
+            <li>
+              <a href="pages/sample-pages/error_2.html" target="_blank">Error</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="#ui-elements" data-toggle="collapse" aria-expanded="false">
+            <span class="link-title">UI Elements</span>
+            <i class="mdi mdi-bullseye link-icon"></i>
+          </a>
+          <ul class="collapse navigation-submenu" id="ui-elements">
+            <li>
+              <a href="pages/ui-components/buttons.html">Buttons</a>
+            </li>
+            <li>
+              <a href="pages/ui-components/tables.html">Tables</a>
+            </li>
+            <li>
+              <a href="pages/ui-components/typography.html">Typography</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="pages/forms/form-elements.html">
+            <span class="link-title">Forms</span>
+            <i class="mdi mdi-clipboard-outline link-icon"></i>
+          </a>
+        </li>
+        <li>
+          <a href="pages/charts/chartjs.html">
+            <span class="link-title">Charts</span>
+            <i class="mdi mdi-chart-donut link-icon"></i>
+          </a>
+        </li>
+        <li>
+          <a href="pages/icons/material-icons.html">
+            <span class="link-title">Icons</span>
+            <i class="mdi mdi-flower-tulip-outline link-icon"></i>
+          </a>
+        </li>
+      </ul>
+
+    </div>
+    <!-- partial -->
+    <div class="page-content-wrapper">
+      <div class="page-content-wrapper-inner">
+        <div class="content-viewport">
+          <div class="row">
+            <div class="col-12 py-2 mb-2">
+              <h4>Dashboard</h4>
+              <p class="text-gray">Selamat siang, Dadan Hidayat</p>
+            </div>
+          </div>
+          <div class="row">
+            <!-- halaman transaksi -->
+            <!-- <div class="col-lg-4 col-md-6 col-sm-12 equel-grid">
                 <div class="grid">
                   <div class="grid-body">
                     <div class="split-header">
@@ -320,35 +377,131 @@
             
             </div>
           </div>
-        </div>
-        <!-- content viewport ends -->
-        <!-- partial:partials/_footer.html -->
-        <footer class="footer">
-          <div class="row">
-            <div class="col-sm-6 text-center text-sm-left mt-3 mt-sm-0">
-              <small class="text-muted d-block">Copyright © 2022
-               <i class="mdi mdi-xml mdi-1x"></i> <i class="mdi mdi-heart text-danger"></i>
-              <a href="http://www.uxcandy.co" target="_blank">SAMPAHKITA</a>. All rights reserved</small>
-            </div>
+        </div> -->
+            <!-- transaksi -->
+
+
+            <!-- new transaksi -->
+              <div class="col-12 py-2 mb-2">
+                <div class="trx-wrapper d-flex flex-wrap justify-content-between">
+                  <div class="card-trx mt-3 lg-w-48">
+                    <div class="w-100 py-2 px-3 rounded-top border-bottom-gray bg-gray">
+                      Detail Transaksi
+                    </div>
+                    <form class="py-3 px-3 bg-white">
+                      <div class="mb-2 fs-14">INVOICE : <input type="text" class="text-black border-0 fs-14 bg-white" value="INV-BS-2022239835" disabled></div>
+                      <div class="mb-2 fs-14
+                      ">Tanggal : <input type="text" class="text-black border-0 fs-14 bg-white" value="04-07-2022" disabled></div>
+                      <div>Nama Member : <select class="py-1 px-2 rounded border-gray ml-2 bg-white" name="member" id="member">
+                        <option value="#">Pilih Member</option>
+                        <option value="user_01">Ahmad Hidayat</option>
+                        <option value="user_02">Dadan Hidayat</option>                        
+                        <option value="user_03">Kim Jong Unko</option>                        
+                      </select>
+                    </div>
+                    </form>
+                  </div>
+                  <div class="card-trx d-flex flex-column justify-content-between mt-3 lg-w-48 bg-white">
+                      <div class="w-100 py-2 px-3 border-bottom-gray bg-gray">
+                        Detail Harga
+                      </div>
+                      <form class="px-3 py-4">
+                        <div class="w-100 fs-14 py-4 fs-24">Subtotal : Rp.<input type="text" class="border-0 bg-white fs-24 w-50" value="100.000" disabled></div>
+                      </form>
+                  </div>
+                  <div class="card-trx mt-3 space">
+                    <div class="w-100 py-2 px-3 border-bottom-gray bg-gray">
+                      Transaksi Terbaru
+                    </div>
+                    <div class="table-responsive">
+                      <table class="table">
+                        <thead>
+                          <tr>
+                            <th scope="col">No.</th>
+                            <th scope="col">Nama Produk</th>
+                            <th scope="col">Harga Produk</th>
+                            <th scope="col">Qty</th>
+                            <th scope="col">Satuan</th>
+                            <th scope="col">Total Harga</th>
+                          </tr>
+                        </thead>
+                        <tbody class="bg-white">
+                          <tr>
+                            <th scope="row">1</th>
+                            <td>Muhammad</td>
+                            <td>10000</td>
+                            <td>10</td>
+                            <td>4pcs</td>
+                            <td>100000</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">2</th>
+                            <td>Aisyah</td>
+                            <td>10000</td>
+                            <td>10</td>
+                            <td>4pcs</td>
+                            <td>100000</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">3</th>
+                            <td>Fatimah</td>
+                            <td>10000</td>
+                            <td>10</td>
+                            <td>4pcs</td>
+                            <td>100000</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                  <div class="d-flex justify-content-end w-100">
+                    <div class="card-trx mt-3 lg-w-50 space">
+                      <div class="w-100 py-2 px-3 border-bottom-gray bg-gray">
+                        Total Pembayaran
+                      </div>
+                    </div>
+
+                  </div>
+                  
+                </div>
+              </div>
+            <!-- end -->
+
+
+
+
+
+
+
+            <!-- content viewport ends -->
+            <!-- partial:partials/_footer.html -->
+            <footer class="footer">
+              <div class="row">
+                <div class="col-sm-6 text-center text-sm-left mt-3 mt-sm-0">
+                  <small class="text-muted d-block">Copyright © 2022
+                    <i class="mdi mdi-xml mdi-1x"></i> <i class="mdi mdi-heart text-danger"></i>
+                    <a href="http://www.uxcandy.co" target="_blank">SAMPAHKITA</a>. All rights reserved</small>
+                </div>
+              </div>
+            </footer>
+            <!-- partial -->
           </div>
-        </footer>
-        <!-- partial -->
-      </div>
-      <!-- page content ends -->
-    </div>
-    <!--page body ends -->
-    <!-- SCRIPT LOADING START FORM HERE /////////////-->
-    <!-- plugins:js -->
-    <script src="../assets/vendors/js/core.js"></script>
-    <!-- endinject -->
-    <!-- Vendor Js For This Page Ends-->
-    <script src="../assets/vendors/apexcharts/apexcharts.min.js"></script>
-    <script src="../assets/vendors/chartjs/Chart.min.js"></script>
-    <script src="../assets/js/charts/chartjs.addon.js"></script>
-    <!-- Vendor Js For This Page Ends-->
-    <!-- build:js -->
-    <script src="../assets/js/template.js"></script>
-    <script src="../assets/js/dashboard.js"></script>
-    <!-- endbuild -->
-  </body>
+          <!-- page content ends -->
+        </div>
+        <!--page body ends -->
+        <!-- SCRIPT LOADING START FORM HERE /////////////-->
+        <!-- plugins:js -->
+        <script src="../assets/vendors/js/core.js"></script>
+        <!-- endinject -->
+        <!-- Vendor Js For This Page Ends-->
+        <script src="../assets/vendors/apexcharts/apexcharts.min.js"></script>
+        <script src="../assets/vendors/chartjs/Chart.min.js"></script>
+        <script src="../assets/js/charts/chartjs.addon.js"></script>
+        <!-- Vendor Js For This Page Ends-->
+        <!-- build:js -->
+        <script src="../assets/js/template.js"></script>
+        <script src="../assets/js/dashboard.js"></script>
+        <!-- endbuild -->
+</body>
+
 </html>
