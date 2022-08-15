@@ -86,7 +86,7 @@
 
 		</div>
 
-		 <div class="tabs-products mt-4">
+		 <div class="tabs-products mt-5">
 			<ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
 			  <li class="nav-item">
 			    <a class="nav-link active" id="pills-all_products-tab" data-toggle="pill" href="#pills-all_products" role="tab" aria-controls="pills-all_products" aria-selected="true">All Products</a>
