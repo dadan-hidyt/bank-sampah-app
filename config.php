@@ -5,6 +5,7 @@ defined('ROOT_PATH') OR exit('Tidak dapat mengakses secara direct ke sini!');
  * DB
  * SITE
  * */
+$url = $_SERVER['HTTP_HOST'] == 'banksampah.test' ? '' : 'bank-sampah-app/';
 define('CONFIG',array(
 	'DB' => array(
 		'HOST'		=>	'localhost',
@@ -15,7 +16,7 @@ define('CONFIG',array(
 	),
 	'SITE' => array(
 		'TITLE' => 'sampahkita',
-		'URL' => isset($_SERVER['HTTPS']) ? 'https://' : 'http://'.$_SERVER['HTTP_HOST'].'/myproject/bank-sampah-app/',//url
+		'URL' => isset($_SERVER['HTTPS']) ? 'https://' : 'http://'.$_SERVER['HTTP_HOST'].'/'.$url,//url
 		'FAVICON' => 'default.ico',
 	),
 ));

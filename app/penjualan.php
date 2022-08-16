@@ -6,6 +6,6 @@ include '../src/init.php';
  */
 $user_id = 83;
 
-view('pages/penjualan','layout.dashboard',[
+view('pages/penjualan_view','layout.dashboard',[
     'title' => 'penjualan',
 ]);

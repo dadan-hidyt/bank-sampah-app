@@ -22,7 +22,7 @@
                         </div>
                         <div class="form-group">
                             <label for="Password">Password</label>
-                            <input type="text" name="password" class='form-control form-control-lg'>
+                            <input type="password" name="password" class='form-control form-control-lg'>
                         </div>
                         <div class="form-group">
                             <div class="checkbox">
@@ -38,6 +38,5 @@
                 </div>
             </div>
         </div>
-
     </div>
 <!-- end:login -->

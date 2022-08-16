@@ -1,3 +1,0 @@
-RewriteEngine on
-#untuk routing file
-RewriteRule ^([a-zA-Z0-9_-]{3,5})$ file.php?file_id=$1

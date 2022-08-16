@@ -31,9 +31,9 @@ class Auth {
 		//crete sessionfor user
 		$cookie_expire = strtotime('+1year');
 		$hash = hash('sha256', $id.time().$cookie_expire);
-		$ip = '192.168.43.253';
-		$platform = 'Windows';
-		$browser = 'Chrome';
+		$ip = get_ip();
+		$platform = getPlatform();
+		$browser = getBrowser()->browser;
 		$time_now = time();
 		//chrome
 		db()->connect()->begin_transaction();
@@ -101,6 +101,16 @@ class Auth {
 			session_unset();
 			return $callback();
 		}
+	}
+	function loginInfo() {
+		$id = $this->userData()['id_pengguna'];
+		$token = cookie()->get('_xht');
+		if (!empty(session()->get('_xht'))) {
+			$token = session()->get('_xht');
+		}
+		$ip = get_ip();
+		return db()->query("SELECT * FROM tb_sessions WHERE id_pengguna='$id' AND token='$token' AND ip='$ip'")->fetch_object();
+
 	}
 	public function getId() {
 		return $this->id;

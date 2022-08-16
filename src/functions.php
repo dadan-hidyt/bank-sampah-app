@@ -137,11 +137,11 @@ function create_breadcrumb($data = [])
     if (!empty($data)) {
         $content = '
         <nav aria-label="breadcrumb">
-            <ol class="breadcrumb has-arrow">';
+        <ol class="breadcrumb has-arrow">';
         if (count($data) > 0) {
             $content .= '<li class="breadcrumb-item">
-                    <a href=\'home.php\'>Dashboard</a>
-                </li>';
+            <a href=\'home.php\'>Dashboard</a>
+            </li>';
         }
         foreach ($data as $link => $value) {
 
@@ -150,12 +150,12 @@ function create_breadcrumb($data = [])
             } else {
                 $content .= '<li class="breadcrumb-item">
                 <a href=\'' . $value . '\'>' . $link . '</a>
-            </li>';
+                </li>';
             }
         }
     }
     $content .= '
-        </ol>
+    </ol>
     </nav>';
     echo $content;
 }
@@ -165,6 +165,7 @@ function db()
 }
 function toObject($array = [])
 {
+  if (is_array($array)) {
     $std = new StdClass();
     foreach ($array as $ar => $value) {
         $std->{$ar} = $value;
@@ -174,6 +175,19 @@ function toObject($array = [])
     }
     return $std;
 }
+}
+function formatSize($size,$str = false) {
+    $unit = ['B','KB','MB',"GB","TB",'PB'];
+    $i = 0;
+    while (1024 < $size) {
+        $size /= 1024;
+        $i++;
+    }
+    if ($str === false) {
+       return (int) ceil($size);
+   }
+   return (string) ceil($size).' '.$unit[$i];
+} 
 
 function toArray(object $object) {
     $array = [];
@@ -184,28 +198,166 @@ function toArray(object $object) {
         }
     }
     return $array;
- }
+}
 
- function redirect($to) {
+function redirect($to) {
     header('location: '.$to);
     exit;
- }
- function cookie() {
+}
+function cookie() {
     return core()->cookie;
- }
- function request(){
+}
+function request(){
     return core()->request;
- }
+}
 function randomFileName($filename)  {
     $ext = '.'.pathinfo($filename,PATHINFO_EXTENSION);
     return uniqid().time().md5(rand()).$ext;
 }
- function upload($filename,$tmp,$dir) {
-   if (is_dir($dir) || !is_file($dir)) {
-       @mkdir($dir);
-   }
-   if (move_uploaded_file($tmp, $dir.DS.$filename)) {
-       return true;
-   }
-   return false;
+function upload($filename,$tmp,$dir) {
+ if (is_dir($dir) || !is_file($dir)) {
+     @mkdir($dir);
  }
+ if (move_uploaded_file($tmp, $dir.DS.$filename)) {
+     return true;
+ }
+ return false;
+}
+
+function checkAkses() {
+    $aks = [];
+    $akses = core()->user->getAkses();
+    $menu = db()->query("SELECT
+        tb_menu.link
+        FROM
+        tb_menu_akses
+        INNER JOIN tb_akses ON tb_menu_akses.akses_id = tb_akses.fungsi_akses
+        INNER JOIN tb_menu ON tb_menu.id_menu = tb_menu_akses.id_menu
+        WHERE
+        tb_akses.nama_akses = '".$akses."' AND tb_menu.active='Y'");
+    while ($data = $menu->fetch_assoc()) {
+        $aks[] = $data['link'];
+    }
+    $aks[] = 'home.php';
+    $aks[] = 'logout.php';
+    if (!in_array(basename($_SERVER['SCRIPT_NAME']),$aks)) {
+      redirect('home.php');
+  } 
+}
+
+
+function get_ip() {
+    if(isset($_SERVER['HTTP_X_FORWADED_FOR'])) {
+        $ip = $_SERVER['HTTP_X_FORWADED_FOR'];
+    } else {
+        if (isset($_SERVER['HTTP_CLIENT_IP'])) {
+            $ip = $_SERVER['HTTP_CLIENT_IP'];
+        } else {
+            $ip = $_SERVER['REMOTE_ADDR'];
+        }
+    }
+    return $ip;
+}
+
+function getBrowser() {
+    $agent = $_SERVER['HTTP_USER_AGENT'];
+    $browsers = array(
+        'OPR'           => 'Opera',
+        'Flock'         => 'Flock',
+        'Edge'          => 'Microsoft Edge',
+        'Edg'           => 'Microsoft Edge',
+        'Chrome'        => 'Chrome',
+        'Opera.*?Version' => 'Opera',
+        'Opera'         => 'Opera',
+        'MSIE'          => 'Internet Explorer',
+        'Internet Explorer' => 'Internet Explorer',
+        'Trident.* rv'  => 'Internet Explorer',
+        'Shiira'        => 'Shiira',
+        'Firefox'       => 'Firefox',
+        'Chimera'       => 'Chimera',
+        'Phoenix'       => 'Phoenix',
+        'Firebird'      => 'Firebird',
+        'Camino'        => 'Camino',
+        'Netscape'      => 'Netscape',
+        'OmniWeb'       => 'OmniWeb',
+        'Safari'        => 'Safari',
+        'Mozilla'       => 'Mozilla',
+        'Konqueror'     => 'Konqueror',
+        'icab'          => 'iCab',
+        'Lynx'          => 'Lynx',
+        'Links'         => 'Links',
+        'hotjava'       => 'HotJava',
+        'amaya'         => 'Amaya',
+        'IBrowse'       => 'IBrowse',
+        'Maxthon'       => 'Maxthon',
+        'Ubuntu'        => 'Ubuntu Web Browser'
+    );
+    foreach ($browsers as $key => $value) {
+        if (preg_match('|'.$key.'.*?([0-9\.]+)|i', $agent,$match)) {
+            return toObject([
+                'browser' => $value,
+                'version' => $match[1],
+            ]);
+        }
+    }
+    return toObject([
+        'browser' => 'Unknown',
+        'version' => 'Unknown',
+    ]); 
+
+}
+
+function getPlatform() {
+    $agent = $_SERVER['HTTP_USER_AGENT'];
+    $platforms = array(
+        'windows nt 10.0'   => 'Windows 10',
+        'windows nt 6.3'    => 'Windows 8.1',
+        'windows nt 6.2'    => 'Windows 8',
+        'windows nt 6.1'    => 'Windows 7',
+        'windows nt 6.0'    => 'Windows Vista',
+        'windows nt 5.2'    => 'Windows 2003',
+        'windows nt 5.1'    => 'Windows XP',
+        'windows nt 5.0'    => 'Windows 2000',
+        'windows nt 4.0'    => 'Windows NT 4.0',
+        'winnt4.0'          => 'Windows NT 4.0',
+        'winnt 4.0'         => 'Windows NT',
+        'winnt'             => 'Windows NT',
+        'windows 98'        => 'Windows 98',
+        'win98'             => 'Windows 98',
+        'windows 95'        => 'Windows 95',
+        'win95'             => 'Windows 95',
+        'windows phone'     => 'Windows Phone',
+        'windows'           => 'Unknown Windows OS',
+        'android'           => 'Android',
+        'blackberry'        => 'BlackBerry',
+        'iphone'            => 'iOS',
+        'ipad'              => 'iOS',
+        'ipod'              => 'iOS',
+        'os x'              => 'Mac OS X',
+        'ppc mac'           => 'Power PC Mac',
+        'freebsd'           => 'FreeBSD',
+        'ppc'               => 'Macintosh',
+        'linux'             => 'Linux',
+        'debian'            => 'Debian',
+        'sunos'             => 'Sun Solaris',
+        'beos'              => 'BeOS',
+        'apachebench'       => 'ApacheBench',
+        'aix'               => 'AIX',
+        'irix'              => 'Irix',
+        'osf'               => 'DEC OSF',
+        'hp-ux'             => 'HP-UX',
+        'netbsd'            => 'NetBSD',
+        'bsdi'              => 'BSDi',
+        'openbsd'           => 'OpenBSD',
+        'gnu'               => 'GNU/Linux',
+        'unix'              => 'Unknown Unix OS',
+        'symbian'           => 'Symbian OS'
+    );
+    foreach ($platforms as $key => $value) {
+        if (preg_match('|'.$key.'|i', $agent)) {
+            return $value;
+        }
+    }
+    return 'Unknown';
+}
+

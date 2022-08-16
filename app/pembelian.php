@@ -2,6 +2,6 @@
 require '../src/init.php';
 
 
-view('pages/pembelian','layout.dashboard',[
+view('pages/pembelian_view','layout.dashboard',[
 	'title' => 'Pembelian'
 ]);

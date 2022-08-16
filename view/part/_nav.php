@@ -20,27 +20,25 @@
                         <div class="dropdown-header">
                             <h6 class="dropdown-title">Akun</h6>
                         </div>
-                        <div class="dropdown-body border-top pt-0">
-                            <a class="dropdown-grid">
-                                <i class="grid-icon mdi mdi-arrow-up-bold-circle mdi-2x"></i>
-                                <span class="grid-tittle">Profile</span>
-                            </a>
-                            <a class="dropdown-grid">
-                                <i class="grid-icon mdi mdi-arrow-down-bold-circle mdi-2x"></i>
-                                <span class="grid-tittle">Edit</span>
-                            </a>
-                            <a class="dropdown-grid">
-                                <i class="grid-icon mdi mdi-logout mdi-2x"></i>
-                                <span class="grid-tittle">Logout</span>
-                            </a>
+                        <div class="dropdown-body border-top p-3">
+                           <div><b>Username</b>: <?= core()->user->getUsername(); ?> </div>
+                           <div><b>Level</b>: <?= core()->user->getAkses() ?></div>
+                           <div class="login-info">
+                            <b>Browser</b>: <?= getBrowser()->browser.'/'.getBrowser()->version; ?>
+                            <br>
+                            <b>IP</b>: <?= get_ip(); ?>
+                            <br>
+                            <b>Plaform</b>: <?= getPlatform(); ?>
                         </div>
                     </div>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="logout"><i class="grid-icon mdi mdi-logout mdi-1x"></i></a>
-                </li>
-            </ul>
-        </div>
+                </div>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="logout"><i class="grid-icon mdi mdi-logout mdi-1x"></i></a>
+            </li>
+        </ul>
     </div>
+</div>
 </nav>
 <!-- e:navigation -->

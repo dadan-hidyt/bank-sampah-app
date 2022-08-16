@@ -1,7 +1,7 @@
 <?php create_breadcrumb(['akun' => 'akun.php', 'data_diri'=>'akun.php?data-diri','edit'])?>
 <div class="profile-container w-75">
     <?= session()->getFlash('data_diri_edited'); ?>
-    <div class="profile d-flex">
+    <!-- <div class="profile d-flex">
         <div class="logo-profil">
             <img src="<?=base_url()?>assets/images/profile/female/image_6.png">
         </div>
@@ -9,9 +9,9 @@
             <h1 class="font-weight-bold mb-2">Dadan Hidayat</h1>
             <span class="font-weight-bold">Lihat informasi pribadimu di halaman ini</span>
         </div>
-    </div>
+    </div> -->
     <h2 class="font-weight-bold mt-5">
-        Informasi Pribadi
+        DATA DIRI
     </h2>
     <form enctype="multipart/form-data" method='POST' action="">
         <div class="mt-4">
@@ -88,12 +88,22 @@
 <div class="mt-4">
     <label for="" class="w-100 fs-16 font-weight-bold">Foto KK</label>
     <i>Upload foto KK maxsimal 10 MB</i>
-    <input name="foto_kk" class="w-100 p-3 border border-gray rounded-lg" type="file">
+    <input accept="image/*" name="foto_kk" class="w-100 p-3 border border-gray rounded-lg" type="file">
+    <?php if ((core()->user->dataDiri()->foto_ktp ?? null) !== null ): ?>
+    <img width="400px" class="img-thumbnail mt-3" src="<?= base_url().core()->user->dataDiri()->foto_ktp ?>" alt="Foto KTP">
+    <br>
+    <a target="__blank" href="<?= base_url().core()->user->dataDiri()->foto_ktp ?>">Lihat</a>
+<?php endif ?>
 </div>
 <div class="mt-4">
     <label for="" class="w-100 fs-16 font-weight-bold">Foto KTP</label>
     <i>Upload foto KK maxsimal 10 MB</i>
-    <input name="foto_ktp" class="w-100 p-3 border border-gray rounded-lg" type="file">
+    <input accept="image/*" name="foto_ktp" class="w-100 p-3 border border-gray rounded-lg" type="file">
+    <?php if ((core()->user->dataDiri()->photo_kk ?? null) !== null ): ?>
+    <img width="400px" class="img-thumbnail mt-3" src="<?= base_url().core()->user->dataDiri()->photo_kk ?>" alt="Foto KK">
+    <br>
+    <a target="__blank" href="<?= base_url().core()->user->dataDiri()->photo_kk ?>">Lihat</a>
+<?php endif ?>
 </div>
 <div class="mt-4">
     <button name="update_data_diri" class="btn btn-primary">SUBMIT</button>

@@ -27,7 +27,7 @@ class MenuAkses {
         INNER JOIN tb_akses ON tb_menu_akses.akses_id = tb_akses.fungsi_akses
         INNER JOIN tb_menu ON tb_menu.id_menu = tb_menu_akses.id_menu
         WHERE
-        tb_akses.id_akses = '".$this->akses."' AND tb_menu.parent_id = 0 AND tb_menu.active='Y'");
+        tb_akses.nama_akses = '".$this->akses."' AND tb_menu.parent_id = 0 AND tb_menu.active='Y'");
       if(empty($menu)) {
         return;
       }

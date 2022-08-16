@@ -3,7 +3,7 @@
  *User class untuk menangani user 
  */
 class User {
-	private $id;
+	protected $id;
 	const ADMIN = 'admin';
 	const RT = 'rt';
 	const RW = 'rw';
@@ -90,11 +90,11 @@ class User {
 	}
 
 	public function getSaldo() {
-		$id = $this->getId();
-		$run_query = db()->query("SELECT saldo as saldo FROM tb_tabungan WHERE id_pengguna='$id' ORDER BY id DESC");
-		if ($run_query) {
-			return formatRupiah($run_query->fetch_object()->saldo);
+		$saldo = (new Classes\Tabungan())->saldo();
+		if ($saldo) {
+			return $saldo;
 		}
 		return 0;
+		
 	}
 }

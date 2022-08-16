@@ -1,24 +1,15 @@
 <?php create_breadcrumb(['akun' => 'akun.php', 'data_diri'])?>
 <div class="profile-container w-75">
-    <div class="profile d-flex">
-        <div class="logo-profil">
-            <img src="<?=base_url()?>assets/images/profile/female/image_6.png">
-        </div>
-        <div class="status ml-4 d-flex flex-column justify-content-center">
-            <h1 class="font-weight-bold mb-2">Dadan Hidayat</h1>
-            <span class="font-weight-bold">Lihat informasi pribadimu di halaman ini</span>
-        </div>
-    </div>
     <h2 class="font-weight-bold mt-5">
-        Informasi Pribadi
+        DATA DIRI
     </h2>
     <div class="mt-4">
-            <label for="" class="w-100 fs-16 font-weight-bold">Nama lengkap</label>
-            <input readonly='true' disabled='true' class="w-100 p-3 border border-gray rounded-lg" value="<?= core()->user->dataDiri()->nama_lengkap; ?>">
+        <label for="" class="w-100 fs-16 font-weight-bold">Nama lengkap</label>
+        <input readonly='true' disabled='true' class="w-100 p-3 border border-gray rounded-lg" value="<?= core()->user->dataDiri()->nama_lengkap; ?>">
     </div>
     <div class="mt-4">
-            <label for="" class="w-100 fs-16 font-weight-bold">No. KTP</label>
-            <input readonly='true' disabled='true' class="w-100 p-3 border border-gray rounded-lg" value="<?= core()->user->dataDiri()->no_ktp; ?>">
+        <label for="" class="w-100 fs-16 font-weight-bold">No. KTP</label>
+        <input readonly='true' disabled='true' class="w-100 p-3 border border-gray rounded-lg" value="<?= core()->user->dataDiri()->no_ktp; ?>">
     </div>
     <div class="d-flex mt-4">
         <div class="w-50 mr-2">
@@ -36,7 +27,7 @@
             <input readonly='true' disabled='true' class="w-100 p-3 border border-gray rounded-lg" value="Islam KTP">
         </div> -->
         <div class="w-50 mr-2">
-        <label for="" class="w-100 fs-16 font-weight-bold">Agama</label>
+            <label for="" class="w-100 fs-16 font-weight-bold">Agama</label>
             <input readonly='true' disabled='true' class="w-100 p-3 border border-gray rounded-lg" value="<?= core()->user->dataDiri()->agama ?>">
         </div>
         <div class="w-25 ml-2 mr-2">
@@ -62,7 +53,7 @@
         </div>
     </div>
     <div class="d-flex mt-4">
-    <div class="w-50 mr-2">
+        <div class="w-50 mr-2">
             <label for="" class="w-100 fs-16 font-weight-bold">Kabupaten</label>
             <input readonly='true' disabled='true' class="w-100 p-3 border border-gray rounded-lg" value="<?= core()->user->dataDiri()->kabupaten ?>">
         </div>
@@ -72,11 +63,27 @@
         </div>
     </div>
     <div class="mt-4">
-    <label for="" class="w-100 fs-16 font-weight-bold">Alamat</label>
-            <input readonly='true' disabled='true' class="w-100 p-3 border border-gray rounded-lg" value="<?= core()->user->dataDiri()->alamat ?>">
+        <label for="" class="w-100 fs-16 font-weight-bold">Alamat</label>
+        <input readonly='true' disabled='true' class="w-100 p-3 border border-gray rounded-lg" value="<?= core()->user->dataDiri()->alamat ?>">
     </div>
-    <div class="mt-4">
-        <a href="akun.php?data-diri&edit" class="btn btn-primary">Edit data diri</a>
+    <div class="row">
+        <div class="mt-4 col-md-5 mr-3">
+            <?php if ((core()->user->dataDiri()->foto_ktp ?? null) !== null ): ?>
+            <img  class="img-responsive img-thumbnail  mt-3" src="<?= base_url().core()->user->dataDiri()->foto_ktp ?>" alt="Foto KTP">
+            <br>
+            <a target="__blank" href="<?= base_url().core()->user->dataDiri()->foto_ktp ?>">Lihat</a>
+        <?php endif ?>
     </div>
+    <div class="mt-4 col-md-5 mr-3">
+        <?php if ((core()->user->dataDiri()->photo_kk ?? null) !== null ): ?>
+        <img  class="img-responsive img-thumbnail mt-3" src="<?= base_url().core()->user->dataDiri()->photo_kk ?>" alt="Foto KK">
+        <br>
+        <a target="__blank" href="<?= base_url().core()->user->dataDiri()->photo_kk ?>">Lihat</a>
+    <?php endif ?>
+</div>
+</div>
+<div class="mt-4">
+    <a href="akun.php?data-diri&edit" class="btn btn-primary">Edit data diri</a>
+</div>
 
 </div>
