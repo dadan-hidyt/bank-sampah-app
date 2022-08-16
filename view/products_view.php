@@ -51,14 +51,45 @@
 	</div>
 </nav>
 
+<div class="products_body">
+	<div class="container mt-4">
 
-<div class="container mt-4">
-	<h3 class="fw-bolder">Katalog Produk</h3>
+		<div class="header-products d-flex align-items-center justify-content-between">
+			<h3 class="fw-bolder">Katalog Produk</h3>
+			
+			<div class="select-btn_box position-relative">
+				<div class="select-btn">
+					<span>Filter</span>
+					<i class='bx bx-filter-alt ml-2'></i>
+				</div>
 
-		<div class="tabs-products mt-4">
+				<div class="select_option position-absolute mt-2 nav nav-pills" id="pills-tab" role="tablist">
+					<div class="option">
+						<a id="pills-all_products-tab" data-toggle="pill" href="#pills-all_products" role="tab" aria-controls="pills-all_products" aria-selected="true">All Products</a>
+					</div>
+					<div class="option">
+						<a id="pills-profile-tab" data-toggle="pill" href="#pills-best_product" role="tab" aria-controls="pills-profile" aria-selected="false">Best Product</a>
+					</div>
+					<div class="option">
+						<a id="pills-contact-tab" data-toggle="pill" href="#pills-organik_trash" role="tab" aria-controls="pills-contact" aria-selected="false">Sampah Organik</a>
+					</div>
+					<div class="option">
+						 <a id="pills-contact-tab" data-toggle="pill" href="#pills-Nonorganik_trash" role="tab" aria-controls="pills-contact" aria-selected="false">Sampah Non-Organik</a>
+					</div>
+					<div class="option">
+						 <a id="pills-contact-tab" data-toggle="pill" href="#pills-hasil_olahan" role="tab" aria-controls="pills-contact" aria-selected="false">Hasil Olahan</a>
+					</div>
+				</div>
+
+			</div>
+
+
+		</div>
+
+		 <div class="tabs-products mt-5">
 			<ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
 			  <li class="nav-item">
-			    <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">All Products</a>
+			    <a class="nav-link active" id="pills-all_products-tab" data-toggle="pill" href="#pills-all_products" role="tab" aria-controls="pills-all_products" aria-selected="true">All Products</a>
 			  </li>
 			  <li class="nav-item">
 			    <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-best_product" role="tab" aria-controls="pills-profile" aria-selected="false">Best Product</a>
@@ -74,7 +105,7 @@
 			  </li>
 			</ul>
 			<div class="tab-content" id="pills-tabContent">
-			  <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+			  <div class="tab-pane fade show active" id="pills-all_products" role="tabpanel" aria-labelledby="pills-all_products-tab">
 			  	
 			  	<div class="row_all_product row">
 			  		<?php 
@@ -118,5 +149,26 @@
 
 			</div>
 		</div>	
+ 		
+</div>
 
 </div>
+
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<script>
+	
+	const filter_btn =  document.querySelector('.select-btn');
+	const filter_body = document.querySelector('.select_option');
+
+	filter_btn.addEventListener('click', () => {
+		filter_body.classList.toggle('show');
+		filter_btn.classList.toggle('active');
+	});
+
+
+</script>
