@@ -1,5 +1,4 @@
 <?php 
-
 require '../../src/init.php';
 header('Content-Type: application/json');
 $response = [];
@@ -10,16 +9,30 @@ if (core()->request->has('profile_photo')) {
 	$tmp = $file['tmp_name'];
 
 	$extension = pathinfo($name, PATHINFO_EXTENSION);
-	if (in_array(strtolower($extension),['jpg','jpeg','png','gif'])) {
-		$response = ['error'=>false,'msg'=>'Upload data berhasil!'];
-		echo json_encode($response);
+	if (in_array(strtolower($extension),['jpg','jpeg','png','gif']) && $size < 3000000) {
+		//get profile photo user from database 
+		$old_photo = core()->user->getPhoto();
+		$destination = ROOT_PATH.'files'.DS.'images'.DS.'avatar';
+		//check destination for store photo
+		//image new name for handler confrlict name
+		$image_new_name = sprintf('avatar-%s-%s.%s',core()->user->getUsername(),md5(uniqid()),$extension);
+		$id = core()->user->getId();
+		if (db()->query("UPDATE tb_pengguna SET photo_profile ='files/images/avatar/$image_new_name' WHERE id_pengguna='$id'")) {
+			if (!empty($old_photo)) {
+				$old_photo = str_replace('/', DS, $old_photo);
+				@unlink(ROOT_PATH.$old_photo);
+			}
+			upload($image_new_name,$tmp,$destination);
+			$response = ['error'=>false,'msg'=>'Photo profile berhasil di update!'];
+			echo json_encode($response);
+		}
 		die();exit();
 	} else {
-		$response = ['error'=>true,'msg'=>'extensi harus jpg,png,atau gif'];
+		$response = ['error'=>true,'msg'=>'extensi harus jpg,png,atau gif dan maxsimal upload 2MB'];
 		echo json_encode($response);
 		die();exit();
 	}
 
 }
 
- ?>
+?>

@@ -2,7 +2,7 @@
 <div class="sidebar">
   <div class="user-profile">
     <div class="display-avatar border border-success">
-      <img class="profile-img img-lg rounded-circle" style="object-fit: cover;" src="<?= base_url(); ?>assets/images/profile/female/image_6.png" alt="profile image">
+      <img class="profile-img img-lg rounded-circle" style="object-fit: cover;" src="<?= base_url(core()->user->getPhoto()); ?>" alt="profile image">
     </div>
   <!--   <div class="info-wrapper">
     </div> -->
@@ -26,6 +26,5 @@
     </a>
   </li>
 </ul>
-
 </div>
 <!-- e:sidebar -->

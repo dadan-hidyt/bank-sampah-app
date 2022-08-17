@@ -68,6 +68,11 @@ class User {
 			return $this->dataPengguna()->email;
 		}
 	}
+	public function getPhoto() {
+		if($this->dataPengguna()) {
+			return $this->dataPengguna()->photo_profile;
+		}
+	}
 	public function getAkses() {
 		if($this->dataDiri()) {
 			return $this->dataPengguna()->sebagai;

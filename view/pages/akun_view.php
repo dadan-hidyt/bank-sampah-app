@@ -3,7 +3,7 @@
   <div class="w-100 py-3">
     <div class="d-flex flex-column justify-content-center w-100">
      <div class="logo-profil rounded-circle border border-success mx-auto">
-      <img id="logo" src="<?=base_url()?>assets/images/profile/female/image_6.png" class="rounded-circle profile">
+      <img id="logo" src="<?= base_url(core()->user->getPhoto()); ?>" class="rounded-circle profile profile-photo">
     </div>
     <div class="w-100 text-center">
       <i id="pen_icon" class='mdi mdi-lead-pencil mdi-4x text-success'></i>
@@ -11,7 +11,7 @@
     </div>
   </div>
   <form action="" name="ep" class="w-100 d-flex flex-col">
-    <input onchange="photo(event)" type="file" name="file" id="file" class="file">
+    <input accept="image/*" onchange="photo(event)" type="file" name="file" id="file" class="file">
     <div class="ep-container w-100 mt-4 d-flex flex-wrap justify-content-between">
       <div class="w-100">
         <label for=" lastname">Username :</label>
@@ -49,10 +49,9 @@
  editBtn.addEventListener("click", function () {
   document.getElementById("file").click();
 });
-
+ //upload photo profile
  function photo(event) {
    const file = event.target.files[0];
-
    const filename = file?.name ?? 'Tidak ada gambar';
        //icon edit
        const icon_edit = document.getElementById('pen_icon');
@@ -61,6 +60,7 @@
        icon_edit.innerText = filename;
        //preview
        const image = URL.createObjectURL(file);
+       //if image not null or image not undefined
        if (image) {
         image_profile.src = image;
         const Data = new FormData();
@@ -71,24 +71,20 @@
         AJAX.responseType = 'json';
         AJAX.upload.onprogress = function(e) {
           const complete = Math.ceil((e.loaded/e.total) * 100);
-          progress.innerHTML = `
-          <progress max='100' min='0' value='${complete}'></progress>
-          `;
+          progress.innerHTML = `<progress max='100' min='0' value='${complete}'></progress>`;
         }
+        //if onload
         AJAX.onload = function(e) {
           const response = e.target.response;
           if (response.error == false) {
-            alert(response.msg)
+            progress.innerHTML = response.msg;
           } else {
             progress.innerHTML = response.msg;
           }
         }
         AJAX.send(Data);
-
       } else {
         image_profile.src = original;
       }
     }
-
-
   </script>
