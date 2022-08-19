@@ -74,12 +74,16 @@
   }
 
   .price-total {
-    height: 120px;
+    height: 100px;
   }
 
   @media (min-width: 992px) {
     .space {
       margin-top: 40px !important;
+    }
+
+    .lg-w-25 {
+      width: 25% !important;
     }
 
     .lg-w-50 {
@@ -92,6 +96,10 @@
 
     .lg-w-48 {
       width: 48% !important;
+    }
+
+    .lg-w-75 {
+      width: 75% !important;
     }
 
     .trx-wrapper {
@@ -231,181 +239,6 @@
             </div>
           </div>
           <div class="row">
-            <!-- halaman transaksi -->
-            <!-- <div class="col-lg-4 col-md-6 col-sm-12 equel-grid">
-                <div class="grid">
-                  <div class="grid-body">
-                    <div class="split-header">
-                      <p class="card-title">SALDO SAYA</p>
-                      <span class="btn action-btn btn-xs component-flat" data-toggle="tooltip" data-placement="left" title="Available balance since the last week">
-                        <i class="mdi mdi-information-outline text-muted mdi-2x"></i>
-                      </span>
-                    </div>
-                    <div class="d-flex align-items-end mt-2">
-                      <h1>Rp. 29.000</h1>
-                    </div>
-                    <div class="d-block mt-2">
-                      <div class="wrapper d-flex pr-4">
-                        <small class="text-success font-weight-medium mr-2">MASUK</small>
-                        <small class="text-gray">Rp. 29.000</small>
-                      </div>
-                      <div class="wrapper d-flex">
-                        <small class="text-danger font-weight-medium mr-2">KELUAR</small>
-                        <small class="text-gray">Rp. 0</small>
-                      </div>
-                    </div>
-                    <div class="mt-4 mb-4">
-                      <button class="btn btn-success" type="button">TARIK SALDO</button>
-                    </div>
-                    <div class="d-flex mt-3 mb-3">
-                      <small class="mb-0 text-primary">Transaksi Bulan ini (2)</small>
-                    </div>
-                    <div class="d-flex justify-content-between border-bottom py-2">
-                      <p class="text-black">Bayar iyuran masjid</p>
-                      <p class="text-gray">Rp. 10.000</p>
-                    </div>
-                    <div class="d-flex justify-content-between border-bottom py-2">
-                      <p class="text-black">Isi galon</p>
-                      <p class="text-gray">Rp. 5.000</p>
-                    </div>
-                   
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-lg-8 col-md-6 equel-grid">
-                
-                <div class="grid">
-                  <div class="grid-body py-3">
-                    <p class="card-title ml-n1">UPDATE HARGA</p>
-                  </div>
-                  <div class="table-responsive">
-                  <table class="table table-stretched">
-                    <thead>
-                      <tr>
-                        <th>Nama Limbah</th>
-                        <th>Satuan</th>
-                        <th>Harga Hari Ini</th>
-                        <th>Harga Hari Kemarin</th>
-                        <th>Change</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>
-                          <p class="mb-n1 font-weight-medium">Botol AQUA</p>
-                        </td>
-                        <td class="font-weight-medium">KG</td>
-                        <td class="font-weight-medium">Rp. 4000</td>
-                        <td class="font-weight-medium">Rp. 3.500</td>
-                        <td class="text-danger font-weight-medium">
-                          <div class="badge badge-success"><i class="mdi mdi-arrow-up"></i>  500</div>
-                        </td>
-                      </tr>
-                      
-                      <tr>
-                        <td>
-                          <p class="mb-n1 font-weight-medium">Kertas</p>
-                        </td>
-                        <td class="font-weight-medium">KG</td>
-                        <td class="font-weight-medium">Rp. 2000</td>
-                        <td class="font-weight-medium">Rp. 2500</td>
-                        <td class="text-danger font-weight-medium">
-                          <div class="badge badge-danger"><i class="mdi mdi-arrow-down"></i>  500</div>
-                        </td>
-                      </tr>
-                      
-                      <tr>
-                        <td>
-                          <p class="mb-n1 font-weight-medium">Kaleng</p>
-                        </td>
-                        <td class="font-weight-medium">KG</td>
-                        <td class="font-weight-medium">Rp. 10.000</td>
-                        <td class="font-weight-medium">Rp. 8.000</td>
-                        <td class="text-danger font-weight-medium">
-                          <div class="badge badge-success"><i class="mdi mdi-arrow-up"></i>2.000</div>
-                        </td>
-                      </tr>
-
-                      <tr>
-                        <td>
-                          <p class="mb-n1 font-weight-medium">Bungkus Kopi ABC</p>
-                        </td>
-                        <td class="font-weight-medium">KG</td>
-                        <td class="font-weight-medium">Rp. 5.000</td>
-                        <td class="font-weight-medium">Rp. 4.500</td>
-                        <td class="text-danger font-weight-medium">
-                          <div class="badge badge-success"><i class="mdi mdi-arrow-up"></i>500</div>
-                        </td>
-                      </tr>
-
-                    </tbody>
-                  </table>
-                </div>
-                </div>
-              </div>
-
-          
-        
-              <div class="col-md-12 equel-grid">
-                <div class="grid">
-                  <div class="grid-body py-3">
-                    <p class="card-title ml-n1">PENJUALAN BULAN INI</p>
-                  </div>
-                  <div class="table-responsive">
-                    <table class="table table-hover table-sm">
-                      <thead>
-                        <tr class="solid-header">
-                          <th colspan="2" class="pl-4">PENAMPUNG</th>
-                          <th>NO TRANSAKSI</th>
-                          <th>SALDO</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td class="pr-0 pl-4">
-                            <img class="profile-img img-sm" src="../assets/images/profile/male/image_4.png" alt="profile image">
-                          </td>
-                          <td class="pl-md-0">
-                            <small class="text-black font-weight-medium d-block">KARTA-RW-10</small>
-                            <span class="text-gray">
-                              <i class="text-primary mdi mdi-map-marker"></i>Jl. Prabu gajah agung nomor 3</span>
-                          </td>
-                          <td>
-                            <a href="transaksi.php?detail="><small>TRX-JL-92731020920201</small></a>
-                          </td>
-                          <td> +RP. 78.000 </td>
-                        </tr>
-                        <tr>
-                          <td class="pr-0 pl-4">
-                            <img class="profile-img img-sm" src="../assets/images/profile/male/image_4.png" alt="profile image">
-                          </td>
-                          <td class="pl-md-0">
-                            <small class="text-black font-weight-medium d-block">KARTA-RW-10</small>
-                            <span class="text-gray">
-                              <i class="text-primary mdi mdi-map-marker"></i>Jl. Prabu gajah agung nomor 3</span>
-                          </td>
-                          <td>
-                            <a href="transaksi.php?detail="><small>TRX-JL-92731020934431</small></a>
-                          </td>
-                          <td> +RP. 8.000 </td>
-                        </tr>
-                       
-                         
-                        
-                      </tbody>
-                    </table>
-                  </div>
-                  <a class="border-top px-3 py-2 d-block text-gray" href="#">
-                    <small class="font-weight-medium"><i class="mdi mdi-chevron-down mr-2"></i>View All Order History</small>
-                  </a>
-                </div>
-              </div>
-            
-            </div>
-          </div>
-        </div> -->
-            <!-- transaksi -->
 
 
             <!-- new transaksi -->
@@ -421,7 +254,7 @@
                     <div class="mb-2 fs-14
                       ">Tanggal : <input type="text" class="text-black border-0 fs-14 bg-white" value="04-07-2022"
                         disabled></div>
-                    <div>Nama Member : <select class="py-1 px-2 rounded border-gray ml-2 bg-white" name="member"
+                    <div>Nama Member : <select class="p-2 rounded-md border-gray ml-2 bg-white" name="member"
                         id="member">
                         <option value="#">Pilih Member</option>
                         <option value="user_01">Ahmad Hidayat</option>
@@ -433,11 +266,36 @@
                 </div>
                 <div class="card-trx d-flex flex-column mt-3 lg-w-48 bg-white">
                   <div class="w-100 py-2 px-3 border-bottom-gray bg-gray">
-                    Detail Harga
+                    Detail Produk
                   </div>
-                  <div class="py-5 fs-20 d-flex justify-content-center align-items-center h-100">Subtotal : Rp.
-                    <span>100,000</span>
-                  </div>
+                  <form class="d-flex py-3 px-3 h-100 align-items-center">
+                    <div class="w-75">
+                      <div class="d-flex w-100 mb-2 fs-14
+                    "><span>KODE PRODUK : </span><input type="text"
+                          class="w-50 text-black border-0 fs-14 bg-white px-2" value="-- Pilih Produk --" disabled>
+                      </div>
+                      <div>Pilih Produk : <select class="p-2 rounded-md border-gray ml-2 bg-white" name="member"
+                          id="member">
+                          <option value="#">Nama Produk</option>
+                          <option value="user_01">Kopi</option>
+                          <option value="user_02">Detergen</option>
+                          <option value="user_03">Batu Bata</option>
+                        </select>
+                      </div>
+                      <div class="d-flex w-100 mt-2 fs-14
+                    "><label for="quantity">Masukan Jumlah :</label>
+                        <input type="number" id="quantity" name="quantity" class="py-1 w-25 ml-2 rounded-md border-gray">
+                      </div>
+                    </div>
+                    <div class="w-25 d-flex justify-content-end">
+                      <button type="submit" class="text-white bg-primary py-2 px-4 rounded-md border-0">
+                        Pilih
+                      </button>
+                    </div>
+
+
+
+                  </form>
                 </div>
                 <div class="card-trx mt-3 space">
                   <div class="w-100 py-2 px-3 border-bottom-gray bg-gray">
@@ -450,8 +308,8 @@
                           <th scope="col">No.</th>
                           <th scope="col">Nama Produk</th>
                           <th scope="col">Harga Produk</th>
-                          <th scope="col">Qty</th>
                           <th scope="col">Satuan</th>
+                          <th scope="col">Qty</th>
                           <th scope="col">Total Harga</th>
                         </tr>
                       </thead>
@@ -460,7 +318,7 @@
                           <th scope="row">1</th>
                           <td>Muhammad</td>
                           <td>10000</td>
-                          <td>10</td>
+                          <td>kg</td>
                           <td>4pcs</td>
                           <td>100000</td>
                         </tr>
@@ -468,7 +326,7 @@
                           <th scope="row">2</th>
                           <td>Aisyah</td>
                           <td>10000</td>
-                          <td>10</td>
+                          <td>kg</td>
                           <td>4pcs</td>
                           <td>100000</td>
                         </tr>
@@ -476,25 +334,13 @@
                           <th scope="row">3</th>
                           <td>Fatimah</td>
                           <td>10000</td>
-                          <td>10</td>
+                          <td>gram</td>
                           <td>4pcs</td>
                           <td>100000</td>
                         </tr>
                       </tbody>
                     </table>
                   </div>
-                </div>
-                <div class="card-trx mt-3 lg-w-48 space">
-                  <div class="w-100 py-2 px-3 border-bottom-gray bg-gray">
-                    Inputkan Pembayaran
-                  </div>
-                  <div class="py-5 px-3">
-                    <div class="fs-16">
-                      <input type="text" class="border-gray rounded-md w-100 px-3 py-2"
-                        placeholder="masukan jumlah pembayaran">
-                    </div>
-                  </div>
-
                 </div>
                 <div class="card-trx mt-3 lg-w-48 space">
                   <div class="w-100 py-2 px-3 border-bottom-gray bg-gray">
@@ -505,13 +351,10 @@
                       <div class="fs-16">
                         Total Bayar : RP.<span>105.000</span>
                       </div>
-                      <div class="fs-16 mt-2">
-                        Kembalian : RP.<span>5.000</span>
-                      </div>
                     </div>
                     <div>
                       <button type="button" class="py-2 px-4 border-0 bg-primary rounded-md text-white">
-                        Submit
+                        Konfirmasi
                       </button>
                     </div>
 
