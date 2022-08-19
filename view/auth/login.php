@@ -1,3 +1,4 @@
+
 <!-- begin:login -->
 <div class="authentication-theme auth-style_1">
         <div class="col-md-4 mx-auto mt-3">
@@ -24,6 +25,8 @@
                             <label for="Password">Password</label>
                             <input type="password" name="password" class='form-control form-control-lg'>
                         </div>
+
+                        <div class="d-flex justify-content-between">
                         <div class="form-group">
                             <div class="checkbox">
                                   <label>
@@ -31,6 +34,11 @@
                                   </label>
                                 </div>
                         </div>
+                        <div class="text-right">
+                            Belum punya akun? <a href="daftar_akun.php">register</a>
+                        </div>
+                        </div>
+                        
                         <div class="form-group">
                             <button class="btn btn-block btn-primary">LOGIN</button>
                         </div>
