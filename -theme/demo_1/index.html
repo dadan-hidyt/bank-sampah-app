@@ -76,10 +76,12 @@
   .price-total {
     height: 100px;
   }
-  .picker:hover{
+
+  .picker:hover {
     border: 1px solid #325878 !important;
     background-color: #c8e6ff;
   }
+
   @media (min-width: 992px) {
     .space {
       margin-top: 40px !important;
@@ -287,7 +289,8 @@
                       </div>
                       <div class="d-flex w-100 mt-2 fs-14
                     "><label for="quantity">Masukan Jumlah :</label>
-                        <input type="number" id="quantity" name="quantity" min="1" class="py-1 w-25 ml-2 rounded-md border-gray">
+                        <input type="number" id="quantity" name="quantity" min="1"
+                          class="py-1 w-25 ml-2 rounded-md border-gray">
                       </div>
                     </div>
                     <div class="w-25 d-flex justify-content-end">
@@ -345,43 +348,41 @@
                     </table>
                   </div>
                 </div>
-                <div class="card-trx mt-3 lg-w-48 space">
-                  <div class="w-100 py-2 px-3 border-bottom-gray bg-gray">
-                    Rincian Pembayaran
-                  </div>
-                  <div class="price-total d-flex justify-content-between align-items-center px-3">
-                    <div class="w-50">
-                      <div class="fs-16">
-                        Total Bayar : RP.<span>105.000</span>
+                <div class="w-100 d-flex justify-content-end">
+                  <div class="card-trx mt-3 lg-w-48 space">
+                    <div class="w-100 py-2 px-3 border-bottom-gray bg-gray">
+                      Rincian Pembayaran
+                    </div>
+                    <div class="price-total d-flex justify-content-between align-items-center px-3">
+                      <div class="w-50">
+                        <div class="fs-16">
+                          Total Bayar : RP.<span>105.000</span>
+                        </div>
+                      </div>
+                      <div>
+                        <button type="button" data-toggle="modal" data-target="#changeBank"
+                          class="py-2 px-4 border-0 bg-primary rounded-md text-white">
+                          Konfirmasi
+                        </button>
                       </div>
                     </div>
-                    <div>
-                      <button type="button" data-toggle="modal" data-target="#changeBank" class="py-2 px-4 border-0 bg-primary rounded-md text-white">
-                        Konfirmasi
-                      </button>
-                    </div>
-
-
                   </div>
-
                 </div>
-
-
               </div>
             </div>
             <!-- end -->
 
             <!-- modal -->
             <div class="modal fade" id="changeBank" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
-            aria-hidden="true">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content px-4 py-4">
-                <div class="modal-header border-0 d-flex flex-column">
+              aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content px-4 py-4">
+                  <div class="modal-header border-0 d-flex flex-column">
                     <h5 class="modal-title fw-bold" id="exampleModalLongTitle">Metode Pembayaran</h5>
-                  <div class="d-flex flex-wrap wd-95 mt-1">
-                    <span class="fsi-14 wd-90 color-gray">Pilih Metode Pembayaran</span>
+                    <div class="d-flex flex-wrap wd-95 mt-1">
+                      <span class="fsi-14 wd-90 color-gray">Pilih Metode Pembayaran</span>
+                    </div>
                   </div>
-                </div>
                   <div class="modal-form">
                     <!-- method -->
                     <div class="picker d-flex w-100 mt-3 p-3 border shadow-sm rounded-md">
@@ -389,21 +390,22 @@
                         <span class="fs-16 font-weight-bold">Uang Tunai</span>
                         <span class="fs-14 mt-2">Bayar dengan uang tunai</span>
                       </div>
-                  </div>
-                  <div class="picker d-flex w-100 mt-3 p-3 border shadow-sm rounded-md">
-                    <div class="d-flex flex-column w-100">
-                      <span class="fs-16 font-weight-bold">Saldo Bank Sampah</span>
-                      <span class="fs-14 mt-2">Bayar dengan saldo bank sampah</span>
                     </div>
-                </div>
+                    <div class="picker d-flex w-100 mt-3 p-3 border shadow-sm rounded-md">
+                      <div class="d-flex flex-column w-100">
+                        <span class="fs-16 font-weight-bold">Saldo Bank Sampah</span>
+                        <span class="fs-14 mt-2">Bayar dengan saldo bank sampah</span>
+                      </div>
+                    </div>
                   </div>
-                <div class="modal-footer border-0 my-2">
-                  <button type="button" class="py-2 px-4 bg-gray border-0 rounded-md" data-dismiss="modal">Tutup</button>
-                  <button type="submit" class="py-2 px-4 bg-primary text-white border-0 rounded-md">Pilih</button>
+                  <div class="modal-footer border-0 my-2">
+                    <button type="button" class="py-2 px-4 bg-gray border-0 rounded-md"
+                      data-dismiss="modal">Tutup</button>
+                    <button type="submit" class="py-2 px-4 bg-primary text-white border-0 rounded-md">Pilih</button>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
             <!-- end modal -->
 
 
