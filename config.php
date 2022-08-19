@@ -19,5 +19,8 @@ define('CONFIG',array(
 		'URL' => isset($_SERVER['HTTPS']) ? 'https://' : 'http://'.$_SERVER['HTTP_HOST'].'/'.$url,//url
 		'FAVICON' => 'default.ico',
 	),
+	"ENV" => array(
+		'DEVELOPMENT' => true,
+	)
 ));
 ?>

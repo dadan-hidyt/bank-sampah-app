@@ -1,4 +1,4 @@
-<?php 
+<?php
 require '../../src/init.php';
 header('Content-Type: application/json');
 $response = [];
@@ -7,14 +7,12 @@ if (core()->request->has('profile_photo')) {
 	$name = $file['name'];
 	$size = $file['size'];
 	$tmp = $file['tmp_name'];
-
+	
 	$extension = pathinfo($name, PATHINFO_EXTENSION);
 	if (in_array(strtolower($extension),['jpg','jpeg','png','gif']) && $size < 3000000) {
 		//get profile photo user from database 
 		$old_photo = core()->user->getPhoto();
 		$destination = ROOT_PATH.'files'.DS.'images'.DS.'avatar';
-		//check destination for store photo
-		//image new name for handler confrlict name
 		$image_new_name = sprintf('avatar-%s-%s.%s',core()->user->getUsername(),md5(uniqid()),$extension);
 		$id = core()->user->getId();
 		if (db()->query("UPDATE tb_pengguna SET photo_profile ='files/images/avatar/$image_new_name' WHERE id_pengguna='$id'")) {

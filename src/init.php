@@ -78,11 +78,11 @@ $registry->set('menu_akses',new MenuAkses);
 //get session user
 $registry->set('user',new User());
 
-
-/**CEK AKSES 
-APAKAH HALAMAN BOLEH DI AKSES SAMA USER YANG LOGIN
-APA TIDAK
-**/
-if (strpos(basename($_SERVER['SCRIPT_NAME']),'app')) {
-	checkAkses();
-}
+//cek akses halaman
+if (
+  basename($_SERVER['SCRIPT_NAME'],'app') 
+  && strtolower(core()->user->getAkses()) != 'admin'
+  && core()->config->get('ENV')->DEVELOPMENT != true
+) {
+    checkAkses();
+}	

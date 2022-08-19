@@ -1,6 +1,6 @@
 <?php
 /**
- * Redirect TO home
+ * Redirect TO login
  */
-header('location:home.php');
+header('location:../login.php');
 ?>
