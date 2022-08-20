@@ -16,8 +16,12 @@
     <link rel="stylesheet" href="assets/vendors/OwlCarousel/dist/assets/owl.theme.default.min.css">
 
 </head>
-
-<body <?= set_body_class($body_class); ?>>
+<?php 
+if (isset($body_class)) {
+    $body_class = set_body_class('header-fixed');
+}
+ ?>
+<body <?= $body_class ?? '' ?>>
     %@content%
     <script src="assets/vendors/OwlCarousel/dist/owl.carousel.min.js"></script>
 </body>

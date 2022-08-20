@@ -10,6 +10,7 @@
       <div id="progress"></div>
     </div>
   </div>
+  <!-- begin:form -->
   <form action="" name="ep" class="w-100 d-flex flex-col">
     <input accept="image/*" onchange="photo(event)" type="file" name="file" id="file" class="file">
     <div class="ep-container w-100 mt-4 d-flex flex-wrap justify-content-between">
@@ -36,6 +37,7 @@
       <a href="akun.php?data-diri" class="btn btn-md mt-4 bg-warning">Data Diri</a>
     </div>
   </form>
+  <!-- end:form -->
 </div>
 </div>
 <script>
