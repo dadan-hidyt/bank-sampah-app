@@ -25,9 +25,9 @@ class Session {
         return $_SESSION[$name] ?? false;
     }
     public function get($name) {
-            if($this->has($name)) {
-                return $_SESSION[$name];
-            }
+        if($this->has($name)) {
+            return $_SESSION[$name];
+        }
     }
     public function flashDanger($key = '',$message = '') {
         if (isset($_SESSION['__flash'][$key])) {
@@ -41,6 +41,12 @@ class Session {
         } 
         $_SESSION['__flash'][$key] = sprintf('<p class="alert alert-warning">%s</p>', $message);
     }
+    public function flash($key = '',$message = '') {
+        if (isset($_SESSION['__flash'][$key])) {
+            unset($_SESSION['__flash'][$key]);
+        } 
+        $_SESSION['__flash'][$key] = $message;
+    }
     public function flashSuccess($key = '',$message = '') {
         if (isset($_SESSION['__flash'][$key])) {
             unset($_SESSION['__flash'][$key]);
@@ -49,23 +55,23 @@ class Session {
     }
 
     public function getFlash($name) {
-       if(!isset($_SESSION['__flash'][$name])) {
-          return;
-       } 
-       $message = $_SESSION['__flash'][$name];
-       unset($_SESSION['__flash'][$name]);
-       return $message;
-    }
-    public function flasHas($name) {
-        return ($_SESSION['__flash'][$name] ?? true) ? true : false;
-    }
-    public function unset($name) {
-      unset($_SESSION[$name]);
-    }
-    public function destroy() {
-        session_unset();
-        session_destroy();
-    }
+     if(!isset($_SESSION['__flash'][$name])) {
+      return;
+  } 
+  $message = $_SESSION['__flash'][$name];
+  unset($_SESSION['__flash'][$name]);
+  return $message;
+}
+public function flasHas($name) {
+    return ($_SESSION['__flash'][$name] ?? true) ? true : false;
+}
+public function unset($name) {
+  unset($_SESSION[$name]);
+}
+public function destroy() {
+    session_unset();
+    session_destroy();
+}
 
 
 }

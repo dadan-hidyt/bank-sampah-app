@@ -15,16 +15,16 @@
                     <div>
                         <?php
                         //get flash
-                            $error =  session()->getFlash('login_gagal_message');
+                            $error =  session()->getFlash('register_gagal_message');
                             if(!empty($error)) {
                                 echo $error;
                             }
                         ?>
                     </div>
-                   <form action="" method='post'>
+                   <form action="" method='POST'>
                         <div class="form-group">
                             <label for="email/username">Nama Lengkap</label>
-                            <input type="text" name="email" class='form-control form-control-lg'>
+                            <input type="text" name="nama_lengkap" class='form-control form-control-lg'>
                         </div>
                         <div class="form-group">
                             <label for="username">Username</label>
@@ -36,7 +36,7 @@
                         </div>
                         <div class="form-group">
                             <label for="phone_number">Nomor Hp</label>
-                            <input type="phone_number" name="phone_number" class='form-control form-control-lg'>
+                            <input type="phone_number" name="no_hp" class='form-control form-control-lg'>
                         </div>
                         <div class="form-group">
                             <label for="password">Buat Password</label>
@@ -44,13 +44,13 @@
                         </div>
                         <div class="form-group">
                             <label for="password_confirm">Konfimasi Password</label>
-                            <input type="password_confirm" name="password_confirm" class='form-control form-control-lg'>
+                            <input type="password_confirm" name="konfirmasi_password" class='form-control form-control-lg'>
                         </div>
                         <div class="w-100 d-flex justify-content-end mb-3">
                             Sudah punya akun? <a href="login.php">login</a>
                         </div>
                         <div class="form-group">
-                            <button class="btn btn-block btn-primary">DAFTAR</button>
+                            <button name="daftar" type="submit" class="btn btn-block btn-primary">DAFTAR</button>
                         </div>
                     </form>
                 </div>
