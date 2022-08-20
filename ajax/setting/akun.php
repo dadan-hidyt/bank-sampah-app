@@ -7,7 +7,7 @@ if (core()->request->has('profile_photo')) {
 	$name = $file['name'];
 	$size = $file['size'];
 	$tmp = $file['tmp_name'];
-	
+	//check extension
 	$extension = pathinfo($name, PATHINFO_EXTENSION);
 	if (in_array(strtolower($extension),['jpg','jpeg','png','gif']) && $size < 3000000) {
 		//get profile photo user from database 
