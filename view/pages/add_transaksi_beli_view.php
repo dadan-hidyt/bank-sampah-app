@@ -93,12 +93,16 @@
                     <div class="mb-2 fs-14
                       ">Tanggal : <input type="text" class="text-black border-0 fs-14 bg-white" value="04-07-2022"
                         disabled></div>
-                    <div>Nama Member : <select class="py-1 px-2 rounded border-gray ml-2 bg-white" name="member"
+                    <div>Nama Member :
+                       <select class="py-1 px-2 rounded border-gray ml-2 bg-white" name="member"
                         id="member">
                         <option value="#">Pilih Member</option>
-                        <option value="user_01">Ahmad Hidayat</option>
-                        <option value="user_02">Dadan Hidayat</option>
-                        <option value="user_03">Kim Jong Unko</option>
+                        <?php if(!empty($this->data['data_member'])) : ?>
+                            <?php foreach($this->data['data_member'] as $data): ?>
+                                <option value=""><?= $data['nama_lengkap'].' | '.$data['no_ktp'] ?></option>
+                            <?php endforeach; ?>
+                          <?php else: ?>
+                          <?php endif;?>
                       </select>
                     </div>
                   </form>
@@ -158,18 +162,6 @@
                 </div>
                 <div class="card-trx mt-3 lg-w-48 space">
                   <div class="w-100 py-2 px-3 border-bottom-gray bg-gray">
-                    Inputkan Pembayaran
-                  </div>
-                  <div class="py-5 px-3">
-                    <div class="fs-16">
-                      <input type="text" class="border-gray rounded-md w-100 px-3 py-2"
-                        placeholder="masukan jumlah pembayaran">
-                    </div>
-                  </div>
-
-                </div>
-                <div class="card-trx mt-3 lg-w-48 space">
-                  <div class="w-100 py-2 px-3 border-bottom-gray bg-gray">
                     Rincian Pembayaran
                   </div>
                   <div class="price-total d-flex justify-content-between align-items-center px-3">
@@ -183,16 +175,11 @@
                     </div>
                     <div>
                       <button type="button" class="py-2 px-4 border-0 bg-primary rounded-md text-white">
-                        Submit
+                        Konfirmasi
                       </button>
                     </div>
-
-
                   </div>
-
                 </div>
-
-
               </div>
             </div>
             <!-- end -->
