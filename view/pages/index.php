@@ -8,26 +8,16 @@
 <?php
 $data_diri =  core()->user->dataDiri();
 $message = null;
-if (empty($data_diri->foto_ktp)) {
-  $message = <<<MSG_EOF
-       Silahkan Upload foto KTP terlebih dahulu <a href="akun.php?upload=ktp">Upload FOTO KTP</a>
-    MSG_EOF;
-} else if (empty($data_diri->photo_kk)) {
-  $message = <<<MSG_EOF
-       Silahkan Upload foto KTP terlebih dahulu <a href="akun.php?upload=kk">Upload FOTO KK</a>
-    MSG_EOF;
-} else if (empty($data_diri)) {
+if (empty($data_diri)) {
   $message = <<<MSG_EOF
       Data diri tidak lengkap! Silahkan isi data diri terlebih dahulu! <a href="akun.php?data-diri&edit">Isi / Edit data diri</a>
     MSG_EOF;
 }
-
 if (!empty($message)) {
 ?>
   <p class="alert alert-warning"><i class="mdi mdi-information"></i><?= $message; ?></p>
 <?php
 }
-
 ?>
 <!-- S:HOMEPAGE -->
 <div class="row">

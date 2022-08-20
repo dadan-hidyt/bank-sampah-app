@@ -42,11 +42,11 @@ class Auth {
 			VALUES ('$id','$ip','$hash','$platform','$browser','$time_now','$cookie_expire')");
 		if($this->remember) {
 			if (cookie()->set('_xht',$hash,$cookie_expire,'/')) {
-			db()->connect()->commit();
+				db()->connect()->commit();
+			}
+		} else{
+			session()->set('_xht',$hash);
 		}
-	} else{
-		session()->set('_xht',$hash);
-	}
 		db()->connect()->rollback();
 		return false;
 	}
@@ -116,4 +116,26 @@ class Auth {
 		return $this->id;
 	}
 	//register
+	public function register($data = []) {
+		$data = array_map(function($e){
+			return strip_tags(db()->connect()->escape_string($e));
+		}, $data);
+		//check usernname 
+		$user = new User();
+		if ($user->usernameExists($data['username'])) {
+			throw new Exception('Username sudah di daftarkan orang lain!');
+		} elseif($user->emailExists($data['email'])) {
+			throw new Exception('Email sudah di daftarkan orang lain!');
+		}
+
+		$password = password_hash($data['password'], PASSWORD_DEFAULT);
+		$sql = sprintf("INSERT INTO `tb_pengguna`(`username`, `password`, `email`, `id_akses`,`confirmation`) VALUES ('%s','%s','%s',
+			'%s','N')", $data['username'],$password,$data['email'],$data['sebagai']);
+		echo $sql;
+		if (db()->query($sql)) {
+			return true;
+		} else {
+			return false;
+		}
+	} 
 }

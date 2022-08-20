@@ -14,15 +14,21 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/vendors/OwlCarousel/dist/assets/owl.carousel.min.css">
     <link rel="stylesheet" href="assets/vendors/OwlCarousel/dist/assets/owl.theme.default.min.css">
-
+    <style>
+        .alert{
+            text-transform: capitalize;
+            border-radius: 0;
+        }
+    </style>
 </head>
 <?php 
 if (isset($body_class)) {
     $body_class = set_body_class('header-fixed');
 }
- ?>
+?>
 <body <?= $body_class ?? '' ?>>
     %@content%
+    <script src="<?= base_url()."assets/js/jquery.js" ?>"></script>
     <script src="assets/vendors/OwlCarousel/dist/owl.carousel.min.js"></script>
 </body>
 </html>

@@ -14,14 +14,19 @@ if ($request->method() === "POST" && $request->has('daftar')) {
 		redirect('daftar_akun.php');
 	}
 
-	$user = new User();
-	$data = [];
+	$user = new Auth();
+	$data = $request->post();
 	try {
+		unset($data['daftar']);
 		$user->register($data);
+		session()->flashWarning('login_gagal_message', "Pendaftaran akun berhasil silahkan login dan lengkapi data!");
+		redirect('login.php');
 	}catch(Exception $e) {
-
+		session()->flashWarning('register_gagal_message', $e->getMessage());
+		redirect('daftar_akun.php');
 	}
 }
+
 view('auth/register_view','layout.general',
 	[
 		'title'=>'Daftar akun',

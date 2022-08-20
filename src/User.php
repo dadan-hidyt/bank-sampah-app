@@ -74,9 +74,7 @@ class User {
 		}
 	}
 	public function getAkses() {
-		if($this->dataDiri()) {
-			return $this->dataPengguna()->sebagai;
-		}
+		return $this->dataPengguna()->sebagai ?? null;
 	}
 	public function dataDiri() {
 		//get data pengguna
@@ -101,5 +99,12 @@ class User {
 		}
 		return 0;
 		
+	}
+	public function usernameExists($username) {
+		return db()->query("SELECT username FROM tb_pengguna WHERE username='{$username}' LIMIT 1")->num_rows > 0;
+	}
+	public function emailExists($email)
+	{
+		return db()->query("SELECT email FROM tb_pengguna WHERE email='{$email}' LIMIT 1")->num_rows > 0;
 	}
 }

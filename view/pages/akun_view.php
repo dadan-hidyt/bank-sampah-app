@@ -3,7 +3,7 @@
   <div class="w-100 py-3">
     <div class="d-flex flex-column justify-content-center w-100">
      <div class="logo-profil rounded-circle border border-success mx-auto">
-      <img id="logo" src="<?= base_url(core()->user->getPhoto()); ?>" class="rounded-circle profile profile-photo">
+      <img id="logo" src="<?= base_url(core()->user->getPhoto() ?? 'assets/images/profile/female/image_1.png'); ?>" class="rounded-circle profile profile-photo">
     </div>
     <div class="w-100 text-center">
       <i id="pen_icon" class='mdi mdi-lead-pencil mdi-4x text-success'></i>
