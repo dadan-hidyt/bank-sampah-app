@@ -361,3 +361,7 @@ function getPlatform() {
     return 'Unknown';
 }
 
+function createInvoice($type = 'JB') {
+    $invoice = strtoupper(sprintf('TRX-%s%0d%s%s',$type,core()->user->getId(),date('mY',time()),md5(uniqid())));
+    return substr($invoice, 0,30);
+}

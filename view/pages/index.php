@@ -50,11 +50,10 @@ if (!empty($message)) {
               </div>
             <?php endif ?>
           <?php endforeach ?>
+          <a href="">Lihat lainya</a>
         <?php else : ?>
-          <span>Not found</span>
+          <span>Belum ada saldo apapun!</span>
         <?php endif ?>
-        <a href="">See all</a>
-
       </div>
     </div>
   </div>

@@ -1,4 +1,8 @@
 <?php
+/**
+ * @author dadan hiadayat
+ * @package autentikasi
+ **/
 include 'src/init.php';
 $request = core()->request;
 if ($request->method() === "POST" && $request->has('daftar')) {
@@ -13,12 +17,14 @@ if ($request->method() === "POST" && $request->has('daftar')) {
 		session()->flash('register_gagal_message', $error);
 		redirect('daftar_akun.php');
 	}
-
+	//auth instance
 	$user = new Auth();
+	//data from post
 	$data = $request->post();
 	try {
 		unset($data['daftar']);
 		$user->register($data);
+		//jika pendafraran berhasil arahkan ke halaman login
 		session()->flashWarning('login_gagal_message', "Pendaftaran akun berhasil silahkan login dan lengkapi data!");
 		redirect('login.php');
 	}catch(Exception $e) {
@@ -26,7 +32,7 @@ if ($request->method() === "POST" && $request->has('daftar')) {
 		redirect('daftar_akun.php');
 	}
 }
-
+//render view
 view('auth/register_view','layout.general',
 	[
 		'title'=>'Daftar akun',

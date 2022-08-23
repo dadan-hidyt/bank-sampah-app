@@ -29,6 +29,9 @@ class Tabungan extends \User {
 		}
 		return 0;
 	}
+	/**
+	 * untuk mendapatkan saldo keluar
+	 */
 	public function saldoKeluar($limit = null) {
 		$data = [];
 		$id = $this->getId();
@@ -46,6 +49,9 @@ class Tabungan extends \User {
 		}
 		return $data;
 	}
+	/**
+	 * untuk menadapatkan saldo masuk
+	 */
 	public function saldoMasuk($limit = null) {
 		$data = [];
 		$id = $this->getId();

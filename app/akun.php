@@ -1,7 +1,7 @@
 <?php
 
 require '../src/init.php';
-
+//update data diri action
 if (request()->has('update_data_diri') && request()->method() === 'POST') {
 	//file
 	$file_ktp = $_FILES['foto_ktp'];
@@ -59,6 +59,7 @@ if (request()->has('update_data_diri') && request()->method() === 'POST') {
 	}
 
 }
+//data diri
 if (isset($_GET['data-diri'])) {
 	if (isset($_GET['edit'])) {
 		view('pages/data_diri_edit_view','layout.dashboard',['title'=>'Edit data diri']);

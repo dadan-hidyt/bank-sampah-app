@@ -19,7 +19,6 @@
         border:none;
     }
 </style>
-<!-- container -->
 <!-- begin:login -->
 <div class="authentication-theme auth-style_1 mb-5">
     <div class="col-md-4 register mx-auto">
@@ -64,7 +63,7 @@
                 </div>
                 <div class="form-group">
                     <label for="password_confirm">Konfimasi Password</label>
-                    <input type="password_confirm" name="konfirmasi_password" class='form-control form-control-lg'>
+                    <input type="password" name="konfirmasi_password" class='form-control form-control-lg'>
                 </div>
                 <div class="form-group">
                     <label for="daftar_sebagai">Daftar sebagai</label>
