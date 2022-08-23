@@ -23,6 +23,9 @@ if ($request->method() === "POST" && $request->has('daftar')) {
 	$data = $request->post();
 	try {
 		unset($data['daftar']);
+		if ($data['konfirmasi_password'] != $data['password']) {
+			throw new Exception("password harus sama dengan yang sebelumnya!");
+		}
 		$user->register($data);
 		//jika pendafraran berhasil arahkan ke halaman login
 		session()->flashWarning('login_gagal_message', "Pendaftaran akun berhasil silahkan login dan lengkapi data!");

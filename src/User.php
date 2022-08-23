@@ -107,4 +107,7 @@ class User {
 	{
 		return db()->query("SELECT email FROM tb_pengguna WHERE email='{$email}' LIMIT 1")->num_rows > 0;
 	}
+	public function updatePassword(array $data) {
+		
+	}
 }

@@ -22,16 +22,31 @@
         <label for=" lastname">Email :</label>
         <input type="text" name="email" class="form-control border border-dark fs-2 py-4" value="<?= core()->user->getEmail() ?>">
       </div>
+           <div class="w-100 mt-4">
+                   <button type="submit" class="btn btn-md mt-4 bg-success">Simpan perubahan</button>
+           </div>
+        </form>
+
       <div class="mt-3 mb-2">
+        <form id='security' action='akun.php?security_update' method='POST'>
         <b>SECURITY</b>
+        <?php
+        //get flash
+        $error =  session()->getFlash('security_update');
+        if(!empty($error)) {
+          ?>
+            <?php echo $error; ?>
+          <?php
+        }
+        ?>
       </div>
-      <div class="w-100 mt-2">
+      <div class="w-100">
         <label for="email">Password Baru :</label>
-        <input type="email" name="password" class="form-control border border-dark fs-2 py-4">
+        <input type="text" name="password" class="form-control border border-dark fs-2 py-4">
       </div>
       <div class="w-100 mt-4">
         <label for="email">Ketikan ulang password baru :</label>
-        <input type="email" name="repeat_password" class="form-control border border-dark fs-2 py-4">
+        <input type="text" name="repeat_password" class="form-control border border-dark fs-2 py-4">
       </div>
       <button type="submit" class="btn btn-md mt-4 bg-success">Simpan perubahan</button>
       <a href="akun.php?data-diri" class="btn btn-md mt-4 bg-warning">Data Diri</a>

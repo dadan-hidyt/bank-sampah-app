@@ -70,6 +70,22 @@ if (isset($_GET['data-diri'])) {
 		}
 		view('pages/data_diri_view','layout.dashboard',['title'=>'Data diri']);
 	}
+}elseif(isset($_GET['security_update']) && request()->method() == 'POST') {
+	$new_password = request()->post('password');
+	$repeat_password = request()->post('repeat_password');
+	if(!empty($new_password) && !empty($repeat_password)) {
+		$data = ['password'=>$new_password,'repeat_password'=>$repeat_password];
+		if($repeat_password != $new_password) {
+			session()->flashWarning('security_update','Password tidak sama dengan yang dketikan sebelumnya!');
+			redirect('akun.php#security');
+		}
+		$user = new User();
+		if($user->updatePassword($data)) {
+			
+		}
+	} else {
+		redirect('akun.php');
+	}
 } else {
 	view('pages/akun_view','layout.dashboard',['title'=>'Akun saya']);
 }
