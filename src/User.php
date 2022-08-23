@@ -115,6 +115,16 @@ class User {
 			throw new Exception("Password sama dengan password yang dulu!");
 		}
 		$password = password_hash($password, PASSWORD_DEFAULT);
-		db()->query("UPDATE tb_pengguna SET password='$password' WHERE id='$id'");
+		if(db()->query("UPDATE tb_pengguna SET password='$password' WHERE id_pengguna='$id'")) {
+			return true;
+		} else {
+			throw new Exception(db()->query_error);
+		}
+	}
+	public function editEmail($email) {
+
+	}
+	public function editUsername($username) {
+		
 	}
 }
