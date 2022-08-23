@@ -80,8 +80,13 @@ if (isset($_GET['data-diri'])) {
 			redirect('akun.php#security');
 		}
 		$user = new User();
-		if($user->updatePassword($data)) {
-			
+		try {
+			$user->updatePassword($new_password);
+			session()->flashSuccess('security_update','Password berhasil di update!');
+			redirect('akun.php#security');
+		} catch (Exception $e) {
+			session()->flashWarning('security_update',$e->getMessage());
+			redirect('akun.php#security');
 		}
 	} else {
 		redirect('akun.php');

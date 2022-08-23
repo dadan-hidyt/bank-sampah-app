@@ -107,7 +107,14 @@ class User {
 	{
 		return db()->query("SELECT email FROM tb_pengguna WHERE email='{$email}' LIMIT 1")->num_rows > 0;
 	}
-	public function updatePassword(array $data) {
-		
+	public function updatePassword($password) {
+		$id = $this->id;
+		//check dulu apakah password nya sama
+		$sql1 = db()->query("SELECT password FROM tb_pengguna WHERE id_pengguna='$id'")->fetch_assoc();
+		if(password_verify($password, $sql1['password'])) {
+			throw new Exception("Password sama dengan password yang dulu!");
+		}
+		$password = password_hash($password, PASSWORD_DEFAULT);
+		db()->query("UPDATE tb_pengguna SET password='$password' WHERE id='$id'");
 	}
 }
