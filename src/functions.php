@@ -136,7 +136,7 @@ function create_breadcrumb($data = [])
 {
     if (!empty($data)) {
         $content = '
-        <nav aria-label="breadcrumb">
+        <nav aria-label="breadcrumb" class="rounded breadcroumb shadow-sm">
         <ol class="breadcrumb has-arrow">';
         if (count($data) > 0) {
             $content .= '<li class="breadcrumb-item">

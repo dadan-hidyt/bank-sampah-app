@@ -1,5 +1,5 @@
 <?php create_breadcrumb(['akun' => 'akun.php', 'data_diri'])?>
-<div class="profile-container w-75">
+<div class="profile-container w-100 bg-white rodunded shadow-sm p-4">
     <h2 class="font-weight-bold mt-5">
         DATA DIRI
     </h2>

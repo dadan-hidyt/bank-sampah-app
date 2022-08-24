@@ -1,10 +1,5 @@
 <?php
 defined('ROOT_PATH') OR exit('Tidak dapat mengakses secara direct ke sini!');
-/**
- * global configuration
- * DB
- * SITE
- * */
 $url = $_SERVER['HTTP_HOST'] == 'banksampah.test' ? '' : 'myproject/bank-sampah-app/';
 define('CONFIG',array(
 	'DB' => array(

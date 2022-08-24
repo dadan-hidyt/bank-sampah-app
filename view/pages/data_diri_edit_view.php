@@ -1,16 +1,7 @@
 <?php create_breadcrumb(['akun' => 'akun.php', 'data_diri'=>'akun.php?data-diri','edit'])?>
-<div class="profile-container w-75">
+<div class="profile-container w-100 p-4 bg-white rounded shadow-sm">
     <?= session()->getFlash('data_diri_edited'); ?>
-    <!-- <div class="profile d-flex">
-        <div class="logo-profil">
-            <img src="<?=base_url()?>assets/images/profile/female/image_6.png">
-        </div>
-        <div class="status ml-4 d-flex flex-column justify-content-center">
-            <h1 class="font-weight-bold mb-2">Dadan Hidayat</h1>
-            <span class="font-weight-bold">Lihat informasi pribadimu di halaman ini</span>
-        </div>
-    </div> -->
-    <h2 class="font-weight-bold mt-5">
+    <h2 class="font-weight-bold mt-0">
         DATA DIRI
     </h2>
     <form enctype="multipart/form-data" method='POST' action="">
@@ -59,10 +50,10 @@
         <div class="w-50 mr-2">
             <label for="" class="fs-16 font-weight-bold">Kelurahan/Desa</label>
             <div>
-             <input required autofocus class="border border-gray rounded-lg w-100 p-3" value='<?= core()->user->dataDiri()->kelurahan_desa ?? null; ?>' name="kelurahan_desa" id="">
-             </div>
-     </div>
-     <div class="w-50 ml-2">
+               <input required autofocus class="border border-gray rounded-lg w-100 p-3" value='<?= core()->user->dataDiri()->kelurahan_desa ?? null; ?>' name="kelurahan_desa" id="">
+           </div>
+       </div>
+       <div class="w-50 ml-2">
         <label for="" class="w-100 fs-16 font-weight-bold">Kecamatan</label>
         <input required autofocus name="kecamatan" class="w-100 p-3 border border-gray rounded-lg" value="<?= core()->user->dataDiri()->kecamatan ?? null; ?>">
     </div>
@@ -79,13 +70,13 @@
 </div>
 <div class="mt-4">
     <label for="" class="w-100 fs-16 font-weight-bold">Alamat</label>
-    <input required autofocus name="alamat" class="w-100 p-3 border border-gray rounded-lg" value="<?= core()->user->dataDiri()->alamat ?? null ?>">
+    <textarea required autofocus name="alamat" class="w-100 p-3 border border-gray rounded-lg" value="<?= core()->user->dataDiri()->alamat ?? null ?>"><?= core()->user->dataDiri()->alamat ?? null ?></textarea>
 </div>
 
 <div class="mt-4">
-    <label for="" class="w-100 fs-16 font-weight-bold">Foto KK</label>
+    <label for="" class="w-100 fs-16 font-weight-bold">Foto KTP</label>
     <i>Upload foto KK maxsimal 10 MB</i>
-    <input required autofocus accept="image/*" name="foto_kk" class="w-100 p-3 border border-gray rounded-lg" type="file">
+    <input accept="image/*" name="foto_ktp" class="w-100 p-3 border border-gray rounded-lg" type="file">
     <?php if ((core()->user->dataDiri()->foto_ktp ?? null) !== null ): ?>
     <img width="400px" class="img-thumbnail mt-3" src="<?= base_url().core()->user->dataDiri()->foto_ktp ?>" alt="Foto KTP">
     <br>
@@ -93,9 +84,9 @@
 <?php endif ?>
 </div>
 <div class="mt-4">
-    <label for="" class="w-100 fs-16 font-weight-bold">Foto KTP</label>
+    <label for="" class="w-100 fs-16 font-weight-bold">Foto KK</label>
     <i>Upload foto KK maxsimal 10 MB</i>
-    <input required autofocus accept="image/*" name="foto_ktp" class="w-100 p-3 border border-gray rounded-lg" type="file">
+    <input accept="image/*" name="foto_kk" class="w-100 p-3 border border-gray rounded-lg" type="file">
     <?php if ((core()->user->dataDiri()->photo_kk ?? null) !== null ): ?>
     <img width="400px" class="img-thumbnail mt-3" src="<?= base_url().core()->user->dataDiri()->photo_kk ?>" alt="Foto KK">
     <br>
@@ -103,8 +94,11 @@
 <?php endif ?>
 </div>
 <div class="mt-4">
-    <button name="update_data_diri" class="btn btn-primary">SUBMIT</button>
+    <?php if (!empty(core()->user->dataDiri())): ?>
+    <button name="update_data_diri" class="btn btn-primary">UPDATE</button>
+    <?php else: ?>
+        <button name="tambah_data_diri" class="btn btn-primary">SUBMIT</button>
+    <?php endif; ?>
 </div>
 </form>
-
 </div>

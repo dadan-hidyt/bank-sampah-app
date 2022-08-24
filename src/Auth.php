@@ -102,7 +102,7 @@ class Auth {
 			return $callback();
 		}
 	}
-	function loginInfo() {
+	public function loginInfo() {
 		$id = $this->userData()['id_pengguna'];
 		$token = cookie()->get('_xht');
 		if (!empty(session()->get('_xht'))) {
@@ -131,7 +131,6 @@ class Auth {
 		$password = password_hash($data['password'], PASSWORD_DEFAULT);
 		$sql = sprintf("INSERT INTO `tb_pengguna`(`username`, `password`, `email`, `id_akses`,`confirmation`) VALUES ('%s','%s','%s',
 			'%s','N')", $data['username'],$password,$data['email'],$data['sebagai']);
-		echo $sql;
 		if (db()->query($sql)) {
 			return true;
 		} else {
