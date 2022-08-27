@@ -16,6 +16,7 @@ if(core()->auth->isLogin() === false) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     @include('part/_head')
+    <script src='@{ echo base_url("assets/js/sweet-alert.min.js"); }'></script>
     <title>@{echo get_title($title,true)}</title>
 </head>
 

@@ -6,7 +6,7 @@
         </div>
     </div>
     <div class="mt-3 bg-white shadow-sm">
-        <table id="tabel-barang" class="table text-center table-hover table-responsive table-bordered">
+        <table style='width:100%;' id="tabel-barang" class="table text-center table-hover table-responsive table-bordered">
             <thead>
                 <tr>
                     <th>ID</th>
@@ -18,308 +18,9 @@
                     <th>ACT</th>
                 </tr>
             </thead>
-            <tbody>
-                <tr>
-                    <td>2</td>
-                    <td>Sabun ayam</td>
-                    <td>KILO</td>
-                    <td>RP. 29.000</td>
-                    <td>0</td>
-                    <td>odio expedita corporis quas repellendus earum exercitationem ab sunt, perferendis iste. Minima, modi eum!</td>
-                    <td>
-                        <button class='btn btn-sm btn-danger'>Delete</button>
-                        <button class='btn  btn-sm btn-primary'>Update</button>
-                        <button class='btn  btn-sm btn-success'>Update harga</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Sabun ayam</td>
-                    <td>KILO</td>
-                    <td>RP. 29.000</td>
-                    <td>0</td>
-                    <td>odio expedita corporis quas repellendus earum exercitationem ab sunt, perferendis iste. Minima, modi eum!</td>
-                    <td>
-                        <button class='btn btn-sm btn-danger'>Delete</button>
-                        <button class='btn  btn-sm btn-primary'>Update</button>
-                        <button class='btn  btn-sm btn-success'>Update harga</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Sabun ayam</td>
-                    <td>KILO</td>
-                    <td>RP. 29.000</td>
-                    <td>0</td>
-                    <td>odio expedita corporis quas repellendus earum exercitationem ab sunt, perferendis iste. Minima, modi eum!</td>
-                    <td>
-                        <button class='btn btn-sm btn-danger'>Delete</button>
-                        <button class='btn  btn-sm btn-primary'>Update</button>
-                        <button class='btn  btn-sm btn-success'>Update harga</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Sabun ayam</td>
-                    <td>KILO</td>
-                    <td>RP. 29.000</td>
-                    <td>0</td>
-                    <td>odio expedita corporis quas repellendus earum exercitationem ab sunt, perferendis iste. Minima, modi eum!</td>
-                    <td>
-                        <button class='btn btn-sm btn-danger'>Delete</button>
-                        <button class='btn  btn-sm btn-primary'>Update</button>
-                        <button class='btn  btn-sm btn-success'>Update harga</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Sabun ayam</td>
-                    <td>KILO</td>
-                    <td>RP. 29.000</td>
-                    <td>0</td>
-                    <td>odio expedita corporis quas repellendus earum exercitationem ab sunt, perferendis iste. Minima, modi eum!</td>
-                    <td>
-                        <button class='btn btn-sm btn-danger'>Delete</button>
-                        <button class='btn  btn-sm btn-primary'>Update</button>
-                        <button class='btn  btn-sm btn-success'>Update harga</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Sabun ayam</td>
-                    <td>KILO</td>
-                    <td>RP. 29.000</td>
-                    <td>0</td>
-                    <td>odio expedita corporis quas repellendus earum exercitationem ab sunt, perferendis iste. Minima, modi eum!</td>
-                    <td>
-                        <button class='btn btn-sm btn-danger'>Delete</button>
-                        <button class='btn  btn-sm btn-primary'>Update</button>
-                        <button class='btn  btn-sm btn-success'>Update harga</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Sabun ayam</td>
-                    <td>KILO</td>
-                    <td>RP. 29.000</td>
-                    <td>0</td>
-                    <td>odio expedita corporis quas repellendus earum exercitationem ab sunt, perferendis iste. Minima, modi eum!</td>
-                    <td>
-                        <button class='btn btn-sm btn-danger'>Delete</button>
-                        <button class='btn  btn-sm btn-primary'>Update</button>
-                        <button class='btn  btn-sm btn-success'>Update harga</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Sabun ayam</td>
-                    <td>KILO</td>
-                    <td>RP. 29.000</td>
-                    <td>0</td>
-                    <td>odio expedita corporis quas repellendus earum exercitationem ab sunt, perferendis iste. Minima, modi eum!</td>
-                    <td>
-                        <button class='btn btn-sm btn-danger'>Delete</button>
-                        <button class='btn  btn-sm btn-primary'>Update</button>
-                        <button class='btn  btn-sm btn-success'>Update harga</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Sabun ayam</td>
-                    <td>KILO</td>
-                    <td>RP. 29.000</td>
-                    <td>0</td>
-                    <td>odio expedita corporis quas repellendus earum exercitationem ab sunt, perferendis iste. Minima, modi eum!</td>
-                    <td>
-                        <button class='btn btn-sm btn-danger'>Delete</button>
-                        <button class='btn  btn-sm btn-primary'>Update</button>
-                        <button class='btn  btn-sm btn-success'>Update harga</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Sabun ayam</td>
-                    <td>KILO</td>
-                    <td>RP. 29.000</td>
-                    <td>0</td>
-                    <td>odio expedita corporis quas repellendus earum exercitationem ab sunt, perferendis iste. Minima, modi eum!</td>
-                    <td>
-                        <button class='btn btn-sm btn-danger'>Delete</button>
-                        <button class='btn  btn-sm btn-primary'>Update</button>
-                        <button class='btn  btn-sm btn-success'>Update harga</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Sabun ayam</td>
-                    <td>KILO</td>
-                    <td>RP. 29.000</td>
-                    <td>0</td>
-                    <td>odio expedita corporis quas repellendus earum exercitationem ab sunt, perferendis iste. Minima, modi eum!</td>
-                    <td>
-                        <button class='btn btn-sm btn-danger'>Delete</button>
-                        <button class='btn  btn-sm btn-primary'>Update</button>
-                        <button class='btn  btn-sm btn-success'>Update harga</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Sabun ayam</td>
-                    <td>KILO</td>
-                    <td>RP. 29.000</td>
-                    <td>0</td>
-                    <td>odio expedita corporis quas repellendus earum exercitationem ab sunt, perferendis iste. Minima, modi eum!</td>
-                    <td>
-                        <button class='btn btn-sm btn-danger'>Delete</button>
-                        <button class='btn  btn-sm btn-primary'>Update</button>
-                        <button class='btn  btn-sm btn-success'>Update harga</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Sabun ayam</td>
-                    <td>KILO</td>
-                    <td>RP. 29.000</td>
-                    <td>0</td>
-                    <td>odio expedita corporis quas repellendus earum exercitationem ab sunt, perferendis iste. Minima, modi eum!</td>
-                    <td>
-                        <button class='btn btn-sm btn-danger'>Delete</button>
-                        <button class='btn  btn-sm btn-primary'>Update</button>
-                        <button class='btn  btn-sm btn-success'>Update harga</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Sabun ayam</td>
-                    <td>KILO</td>
-                    <td>RP. 29.000</td>
-                    <td>0</td>
-                    <td>odio expedita corporis quas repellendus earum exercitationem ab sunt, perferendis iste. Minima, modi eum!</td>
-                    <td>
-                        <button class='btn btn-sm btn-danger'>Delete</button>
-                        <button class='btn  btn-sm btn-primary'>Update</button>
-                        <button class='btn  btn-sm btn-success'>Update harga</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Sabun ayam</td>
-                    <td>KILO</td>
-                    <td>RP. 29.000</td>
-                    <td>0</td>
-                    <td>odio expedita corporis quas repellendus earum exercitationem ab sunt, perferendis iste. Minima, modi eum!</td>
-                    <td>
-                        <button class='btn btn-sm btn-danger'>Delete</button>
-                        <button class='btn  btn-sm btn-primary'>Update</button>
-                        <button class='btn  btn-sm btn-success'>Update harga</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Sabun ayam</td>
-                    <td>KILO</td>
-                    <td>RP. 29.000</td>
-                    <td>0</td>
-                    <td>odio expedita corporis quas repellendus earum exercitationem ab sunt, perferendis iste. Minima, modi eum!</td>
-                    <td>
-                        <button class='btn btn-sm btn-danger'>Delete</button>
-                        <button class='btn  btn-sm btn-primary'>Update</button>
-                        <button class='btn  btn-sm btn-success'>Update harga</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Sabun ayam</td>
-                    <td>KILO</td>
-                    <td>RP. 29.000</td>
-                    <td>0</td>
-                    <td>odio expedita corporis quas repellendus earum exercitationem ab sunt, perferendis iste. Minima, modi eum!</td>
-                    <td>
-                        <button class='btn btn-sm btn-danger'>Delete</button>
-                        <button class='btn  btn-sm btn-primary'>Update</button>
-                        <button class='btn  btn-sm btn-success'>Update harga</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Sabun ayam</td>
-                    <td>KILO</td>
-                    <td>RP. 29.000</td>
-                    <td>0</td>
-                    <td>odio expedita corporis quas repellendus earum exercitationem ab sunt, perferendis iste. Minima, modi eum!</td>
-                    <td>
-                        <button class='btn btn-sm btn-danger'>Delete</button>
-                        <button class='btn  btn-sm btn-primary'>Update</button>
-                        <button class='btn  btn-sm btn-success'>Update harga</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Sabun ayam</td>
-                    <td>KILO</td>
-                    <td>RP. 29.000</td>
-                    <td>0</td>
-                    <td>odio expedita corporis quas repellendus earum exercitationem ab sunt, perferendis iste. Minima, modi eum!</td>
-                    <td>
-                        <button class='btn btn-sm btn-danger'>Delete</button>
-                        <button class='btn  btn-sm btn-primary'>Update</button>
-                        <button class='btn  btn-sm btn-success'>Update harga</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Sabun ayam</td>
-                    <td>KILO</td>
-                    <td>RP. 29.000</td>
-                    <td>0</td>
-                    <td>odio expedita corporis quas repellendus earum exercitationem ab sunt, perferendis iste. Minima, modi eum!</td>
-                    <td>
-                        <button class='btn btn-sm btn-danger'>Delete</button>
-                        <button class='btn  btn-sm btn-primary'>Update</button>
-                        <button class='btn  btn-sm btn-success'>Update harga</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Sabun ayam</td>
-                    <td>KILO</td>
-                    <td>RP. 29.000</td>
-                    <td>0</td>
-                    <td>odio expedita corporis quas repellendus earum exercitationem ab sunt, perferendis iste. Minima, modi eum!</td>
-                    <td>
-                        <button class='btn btn-sm btn-danger'>Delete</button>
-                        <button class='btn  btn-sm btn-primary'>Update</button>
-                        <button class='btn  btn-sm btn-success'>Update harga</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Sabun ayam</td>
-                    <td>KILO</td>
-                    <td>RP. 29.000</td>
-                    <td>0</td>
-                    <td>odio expedita corporis quas repellendus earum exercitationem ab sunt, perferendis iste. Minima, modi eum!</td>
-                    <td>
-                        <button class='btn btn-sm btn-danger'>Delete</button>
-                        <button class='btn  btn-sm btn-primary'>Update</button>
-                        <button class='btn  btn-sm btn-success'>Update harga</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Sabun ayam</td>
-                    <td>KILO</td>
-                    <td>RP. 29.000</td>
-                    <td>0</td>
-                    <td>odio expedita corporis quas repellendus earum exercitationem ab sunt, perferendis iste. Minima, modi eum!</td>
-                    <td>
-                        <button class='btn btn-sm btn-danger'>Delete</button>
-                        <button class='btn  btn-sm btn-primary'>Update</button>
-                        <button class='btn  btn-sm btn-success'>Update harga</button>
-                    </td>
-                </tr>
-            </tbody>
-            </tr>
+           <tbody>
+               
+           </tbody>
         </table>
     </div>
 </div>
@@ -334,38 +35,82 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="">
+                <form name='form' method='post' action="">
                     <div class="form-group">
-                        <label for="nama_produk">Nama Produk</label>
-                        <input type="text" class='form-control' id='nama_produk' name='nama'>
+                        <label for="nama_produk">Nama</label>
+                        <input  required type="text" class='form-control' id='nama_produk' name='nama'>
                     </div>
                     <div class="form-group">
                         <label for="harga">Harga</label>
-                        <input type="text" class='form-control' id='nama_produk' name='harga'>
+                        <input  required type="text" class='form-control' id='nama_produk' name='harga'>
                     </div>
                     <div class="form-group">
                         <label for="satuan">Satuan</label>
-                        <select class="form-control" name="satuan" id="satuan">
-                            <option value="lusin">Lusin</option>
-                            <option value="pcs">pcs</option>
+                        <select required  class="form-control" name="satuan" id="satuan">
+                            <option value="">--select satuan---</option>
+                            <option value="KG">KG</option>
+                            <option value="PCS">PCS</option>
+                            <option value="LUSIN">LUSIN</option>
+                            <option value="BIJI">BIJI</option>
                         </select>
                     </div>
+
                     <div class="form-group">
                         <label for="deskripsi">Deskripsi</label>
-                        <textarea name="" id="" cols="30" rows="4" class="form-control"></textarea>
+                        <textarea placeholder='(optional)' name="deskripsi" id="" cols="30" rows="4" class="form-control"></textarea>
                     </div>
-                </form>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">SIMPAN</button>
+                <button type="submit" name='button_submit' class="btn btn-primary">SIMPAN</button>
+                </form>
             </div>
         </div>
     </div>
 </div>
 <!-- end modal -->
 <script>
-    window.onload = function() {
-        $('#tabel-barang').DataTable({});
+    //jika kontent selesai di load
+    function button_loading($message, $disabled = false) {
+         form.button_submit.innerHTML = $message;
+        if($disabled) {
+         form.button_submit.type = 'disabled';
+         form.button_submit.disabled = true;
+        } else {
+              form.button_submit.type = 'submit';
+             form.button_submit.disabled = false;
+        }
     }
+    const request_url =  '<?= base_url('ajax/barang/barang_beli.php') ?>';
+    window.addEventListener('DOMContentLoaded', event=>{
+        //data table
+        const data_table = $('#tabel-barang').DataTable({
+            ajax : request_url+'?type=result',
+        });
+        const form = document.form;
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+           button_loading("LOADING...", true);
+            const data = new FormData(e.target);
+            $.ajax({
+                 url : request_url+'?type=add',
+                 type : "POST",
+                 processData: false,
+                 contentType: false,
+                 cache: false,
+                 data : data,
+                 //success ajax request
+                 success : function(response) {
+                    button_loading("SIMPAN", false);
+                    if(response.code == 200 && response.status == true) {
+                        data_table.ajax.reload(null,false);
+                        swal.fire("success",response.message,'success');
+                    } else{
+                         swal.fire(`Error ${response.code}`,response.message,'error');
+                    }
+                 },
+            })
+            
+        });
+    });
 </script>
