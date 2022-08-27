@@ -82,11 +82,10 @@
         }
     }
     const request_url =  '<?= base_url('ajax/barang/barang_beli.php') ?>';
-    window.addEventListener('DOMContentLoaded', event=>{
-        //data table
-        const data_table = $('#tabel-barang').DataTable({
+    const data_table = $('#tabel-barang').DataTable({
             ajax : request_url+'?type=result',
         });
+    window.addEventListener('DOMContentLoaded', event=>{        
         const form = document.form;
         form.addEventListener('submit', e => {
             e.preventDefault();
@@ -112,5 +111,14 @@
             })
             
         });
+        //delete action
+        const button_delete = document.querySelectorAll('#button_delete_table');
+        if(button_delete) {
+           button_delete.forEach(function(el){
+                el.onclick = function(e) {
+                    console.log(el.getAttribute('data_id'))
+                }
+           })
+        }
     });
 </script>

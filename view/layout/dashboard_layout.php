@@ -17,6 +17,8 @@ if(core()->auth->isLogin() === false) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     @include('part/_head')
     <script src='@{ echo base_url("assets/js/sweet-alert.min.js"); }'></script>
+    <script src="<?= base_url()."assets/js/jquery.js" ?>"></script>
+    <script src="<?= base_url('assets/vendors/datatable/datatables.js') ?>"></script>
     <title>@{echo get_title($title,true)}</title>
 </head>
 
@@ -46,12 +48,10 @@ if(core()->auth->isLogin() === false) {
         <!-- plugins:js -->
         <script src="<?= base_url(); ?>assets/vendors/js/core.js"></script>
         <!-- endinject -->
-        <script src="<?= base_url()."assets/js/jquery.js" ?>"></script>
         <!-- Vendor Js For This Page Ends-->
         <script src="<?= base_url(); ?>assets/vendors/apexcharts/apexcharts.min.js"></script>
         <script src="<?= base_url(); ?>assets/vendors/chartjs/Chart.min.js"></script>
         <script src="<?= base_url(); ?>assets/js/charts/chartjs.addon.js"></script>
-        <script src="<?= base_url('assets/vendors/datatable/datatables.js') ?>"></script>
         <!-- Vendor Js For This Page Ends-->
         <!-- build:js -->
         <script src="<?= base_url(); ?>assets/js/template.js"></script>

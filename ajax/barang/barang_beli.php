@@ -83,7 +83,7 @@ switch (strip_tags($type)) {
 				empty($result['harga_lama']) ? 'N/A' : sprintf('<strong>IDR %s</strong>', formatRupiah((int)$result['harga_lama'])),
 				$result['deskripsi'],
 				'
-					<button data_id=\''.$result['id_produkbeli'].'\'>Hapus</button>
+					<button id="button_delete_table" class="btn btn-danger btn-sm" data_id=\''.$result['id_produkbeli'].'\'>Hapus</button>
 					<button>Edit</button>
 				'
 			];
