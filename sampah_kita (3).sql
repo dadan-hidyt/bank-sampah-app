@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Aug 23, 2022 at 01:00 PM
+-- Generation Time: Aug 27, 2022 at 12:25 PM
 -- Server version: 5.7.36
 -- PHP Version: 7.4.26
 
@@ -80,7 +80,9 @@ CREATE TABLE IF NOT EXISTS `tb_datadiri` (
 --
 
 INSERT INTO `tb_datadiri` (`id_diri`, `nama_lengkap`, `tempat_lahir`, `tanggal_lahir`, `agama`, `alamat`, `rt`, `rw`, `kelurahan_desa`, `kecamatan`, `kabupaten`, `provinsi`, `no_ktp`, `foto_ktp`, `photo_kk`) VALUES
-(11, 'Dadan Hidayat', 'SUMEDANG', '2003-08-24', 'islam', 'SUMEDANG', 4, 4, 'Desa Margalaksana', 'SUMEDANG SELATAN', 'SUMEDANG', 'JAWA BARAT', '3211172910030001', 'files/dadanhidayat/6304cf14be0781661259540ff6ff23a2f94fee528be0e91bad79e7e.jpg', 'files/dadanhidayat/6304cf14be04516612595402c8cee477ddccaca2b46ece98ae772da.png');
+(11, 'Dadan Hidayat', 'SUMEDANG', '2003-08-24', 'islam', 'SUMEDANG', 4, 4, 'Desa Margalaksana', 'SUMEDANG SELATAN', 'SUMEDANG', 'JAWA BARAT', '3211172910030001', 'files/dadanhidayat/6304cf14be0781661259540ff6ff23a2f94fee528be0e91bad79e7e.jpg', 'files/dadanhidayat/6304cf14be04516612595402c8cee477ddccaca2b46ece98ae772da.png'),
+(12, 'Felix', 'sumedang', '1992-02-09', 'islam', 'JL. Sumedang merdeka NO9 Kabupaten sumedang, PERUM 43', 4, 4, 'DESA SEKAR WANGI', 'SUMEDANG', 'Sumedang', '234', '202113238493434', 'files/sumedang/63052b14e80b2166128309233f25d9a8015406fb36d4618d886297e.jpg', 'files/sumedang/63052af72dffc1661283063db82315c9710f5710922489e14ba456d.png'),
+(13, 'Muhamad rfly', 'BOGOR', '2004-02-23', 'islam', 'JL. Medan raya NO1, RT03/05 Desa Mekar jaya', 3, 3, 'DESA SEKAR WANGI', 'SUMEDANG SELATAN', 'SUMEDANG', 'JAWA BARAT', '202113238493431', 'files/mard12/63052dc4cb129166128378069a6b391bccbc40bdacbb348dfcecc78.png', 'files/mard12/63052dc4cb0931661283780e0dfd4dcdb74333bf458e3b55ae5b1cd.jpg');
 
 -- --------------------------------------------------------
 
@@ -195,7 +197,7 @@ CREATE TABLE IF NOT EXISTS `tb_pengguna` (
   PRIMARY KEY (`id_pengguna`),
   UNIQUE KEY `username_uniq` (`username`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `tb_pengguna`
@@ -203,7 +205,11 @@ CREATE TABLE IF NOT EXISTS `tb_pengguna` (
 
 INSERT INTO `tb_pengguna` (`id_pengguna`, `username`, `password`, `email`, `id_akses`, `photo_profile`, `confirmation`) VALUES
 (1, 'administrator', '$2y$10$N9wPe.zRqwwtg7u80B7bFuDyrmYBsI8OzrpNYsRif.wLbYMPo5S3W', 'admin@admin.com', 0, 'sumedang', 'Y'),
-(11, 'dadanhidayat', '$2y$10$ckuLEvoUrAt.0NcRo4xF7.Q3ip2ortxaMZM.5h.ef8mQ7cmbU5e6u', 'dadanhidayat@dadan.com', 2, NULL, 'N');
+(11, 'dadanhidayat', '$2y$10$T8WHw2RZeCSwMpk4qGPbD.8adbmuOmgJzfP./K8d5a5uo0UZ3rvwS', 'dadanhidayat@dadan.com', 2, 'files/images/avatar/avatar-dadanhidayat-90e1d183a5b03ff7df6dd2cd69be09f3.gif', 'N'),
+(12, 'sumedang', '$2y$10$WzI.99sFaKvK2KgkySKp5OeKhD1sFE4daTLjJNVVVU59SviyDr3HK', 'dadan@gmail.com', 2, NULL, 'N'),
+(13, 'mard12', '$2y$10$b1Cbc3B5viNCtEoR39YKsuf.n2w4yXhnDHFGwZYq/APIATX0LrzTa', 'mard12@gmail.com', 3, 'files/images/avatar/avatar-mard12-23997b2a2c13557a3b23ab2561924e39.jpg', 'N'),
+(14, 'sumedang_penampung', '$2y$10$yiEKD9BfL5HQ.MNCw1HEh.cAAoldyduWjF3IhiNs5gjlUI14f3CZ2', 'sumedang_penampung@sumedang.com', 3, NULL, 'N'),
+(15, 'ridarmasteradmin', '$2y$10$MTcg4SrvAwsZJQv1SamW.OZMCQui22izmsdSIHS88jKmRF55KD/6O', 'dadan0@dadan.com', 3, 'files/images/avatar/avatar-ridarmasteradmin-1f14571bd4a6c2537041df08b195817c.jpg', 'N');
 
 -- --------------------------------------------------------
 
@@ -214,14 +220,28 @@ INSERT INTO `tb_pengguna` (`id_pengguna`, `username`, `password`, `email`, `id_a
 DROP TABLE IF EXISTS `tb_produkbeli`;
 CREATE TABLE IF NOT EXISTS `tb_produkbeli` (
   `id_produkbeli` int(11) NOT NULL AUTO_INCREMENT,
+  `id_pengguna` int(11) NOT NULL,
   `nama` varchar(120) DEFAULT NULL,
   `harga` varchar(255) DEFAULT NULL,
+  `harga_lama` varchar(225) NOT NULL,
   `satuan` varchar(255) DEFAULT NULL,
   `pj` varchar(100) DEFAULT NULL,
   `status` varchar(255) DEFAULT NULL,
   `deskripsi` text,
   PRIMARY KEY (`id_produkbeli`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tb_produkbeli`
+--
+
+INSERT INTO `tb_produkbeli` (`id_produkbeli`, `id_pengguna`, `nama`, `harga`, `harga_lama`, `satuan`, `pj`, `status`, `deskripsi`) VALUES
+(1, 15, 'KARDUS', '7400', '7000', 'lusin', NULL, 'null', 'neak'),
+(2, 15, 'Kaleng', '10000', '0', 'pcs', NULL, 'null', ''),
+(3, 15, 'bunda rahma', '100000000', '0', 'lusin', NULL, 'null', 'da'),
+(4, 15, 'besi', '9000', '10000', 'KG', NULL, 'null', 'Yang punya besi baja bisa di jual di sini\r\natau 0882238376253'),
+(5, 15, 'Komputer Rongsok', '50000', '0', 'BIJI', NULL, 'null', 'Di beli komputer bekas all spek'),
+(6, 15, 'TV Rongsok', '50000', '0', 'PCS', NULL, 'null', 'Di beli komputer bekas all spek');
 
 -- --------------------------------------------------------
 
@@ -232,7 +252,7 @@ CREATE TABLE IF NOT EXISTS `tb_produkbeli` (
 DROP TABLE IF EXISTS `tb_produkjual`;
 CREATE TABLE IF NOT EXISTS `tb_produkjual` (
   `id_produkjual` int(11) NOT NULL AUTO_INCREMENT,
-  `id_pangguna` varchar(100) NOT NULL,
+  `id_pengguna` varchar(100) NOT NULL,
   `nama` varchar(200) NOT NULL,
   `harga` varchar(221) NOT NULL,
   `harga_lama` varchar(233) NOT NULL,
@@ -240,7 +260,18 @@ CREATE TABLE IF NOT EXISTS `tb_produkjual` (
   `status` varchar(20) NOT NULL,
   `deskripsi` text NOT NULL,
   PRIMARY KEY (`id_produkjual`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=19 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tb_produkjual`
+--
+
+INSERT INTO `tb_produkjual` (`id_produkjual`, `id_pengguna`, `nama`, `harga`, `harga_lama`, `satuan`, `status`, `deskripsi`) VALUES
+(18, '15', 'Indonesia', '10000', '0', 'lusin', 'null', 'da'),
+(17, '14', 'kondom bekas', '1000', '0', 'lusin', 'null', 'wkwkwk'),
+(16, '14', 'Komputer rongsok', '50000', '0', 'lusin', 'null', 'Komputer rongsok yang harganya murah silahkan'),
+(15, '14', 'Kelapa muda enak', '5000', '0', 'lusin', 'null', 'dadan hidayat'),
+(14, '14', 'Kertas Bekas', '1000', '0', 'lusin', 'null', 'dadan hidayat');
 
 -- --------------------------------------------------------
 
@@ -259,14 +290,15 @@ CREATE TABLE IF NOT EXISTS `tb_sessions` (
   `create_at` varchar(100) NOT NULL,
   `expire` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=99 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=103 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `tb_sessions`
 --
 
 INSERT INTO `tb_sessions` (`id`, `id_pengguna`, `ip`, `token`, `platform`, `browser`, `create_at`, `expire`) VALUES
-(98, 11, '::1', '961e05119b3714ce8264d0acc0274786baf3eaf2a97641d8409aee18600687bf', 'Windows 10', 'Chrome', '1661259466', '1692795466');
+(100, 13, '::1', 'ac3703a0191d667a6b5ce59d559b03ea1e8affa8bc84a26afb31b2470233887b', 'Windows 10', 'Chrome', '1661283673', '1692819673'),
+(102, 15, '::1', '0a47efa0dc69992c59fa66c6d2d228cd5ae9acc83398abad4fd562dfca70e739', 'Windows 10', 'Chrome', '1661592477', '1693128477');
 
 -- --------------------------------------------------------
 
