@@ -84,7 +84,7 @@ switch (strip_tags($type)) {
 				$result['deskripsi'],
 				'
 					<button id="button_delete_table" class="btn btn-danger btn-sm" data_id=\''.$result['id_produkbeli'].'\'>Hapus</button>
-					<button id="button_edit_table" data_id=\''.$result['id_produkbeli'].'\'>Edit</button>
+					<button class="btn btn-success btn-sm" id="button_edit_table" data_id=\''.$result['id_produkbeli'].'\'>Edit</button>
 				'
 			];
 		}
@@ -106,6 +106,53 @@ switch (strip_tags($type)) {
 			];
 		}
 		echo json_encode($response);
+		break;
+	case 'get_data_by_id':
+		$id = core()->request->get('id');
+		$data = db()->query("SELECT * FROM tb_produkbeli WHERE id_produkbeli='$id'");
+		echo db()->query_error;
+		$response = [
+			'code' => 200,
+			'status' => true,
+			'data' => $data->fetch_assoc(),
+		];
+		echo json_encode($response);
+		break;
+	case 'edit':
+		$id = core()->request->get('id');
+		if (empty($id)) {
+			return false;
+		}
+		$data = core()->request->post();
+		if (empty($data)) {
+			return false;
+		}
+		$result = db()->query("SELECT * FROM tb_produkbeli WHERE id_produkbeli='$id'");
+		if ($result && $result->num_rows > 0) {
+			$fetch = $result->fetch_object();
+			if (!empty($data['harga'])) {
+				$harga_lama = $fetch->harga;
+				$harga_baru = $data['harga'];
+			} else {
+				$harga_lama = 0;
+				$harga_baru = $fetch->harga;
+			}
+			if (db()->query("UPDATE tb_produkbeli SET nama='$data[nama]', harga='$harga_baru',harga_lama='$harga_lama', satuan='$data[satuan]',deskripsi='$data[deskripsi]' WHERE id_produkbeli='$id'")) {
+				$response = [
+					'code' => 200,
+					'status' => true,
+					'message' => "data berhasil di update",
+				];
+				echo json_encode($response);exit;die();
+			}
+		}
+			$response = [
+				'code' => 204,
+				'status' => false,
+				'message' => 'data gagal di update!',
+			];
+			echo json_encode($response);
+		
 		break;
 	default:
 		// code...
