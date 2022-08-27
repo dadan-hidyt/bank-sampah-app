@@ -273,7 +273,5 @@
 </div>
 </div>
 <script>
-    window.onload = function() {
-        $('#tabel-penjualan').DataTable({});
-    }
+    $('#tabel-penjualan').DataTable({});
 </script>

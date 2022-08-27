@@ -52,6 +52,8 @@
                             <option value="PCS">PCS</option>
                             <option value="LUSIN">LUSIN</option>
                             <option value="BIJI">BIJI</option>
+                            <option value="/1KG">/1KG</option>
+                            <option value="/1BIJI">/1BIJI</option>
                         </select>
                     </div>
 
@@ -85,7 +87,10 @@
     const data_table = $('#tabel-barang').DataTable({
             ajax : request_url+'?type=result',
         });
-    window.addEventListener('DOMContentLoaded', event=>{        
+    window.addEventListener('load', event=>{        
+        /**
+         * tambah data 
+         */
         const form = document.form;
         form.addEventListener('submit', e => {
             e.preventDefault();
@@ -102,23 +107,51 @@
                  success : function(response) {
                     button_loading("SIMPAN", false);
                     if(response.code == 200 && response.status == true) {
-                        data_table.ajax.reload(null,false);
+                        data_table.ajax.reload(null,true);
                         swal.fire("success",response.message,'success');
                     } else{
-                         swal.fire(`Error ${response.code}`,response.message,'error');
+                         Swal.fire(`Error ${response.code}`,response.message,'error');
                     }
                  },
             })
             
         });
-        //delete action
+        /**
+         * hapus data
+         */
         const button_delete = document.querySelectorAll('#button_delete_table');
-        if(button_delete) {
-           button_delete.forEach(function(el){
-                el.onclick = function(e) {
-                    console.log(el.getAttribute('data_id'))
-                }
-           })
+        for (let i = 0; i < button_delete.length; i++) {
+          button_delete[i].onclick = function() {
+             Swal.fire({
+                 title : 'Apakah anda yakin ingin menghapus data ini?',
+                 showCancelButton : true,
+                 confirmButtonText : 'Oke',
+             }).then(result=>{
+                 if(result.isConfirmed) {
+                   const id = button_delete[i].getAttribute('data_id');
+                   $.ajax({
+                       url : request_url+'?type=delete&id='+id,
+                       type : 'GET',
+                       success : function(response) {
+                           if(response.code == 200 && response.status == true) {
+                               Swal.fire({
+                                   icon : 'success',
+                                   title : 'Data berhasil di hapus!',
+                                   showConfirmButton : false,
+                                   timer : 2000,
+                               });
+                               setTimeout(function(){
+                                    window.location.reload(true);
+                               },2000);
+                           }
+                       }
+                   });
+                 } 
+             });
+          }
         }
+     /**
+      * edit data
+      */
     });
 </script>

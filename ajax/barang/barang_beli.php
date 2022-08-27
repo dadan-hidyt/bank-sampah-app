@@ -84,12 +84,29 @@ switch (strip_tags($type)) {
 				$result['deskripsi'],
 				'
 					<button id="button_delete_table" class="btn btn-danger btn-sm" data_id=\''.$result['id_produkbeli'].'\'>Hapus</button>
-					<button>Edit</button>
+					<button id="button_edit_table" data_id=\''.$result['id_produkbeli'].'\'>Edit</button>
 				'
 			];
 		}
 		echo json_encode($response_data);
 	break;
+	case 'delete' :
+		$id = core()->request->get('id');
+		if (db()->query("DELETE FROM tb_produkbeli WHERE id_produkbeli='$id' AND id_pengguna='$user_id'")) {
+			$response = [
+				'code' => 200,
+				'status' => true,
+				'message' => 'Data berhail di hapus!',
+			];
+		} else {
+			$response = [
+				'code' => 204,
+				'status' => false,
+				'message' => db()->query_error,
+			];
+		}
+		echo json_encode($response);
+		break;
 	default:
 		// code...
 		break;
