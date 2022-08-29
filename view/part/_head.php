@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="<?= base_url('assets/vendors/datatable/datatables.css') ?>">
+<link rel="stylesheet" href="<?= base_url('assets/vendors/datatable/datatables.css?V') ?>">
 <link rel="stylesheet" href="<?= base_url(); ?>assets/vendors/iconfonts/mdi/css/materialdesignicons.css" />
 <link rel="stylesheet" href="<?= base_url(); ?>assets/vendors/css/vendor.addons.css" />
 <link rel="stylesheet" href="<?= base_url(); ?>assets/css/shared/style.css?v=<?= time(); ?>" />

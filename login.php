@@ -12,7 +12,7 @@ $req = core()->request;
 $auth = core()->auth;
 
 if($auth->isLogin()) {
-    redirect('app/home.php');
+    redirect('user-panel/home.php');
 }
 /**
  * cek apakah method nya post
@@ -33,7 +33,7 @@ if($req->method() === 'POST') {
     try {
         //proccess login
        $data = $auth->doLogin($data);
-      redirect('app/home.php');
+      redirect('user-panel/home.php');
     }catch(Exception $e) {
         session()->flashWarning('login_gagal_message',$e->getMessage());
         redirect('login.php');

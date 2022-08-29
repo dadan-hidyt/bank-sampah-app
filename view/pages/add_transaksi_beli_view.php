@@ -88,7 +88,9 @@
   }
 }
 </style>
-<!-- new transaksi -->
+
+<div class="row">
+  <!-- new transaksi -->
 <div class="col-12 py-2 mb-2">
   <div class="trx-wrapper d-flex flex-wrap justify-content-between">
     <div class="card-trx mt-3 lg-w-48">
@@ -99,7 +101,7 @@
         <div class="mb-2 fs-14">INVOICE : <input type="text" class="text-black border-0 fs-14 bg-white"
           value="INV-BS-2022239835" disabled></div>
           <div class="mb-2 fs-14
-          ">Tanggal : <input type="text" class="text-black border-0 fs-14 bg-white" value="04-07-2022"
+          ">Tanggal : <input type="text" class="text-black border-0 fs-14 bg-white" value="<?= date('Y-m-d h:i:s'); ?>"
           disabled></div>
           <div>Nama Member :
             <select class="py-1 px-2 rounded border-gray ml-2 bg-white" name="member"
@@ -119,27 +121,27 @@
         <div class="w-100 py-2 px-3 border-bottom-gray bg-gray">
           Detail Produk
         </div>
-        <form class="d-flex py-3 px-3 h-100 align-items-center">
+        <form id="transaksi_add_barang" class="d-flex py-3 px-3 h-100 align-items-center">
           <div class="w-75">
-            <div class="d-flex w-100 mb-2 fs-14
-            "><span>KODE PRODUK : </span><input type="text"
-            class="w-50 text-black border-0 fs-14 bg-white px-2" value="-- Pilih Produk --" disabled>
-          </div>
-          <div>Pilih Produk : <select class="p-2 rounded-md border-gray ml-2 bg-white" name="member"
+          <div>Pilih barang : <select class="p-2 rounded-md border-gray ml-2 bg-white" name="barang_id"
             id="member">
-            <option value="#">Nama Produk</option>
-            <option value="user_01">Kopi</option>
-            <option value="user_02">Detergen</option>
-            <option value="user_03">Batu Bata</option>
+           <?php 
+           foreach ($this->data['produk'] as $value) {
+             ?>
+             <option value="<?php echo $value['id_produkbeli']; ?>"><?php echo $value['nama']; ?></option>
+             <?php
+           }
+
+            ?>
           </select>
         </div>
         <div class="d-flex w-100 mt-2 fs-14
         "><label for="quantity">Masukan Jumlah :</label>
-        <input type="number" id="quantity" name="quantity" class="py-1 w-25 ml-2 rounded-md border-gray">
+        <input type="number" id="quantity" value='1' name="jumlah" class="py-1 w-25 ml-2 rounded-md border-gray">
       </div>
     </div>
     <div class="w-25 d-flex justify-content-end">
-      <button type="submit" class="text-white bg-primary py-2 px-4 rounded-md border-0">
+      <button name="button_submits" type="submit" class="text-white bg-primary py-2 px-4 rounded-md border-0">
         Pilih
       </button>
     </div>
@@ -151,7 +153,7 @@
     Transaksi Terbaru
   </div>
   <div class="table-responsive">
-    <table class="table">
+    <table style="width:100%;" id='tabel' class="table">
       <thead>
         <tr>
           <th scope="col">No.</th>
@@ -162,32 +164,7 @@
           <th scope="col">Total Harga</th>
         </tr>
       </thead>
-      <tbody class="bg-white">
-        <tr>
-          <th scope="row">1</th>
-          <td>Muhammad</td>
-          <td>10000</td>
-          <td>kg</td>
-          <td>4pcs</td>
-          <td>100000</td>
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>Aisyah</td>
-          <td>10000</td>
-          <td>kg</td>
-          <td>4pcs</td>
-          <td>100000</td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td>Fatimah</td>
-          <td>10000</td>
-          <td>gram</td>
-          <td>4pcs</td>
-          <td>100000</td>
-        </tr>
-      </tbody>
+     
     </table>
   </div>
 </div>
@@ -198,7 +175,7 @@
   <div class="price-total d-flex justify-content-between align-items-center px-3">
     <div class="w-50">
       <div class="fs-16">
-        Total Bayar : RP.<span>105.000</span>
+        Total Bayar : RP.<span id="total_bayar">105.000</span>
       </div>
     </div>
     <div>
@@ -246,5 +223,46 @@ aria-hidden="true">
 </div>
 </div>
 <!-- end modal -->
+</div>
 
-<!-- end -->
+<script>
+  let BASE_URL = '<?= base_url(); ?>'
+  let table = $('#tabel').DataTable({
+    ajax : BASE_URL + 'ajax/transaksi/transaksi_penampung.php?type=get_result_cart',
+  });
+  
+
+  function totals() {
+      let ajax = new XMLHttpRequest();
+      ajax.open('GET',BASE_URL+'ajax/transaksi/transaksi_penampung.php?type=total_harga');
+      ajax.onload = function(e) {
+        $('#total_bayar').html(e.target.responseText);
+      }
+      ajax.send();
+
+  }
+  totals();
+  $(document).ready(function(){
+     $('#transaksi_add_barang').on('submit',function(e){
+        e.preventDefault();
+        const button = e.target.button_submits;
+        button.innerHTML = 'Tunggu...';
+        const data = new FormData();
+        data.append('id_barang', e.target.barang_id.value);
+        data.append('jumlah', e.target.jumlah.value);
+        $.ajax({
+            url : BASE_URL+'ajax/transaksi/transaksi_penampung.php?type=add_to_cart',
+            type : 'POST',
+            data : data,
+            cache : false,
+            processData: false,
+            contentType: false,
+            success : function() {
+              Swal.fire('success','Data berhasil di tambahkan ke cart!');
+              table.ajax.reload();
+              totals();
+            }
+        });
+     });
+  });
+</script>

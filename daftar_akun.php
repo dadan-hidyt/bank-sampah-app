@@ -4,6 +4,9 @@
  * @package autentikasi
  **/
 include 'src/init.php';
+if(core()->auth->isLogin()) {
+    redirect('user-panel/home.php');
+}
 $request = core()->request;
 if ($request->method() === "POST" && $request->has('daftar')) {
 	$error = null;

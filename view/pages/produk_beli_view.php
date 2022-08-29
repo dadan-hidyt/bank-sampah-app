@@ -73,8 +73,6 @@
         </div>
     </div>
 </div>
-
-
 <div class="modal-edit">
     <div class="modal" id="exampleModal" aria-hidden="false">
         <div class="modal-dialog" role="document">
@@ -286,10 +284,10 @@ window.addEventListener('load', event => {
                         data : data,
                         success : function(e) {
                             if (e.code == 200 && e.status == true) {
-                                console.log('dadan');
-                                data_table.ajax.reload(null, false);
-                            } else {
-                                console.log('da')
+                                Swal.fire("success",e.message,'success');
+                                setTimeout(() => {
+                                    window.location.reload(true);
+                                }, 2000);
                             }
                         }
                     })
@@ -298,5 +296,7 @@ window.addEventListener('load', event => {
         }
     }
     const edit = show_edit_modal();
+    
+    
 });
 </script>

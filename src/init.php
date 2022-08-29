@@ -78,9 +78,8 @@ $registry->set('menu_akses',new MenuAkses);
 //get session user
 $registry->set('user',new User());
 
-//cek akses halaman
 if (
-  basename($_SERVER['SCRIPT_NAME'],'app') 
+  strpos($_SERVER['PHP_SELF'],'user-panel') != false 
   && strtolower(core()->user->getAkses()) != 'admin'
   && core()->config->get('ENV')->DEVELOPMENT != true
 ) {

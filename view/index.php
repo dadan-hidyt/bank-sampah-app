@@ -26,7 +26,7 @@
 				
 				<input type="text" class="input-search" placeholder="Cari sesuatu...">
 			</div>
-			<a href="#" class="login-bx btn">
+			<a href="app" class="login-bx btn">
 				Login
 			</a>
 		</div>

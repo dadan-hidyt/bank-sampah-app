@@ -1575,3 +1575,35 @@ div.dataTables_wrapper span.select-item {
   background-color: red;
   width: 300px !important;
 }
+
+@media (max-width: 520px) {
+  .dataTables_wrapper .dataTables_filter input {
+    border: 2px solid #dedede;
+    border-radius: 2px;
+    margin-top: 5px;
+    padding: 1px;
+    background-color: transparent;
+    margin-right: -16px !important;
+}
+.dataTables_wrapper .dataTables_length {
+    padding-top: -13px;
+    padding-left: 10px;
+    float: left;
+}
+.dataTables_wrapper .dataTables_length, .dataTables_wrapper .dataTables_filter {
+    float: left;
+    text-align: center;
+    margin-right: -5px;
+}
+.dataTables_wrapper .dataTables_length select {
+    border: 2px solid #dedede;
+    border-radius: 2px;
+    background-color: transparent;
+    padding: 1px;
+}
+div.dataTables_wrapper div.dataTables_filter input {
+    margin-left: 2px;
+    display: inline-block;
+    width: auto;
+}
+}
